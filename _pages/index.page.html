@@ -1,117 +1,858 @@
 <!-- META
-TITLE: BigLinker Biz — 기업교육 코칭 전문 플랫폼
+TITLE: BigLinker Biz — 기업교육 역량강화 전문 플랫폼
 HEADER_PROMO: 2026 기업교육 프로그램 오픈
 ACTIVE_TAB:
 -->
 
 <!-- PAGE_CSS -->
 <style>
-    :root {
-      --header-line: #e5e8ef; --header-line-strong: #d7dbe5;
-      --header-text: #17191f; --header-muted: #6e7687;
-      --bg: #0b0e13; --text: #f6f7fb; --muted: rgba(255,255,255,0.66);
-      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
-      --max: 1320px; --radius-lg: 22px; --radius-md: 18px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: "Noto Sans KR", "Pretendard", sans-serif; background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%), linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%); color: var(--text); -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
-    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-    .hero { padding: 100px 0 60px; text-align: center; }
-    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
-    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.6vw,60px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; }
-    .hero h1 em { color: var(--brand-2); font-style: normal; }
-    .hero p { max-width: 560px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
-    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
-    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
-    .btn-primary:hover { transform: translateY(-2px); }
-    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); }
-    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; }
-    .service-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); transition: border-color 0.2s, background 0.2s; }
-    .service-card:hover { border-color: rgba(74,104,255,0.4); background: rgba(74,104,255,0.06); }
-    .service-card .sc-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); font-size: 10px; font-weight: 800; color: var(--brand-2); margin-bottom: 12px; letter-spacing: 0.05em; }
-    .service-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
-    .service-card p { font-size: 12.5px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
-    .service-card .sc-link { font-size: 12px; font-weight: 700; color: var(--brand-2); }
-    .site-footer { background: #090c11; border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 40px; }
-    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
-    .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
-    .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
-    .footer-sns { display: flex; gap: 8px; }
-    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: var(--muted); font-size: 11px; font-weight: 700; cursor: pointer; }
-    .footer-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .footer-nav-group h4 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
-    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-    .footer-nav-group a:hover { color: #fff; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 12px; }
-    .footer-legal { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.6; }
-    .footer-policy-links { display: flex; gap: 16px; }
-    .footer-policy-links a { font-size: 12px; color: rgba(255,255,255,0.3); }
+/* ══════════════════════════════════════════
+   DESIGN TOKENS — WHITE THEME
+══════════════════════════════════════════ */
+:root {
+  --brand:       #4a68ff;
+  --brand-2:     #7f92ff;
+  --brand-soft:  #eef0ff;
+  --brand-mid:   #dde2ff;
+  --text:        #0f1117;
+  --text-2:      #2e3344;
+  --muted:       #6b7280;
+  --muted-2:     #9ca3af;
+  --bg:          #ffffff;
+  --bg-2:        #f8f9fc;
+  --bg-3:        #f2f4f8;
+  --line:        #e5e7eb;
+  --line-2:      #d1d5db;
+  --max:         1280px;
+  --r-xl:        24px;
+  --r-lg:        18px;
+  --r-md:        14px;
+  --r-sm:        10px;
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md:   0 8px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg:   0 20px 48px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-brand: 0 8px 28px rgba(74,104,255,0.28);
+  --header-text:  #17191f;
+  --header-muted: #6e7687;
+  --header-line:  #e5e8ef;
+  --header-line-strong: #d7dbe5;
+  --toast-bg: rgba(255,255,255,0.98);
+  --toast-text: #0f1117;
+  --toast-muted: #6b7280;
+  --toast-border: rgba(0,0,0,0.08);
+  --toast-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Noto Sans KR", "Pretendard", sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+.inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+h1, h2, h3, p, span, li { word-break: keep-all; overflow-wrap: break-word; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blobFloat1 { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(-20px,16px) scale(1.05);} 66%{transform:translate(12px,-10px) scale(0.97);} }
+@keyframes blobFloat2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(14px,-18px) scale(1.08);} }
+@keyframes dot-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.load-1 { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.load-2 { animation: fadeUp 0.7s 0.1s cubic-bezier(0.16,1,0.3,1) both; }
+.load-3 { animation: fadeUp 0.7s 0.2s cubic-bezier(0.16,1,0.3,1) both; }
+.load-4 { animation: fadeUp 0.7s 0.3s cubic-bezier(0.16,1,0.3,1) both; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+
+.hero-main { position: relative; overflow: hidden; padding: 96px 0 80px; text-align: center; background: #fff; }
+.hero-main::before { content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 1000px; height: 700px; background: radial-gradient(ellipse at 50% 20%, rgba(74,104,255,0.08) 0%, rgba(127,146,255,0.04) 40%, transparent 70%); pointer-events: none; }
+.hero-main::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+.hero-blob { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(60px); opacity: 0.5; }
+.hero-blob--1 { width: 320px; height: 320px; background: rgba(74,104,255,0.09); top: -60px; right: 10%; animation: blobFloat1 12s ease-in-out infinite; }
+.hero-blob--2 { width: 200px; height: 200px; background: rgba(167,139,250,0.07); bottom: 0; left: 8%; animation: blobFloat2 16s ease-in-out infinite; }
+.hero-main > .wrap { position: relative; z-index: 1; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 7px; padding: 6px 16px; border-radius: 999px; border: 1px solid var(--brand-mid); background: var(--brand-soft); color: var(--brand); font-size: 12px; font-weight: 700; margin-bottom: 30px; }
+.hero-kicker span { width: 6px; height: 6px; border-radius: 50%; background: var(--brand); display: inline-block; animation: dot-pulse 2s ease infinite; }
+.hero-main h1 { max-width: 720px; margin: 0 auto 22px; font-size: clamp(34px, 5.2vw, 68px); font-weight: 900; letter-spacing: -0.055em; line-height: 1.12; color: var(--text); }
+.hero-main h1 em { font-style: normal; position: relative; display: inline; background: linear-gradient(135deg, var(--brand), #7c6ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-main h1 em svg { position: absolute; left: 0; bottom: -12px; width: 100%; height: 16px; pointer-events: none; overflow: visible; }
+.hero-sub { max-width: 560px; margin: 0 auto 40px; font-size: 17px; color: var(--muted); line-height: 1.85; font-weight: 400; }
+.hero-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 52px; padding: 0 28px; border-radius: 14px; background: var(--brand); color: #fff; font-weight: 700; font-size: 15px; box-shadow: var(--shadow-brand); transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(74,104,255,0.38); }
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 52px; padding: 0 24px; border-radius: 14px; border: 1.5px solid var(--line-2); color: var(--text-2); font-weight: 600; font-size: 15px; background: #fff; box-shadow: var(--shadow-xs); transition: border-color 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1); }
+.btn-outline:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+
+.trust-bar { background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.trust-bar__inner { display: flex; align-items: stretch; justify-content: center; flex-wrap: wrap; }
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 22px 40px; text-align: center; flex: 1; min-width: 140px; position: relative; }
+.trust-item + .trust-item::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 40%; background: var(--line); }
+.trust-item strong { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; color: var(--text); letter-spacing: -0.04em; white-space: nowrap; }
+.trust-item span { font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 1px; }
+
+.sec { padding: 96px 0; }
+.sec--alt { background: var(--bg-2); }
+.sec--brand { background: linear-gradient(135deg, #3a58ef 0%, #4a68ff 50%, #5a78ff 100%); padding: 100px 0 120px; }
+.sec-head { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.sec-eyebrow { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
+.sec--brand .sec-eyebrow { color: rgba(255,255,255,0.6); }
+.sec-head h2 { font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; line-height: 1.2; letter-spacing: -0.04em; color: var(--text); margin-bottom: 14px; }
+.sec--brand .sec-head h2 { color: #fff; }
+.sec-head p { font-size: 16px; color: var(--muted); line-height: 1.8; }
+.sec--brand .sec-head p { color: rgba(255,255,255,0.7); }
+.em { position: relative; display: inline; }
+.em svg { position: absolute; left: 0; bottom: -7px; width: 100%; height: 14px; pointer-events: none; overflow: visible; }
+
+/* Service grid: 7 items → responsive */
+.service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.service-card { display: flex; flex-direction: column; padding: 28px 24px 24px; border-radius: var(--r-xl); border: 1.5px solid var(--line); background: #fff; box-shadow: var(--shadow-xs); color: var(--text); transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, border-color 0.25s ease; cursor: pointer; }
+@media (hover: hover) { .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--brand); } .service-card:hover .sc-arrow { transform: translateX(4px); opacity: 1; } }
+.sc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+.sc-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--brand-soft); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.sc-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; background: var(--bg-2); color: var(--muted); border: 1px solid var(--line); }
+.service-card strong { font-size: 16px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; display: block; }
+.service-card p { font-size: 13px; color: var(--muted); line-height: 1.75; flex: 1; margin: 0 0 18px; }
+.sc-footer { display: flex; align-items: center; justify-content: space-between; }
+.sc-arrow { font-size: 15px; color: var(--brand); font-weight: 700; opacity: 0.5; transition: transform 0.2s ease, opacity 0.2s ease; }
+
+.guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+.guide-card { border-radius: var(--r-xl); border: 1.5px solid var(--line); background: #fff; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-xs); transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; }
+.guide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--brand-mid); }
+.guide-card--featured { border-color: var(--brand); background: var(--brand-soft); }
+.guide-card--featured:hover { box-shadow: 0 12px 32px rgba(74,104,255,0.14); }
+.gc-who { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 800; color: var(--brand); padding: 5px 13px; border-radius: 999px; background: var(--brand-soft); border: 1px solid var(--brand-mid); width: fit-content; }
+.guide-card--featured .gc-who { background: #fff; }
+.gc-combo { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.gc-combo a { padding: 5px 14px; border-radius: 999px; border: 1px solid var(--line); font-size: 12px; font-weight: 700; color: var(--text-2); background: #fff; transition: background 0.18s, border-color 0.18s, color 0.18s; }
+.gc-combo a:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
+.guide-card--featured .gc-combo a { border-color: rgba(74,104,255,0.3); }
+.gc-combo span { color: var(--muted-2); font-size: 12px; font-weight: 700; }
+.guide-card > p { font-size: 13.5px; color: var(--muted); line-height: 1.78; flex: 1; margin: 0; }
+.gc-link { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: var(--brand); transition: gap 0.2s; }
+.gc-link:hover { gap: 8px; }
+.guide-footer { text-align: center; font-size: 14px; color: var(--muted); margin-top: 8px; }
+.guide-footer a { color: var(--brand); font-weight: 700; }
+
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.why-card { border-radius: var(--r-xl); border: 1.5px solid var(--line); background: #fff; padding: 36px 28px; box-shadow: var(--shadow-xs); display: flex; flex-direction: column; gap: 16px; transition: transform 0.22s ease, box-shadow 0.22s ease; }
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.why-card--featured { border-color: var(--brand); }
+.wc-num { font-size: 11px; font-weight: 900; letter-spacing: 0.1em; color: var(--brand); }
+.wc-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--brand-soft); color: var(--brand); display: flex; align-items: center; justify-content: center; }
+.wc-icon svg { width: 24px; height: 24px; }
+.why-card strong { font-size: 18px; font-weight: 700; color: var(--text); }
+.why-card > p { font-size: 14px; color: var(--muted); line-height: 1.78; margin: 0; }
+.why-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.why-card ul li { font-size: 13px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.6; }
+.why-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-size: 10px; font-weight: 800; top: 3px; }
+
+.how-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.how-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 0 28px; text-align: center; }
+.how-step__circle { width: 64px; height: 64px; border-radius: 50%; background: var(--brand-soft); border: 2px solid var(--brand-mid); display: flex; align-items: center; justify-content: center; color: var(--brand); position: relative; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+.how-step:hover .how-step__circle { background: var(--brand); border-color: var(--brand); color: #fff; transform: scale(1.06); }
+.how-step__circle svg { width: 24px; height: 24px; }
+.how-step__num { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+.how-step strong { font-size: 16px; font-weight: 700; color: var(--text); }
+.how-step p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; max-width: 220px; }
+.how-connector { padding-top: 22px; color: var(--line-2); font-size: 18px; flex-shrink: 0; }
+.how-note { text-align: center; margin-top: 48px; font-size: 13px; color: var(--muted-2); line-height: 1.8; padding-top: 28px; border-top: 1px solid var(--line); }
+.how-note a { color: var(--brand); font-weight: 700; }
+
+.cases-carousel-wrap { position: relative; }
+.cases-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; color: var(--muted); cursor: pointer; font-size: 20px; line-height: 1; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: var(--shadow-xs); transition: border-color 0.18s, color 0.18s; }
+.cases-nav--prev { left: -52px; }
+.cases-nav--next { right: -52px; }
+.cases-nav:hover:not(:disabled) { border-color: var(--brand); color: var(--brand); }
+.cases-nav:disabled { opacity: 0.28; cursor: not-allowed; }
+.cases-overflow { overflow: hidden; width: 100%; border-radius: var(--r-lg); }
+.cases-track { display: flex; transition: transform 0.42s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+.cases-slide { flex: 0 0 100%; min-width: 0; }
+.cases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.case-card { display: flex; align-items: center; gap: 14px; background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg); padding: 16px; box-shadow: var(--shadow-xs); transition: border-color 0.2s, transform 0.22s; min-width: 0; }
+.case-card:hover { border-color: var(--brand-mid); transform: translateY(-2px); }
+.case-logo-wrap { width: 50px; height: 50px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid var(--line); overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+.case-logo-wrap img { width: 38px; height: 38px; object-fit: contain; }
+.case-logo-wrap.placeholder { background: linear-gradient(135deg, var(--brand), #7c6ff7); border: none; font-size: 13px; font-weight: 800; color: #fff; }
+.case-info { flex: 1; min-width: 0; }
+.case-tag { display: inline-block; margin-bottom: 4px; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+.case-name { display: block; font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.case-dept { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cases-dots { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 28px; }
+.cases-dot { width: 8px; height: 8px; border-radius: 4px; background: var(--line-2); cursor: pointer; border: none; transition: background 0.25s, width 0.25s; }
+.cases-dot.is-active { background: var(--brand); width: 22px; }
+
+.coaches-track { display: flex; transition: transform 0.42s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+.coaches-slide { flex: 0 0 100%; min-width: 0; }
+.coaches-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.coach-card { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.coach-photo { width: 100%; aspect-ratio: 7/5; border-radius: var(--r-xl); overflow: hidden; background: var(--bg-3); box-shadow: var(--shadow-sm); position: relative; }
+.coach-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(0.3); transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease; }
+.coach-card:hover .coach-photo img { transform: scale(1.06); filter: grayscale(0); }
+.coach-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 50%); border-radius: inherit; }
+.coach-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.coach-role { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.coaches-more { text-align: center; padding-top: 12px; }
+.coaches-more a { display: inline-flex; align-items: center; gap: 6px; color: var(--brand); font-weight: 700; border: 1.5px solid var(--brand-mid); padding: 8px 20px; border-radius: 999px; background: var(--brand-soft); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+.coaches-more a:hover { background: var(--brand); border-color: var(--brand); color: #fff; transform: translateY(-1px); }
+
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.review-card { background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-xl); padding: 32px 28px; box-shadow: var(--shadow-xs); display: flex; flex-direction: column; gap: 16px; transition: transform 0.22s ease, box-shadow 0.22s ease; }
+.review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.review-card--featured { border-color: var(--brand); }
+.rc-stars { color: #f59e0b; font-size: 14px; letter-spacing: 2px; }
+.rc-quote { font-size: 14.5px; color: var(--text-2); line-height: 1.82; flex: 1; margin: 0; }
+.rc-meta { display: flex; align-items: center; gap: 12px; padding-top: 4px; border-top: 1px solid var(--line); }
+.rc-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--brand), #a78bfa); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; }
+.rc-name { font-size: 13px; font-weight: 700; color: var(--text); display: block; }
+.rc-desc { font-size: 12px; color: var(--muted); display: block; }
+
+.cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.cta-badge { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.12); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+.sec--brand h2 { font-size: clamp(28px, 4vw, 52px); font-weight: 900; letter-spacing: -0.05em; line-height: 1.16; color: #fff; margin-bottom: 18px; }
+.sec--brand p { color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.8; margin-bottom: 40px; }
+.btn-white { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 52px; padding: 0 30px; border-radius: 14px; background: #fff; color: var(--brand); font-weight: 700; font-size: 15px; box-shadow: 0 8px 24px rgba(0,0,0,0.16); transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.2); }
+.btn-ghost-white { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 52px; padding: 0 26px; border-radius: 14px; border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.88); font-weight: 600; font-size: 15px; transition: border-color 0.2s, background 0.2s; }
+.btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); }
+.cta-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+.cta-trust { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.cta-trust span { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 600; }
+
+.site-footer { background: #0f1117; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-inner { max-width: var(--max); margin: 0 auto; padding: 40px 32px 48px; }
+.footer-top { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 28px; }
+.footer-logo { font-size: 18px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+.footer-desc, .footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; margin-bottom: 18px; }
+.footer-sns { display: flex; gap: 8px; }
+.footer-sns-btn { width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: transparent; color: rgba(255,255,255,0.45); cursor: pointer; font-size: 11px; font-weight: 700; transition: background 0.18s, color 0.18s; }
+.footer-sns-btn:hover { background: rgba(74,104,255,0.2); color: var(--brand-2); }
+.footer-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.footer-nav-group h4 { font-size: 11px; font-weight: 800; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+.footer-nav-group a { display: block; font-size: 13px; color: rgba(255,255,255,0.3); margin-bottom: 9px; transition: color 0.18s; }
+.footer-nav-group a:hover { color: rgba(255,255,255,0.75); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-legal { font-size: 11px; color: rgba(255,255,255,0.18); line-height: 1.8; }
+.footer-policy, .footer-policy-links { display: flex; gap: 14px; }
+.footer-policy a, .footer-policy-links a { font-size: 11px; color: rgba(255,255,255,0.25); transition: color 0.18s; }
+
+.mobile-floating-cta { display: none !important; position: fixed; z-index: 900; }
+.mobile-floating-cta.is-floating-active { display: inline-flex !important; align-items: center; gap: 10px; right: 20px; bottom: 24px; min-height: 56px; padding: 10px 18px 10px 12px; border-radius: 14px; background: #fff; color: var(--text); box-shadow: 0 8px 32px rgba(0,0,0,0.16); border: 1px solid var(--line); pointer-events: auto; }
+.mobile-floating-cta img { width: 28px; height: 28px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+.mobile-floating-cta strong { display: block; font-size: 13px; font-weight: 800; color: var(--text); }
+.mobile-floating-cta span { display: block; font-size: 11px; color: var(--muted); }
+
+@media (max-width: 1100px) { .cases-nav--prev { left: -16px; } .cases-nav--next { right: -16px; } }
+@media (max-width: 1024px) { .coaches-grid { grid-template-columns: repeat(4, 1fr); } .service-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .service-grid { grid-template-columns: repeat(2, 1fr); } .guide-grid { grid-template-columns: repeat(2, 1fr); } .why-grid { grid-template-columns: repeat(2, 1fr); } .reviews-grid { grid-template-columns: repeat(2, 1fr); } .coaches-grid { grid-template-columns: repeat(3, 1fr); } .cases-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) {
+  .wrap, .inner { padding: 0 16px; }
+  .hero-main { padding: 56px 0 44px; }
+  .hero-main h1 { font-size: clamp(26px, 7.5vw, 40px); }
+  .hero-sub { font-size: 14.5px; }
+  .hero-sub br { display: none; }
+  .btn-primary, .btn-outline { min-height: 44px; padding: 0 22px; font-size: 14px; }
+  .trust-item { flex: 0 0 50%; padding: 16px 8px; }
+  .trust-item + .trust-item::before { display: none; }
+  .sec { padding: 56px 0; }
+  .sec-head { margin-bottom: 36px; }
+  .sec-head h2 { font-size: clamp(22px, 6vw, 32px); }
+  .service-grid, .guide-grid, .why-grid, .reviews-grid { grid-template-columns: 1fr; gap: 10px; }
+  .cases-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .case-card { padding: 12px; gap: 10px; }
+  .case-logo-wrap { width: 40px; height: 40px; }
+  .cases-nav { display: none; }
+  .how-steps { flex-direction: column; align-items: center; gap: 24px; }
+  .how-connector { display: none; }
+  .how-step { padding: 0; width: 100%; }
+  .coaches-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .footer-nav-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .em svg { bottom: -5px; height: 12px; }
+  .mobile-floating-cta.is-floating-active { right: 12px; left: 12px; bottom: 16px; border-radius: 16px; background: var(--brand) !important; border: none !important; box-shadow: 0 12px 32px rgba(74,104,255,0.38) !important; }
+  .mobile-floating-cta strong { color: #fff; }
+  .mobile-floating-cta span { color: rgba(255,255,255,0.75); }
+}
+@media (max-width: 480px) {
+  .hero-main h1 { font-size: 25px; }
+  .coaches-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-nav-grid { grid-template-columns: 1fr; }
+}
 </style>
 <!-- /PAGE_CSS -->
 
 <!-- MOBILE_CTA -->
+<a class="mobile-floating-cta" href="#cta" aria-label="교육 문의">
+  <img src="./assets/biglinker-logo.png" alt="빅링커">
+  <div>
+    <strong>교육 문의하기</strong>
+    <span>기업 맞춤 교육 설계</span>
+  </div>
+</a>
 <!-- /MOBILE_CTA -->
 
 <!-- MAIN -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-kicker">기업교육 · BigLinker</div>
-      <h1>조직의 역량을<br><em>체계적으로</em> 강화합니다</h1>
-      <p>AI 활용부터 리더십·고객서비스·면접관 교육까지, 기업 맞춤형 역량 강화 프로그램을 설계합니다.</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#cta">교육 문의</a>
-        <a class="btn-secondary" href="#">프로그램 소개서</a>
-      </div>
+<main>
 
+  <!-- ══ §1 HERO ══ -->
+  <section class="hero-main">
+    <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-kicker load-1">
+        <span></span>
+        기업 맞춤 역량강화 교육 전문 · BigLinker Biz
+      </div>
+      <h1 class="load-2">조직의 성장은<br><em>교육 전략으로 설계됩니다<svg viewBox="0 0 310 16" fill="none" preserveAspectRatio="none"><path d="M3 12 C62 4, 155 15, 248 9 C272 5, 307 12, 308 10" stroke="rgba(127,146,255,0.75)" stroke-width="2.8" stroke-linecap="round" fill="none"/><path d="M6 15 C65 9, 158 16, 251 12 C274 9, 307 14, 308 12" stroke="rgba(74,104,255,0.38)" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg></em></h1>
+      <p class="hero-sub load-3">
+        AI 활용부터 리더십·고객서비스·면접관 교육까지.<br>
+        7가지 맞춤형 기업교육 프로그램으로 조직 역량을 한 단계 높입니다.
+      </p>
+      <div class="hero-actions load-4">
+        <a class="btn-primary" href="#cta">교육 문의하기 →</a>
+        <a class="btn-outline" href="#services">프로그램 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §2 TRUST BAR ══ -->
+  <div class="trust-bar">
+    <div class="wrap">
+      <div class="trust-bar__inner">
+        <div class="trust-item">
+          <strong data-count="500">0+</strong>
+          <span>누적 교육 완료</span>
+        </div>
+        <div class="trust-item">
+          <strong data-count="200">0+</strong>
+          <span>교육 참여 기업</span>
+        </div>
+        <div class="trust-item">
+          <strong data-count="98">0%</strong>
+          <span>교육 만족도</span>
+        </div>
+        <div class="trust-item">
+          <strong>7가지</strong>
+          <span>맞춤 교육 프로그램</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ §3 SERVICES ══ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">PROGRAMS</p>
+        <h2>7가지 <span class="em">기업교육 프로그램<svg viewBox="0 0 200 14" fill="none" preserveAspectRatio="none"><path d="M2 10 C40 3, 100 13, 160 7 C178 4, 198 10, 199 8" stroke="rgba(74,104,255,0.6)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M4 13 C42 8, 103 14, 163 10 C180 7, 198 12, 199 10" stroke="rgba(127,146,255,0.3)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <p>조직의 목표에 맞게 커스터마이즈된 교육 프로그램을 설계합니다.</p>
+      </div>
       <div class="service-grid">
-        <a class="service-card" href="./enterprise-ai-training.html">
-          <div class="sc-tag">AI</div>
-          <h3>기업 AI 활용법</h3>
-          <p>업무 생산성을 높이는 AI 도구 활용 실습 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d1" href="./enterprise-ai-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">🤖</div>
+            <span class="sc-tag">AI 활용</span>
+          </div>
+          <strong>기업 AI 활용법 교육</strong>
+          <p>업무 생산성을 높이는 AI 도구 실습 교육. ChatGPT·Gemini 등 실무 적용 전략을 체계적으로 습득합니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./interviewer-training.html">
-          <div class="sc-tag">INTERVIEW</div>
-          <h3>면접관 역량강화</h3>
-          <p>공정하고 효과적인 면접 진행 역량을 키우는 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d2" href="./interviewer-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">🎯</div>
+            <span class="sc-tag">면접관</span>
+          </div>
+          <strong>면접관 역량강화 교육</strong>
+          <p>공정하고 효과적인 면접을 진행하는 역량을 키웁니다. 편향 제거·구조화 면접·평가 기준 설계를 다룹니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./cs-training.html">
-          <div class="sc-tag">CS</div>
-          <h3>AI 상향평준화 교육</h3>
-          <p>조직 전체의 AI 리터러시를 높이는 체계적 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d3" href="./cs-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">📈</div>
+            <span class="sc-tag">AI 리터러시</span>
+          </div>
+          <strong>AI 상향평준화 교육</strong>
+          <p>조직 전체의 AI 리터러시를 체계적으로 높이는 교육. 부서별 AI 활용 수준 격차를 해소합니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./customer-service-training.html">
-          <div class="sc-tag">SERVICE</div>
-          <h3>고객서비스 역량강화</h3>
-          <p>고객 응대의 질을 높이는 실전형 서비스 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d4" href="./customer-service-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">💼</div>
+            <span class="sc-tag">CS 역량</span>
+          </div>
+          <strong>고객서비스 역량강화</strong>
+          <p>고객 응대의 질을 높이는 실전형 서비스 교육. CS 전략·불만 처리·고객 만족도 향상 방법론을 다룹니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./digital-detox-training.html">
-          <div class="sc-tag">DIGITAL</div>
-          <h3>디지털디톡스 역량강화</h3>
-          <p>디지털 과몰입을 예방하고 업무 집중력을 높이는 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d1" href="./digital-detox-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">🧘</div>
+            <span class="sc-tag">디지털 웰니스</span>
+          </div>
+          <strong>디지털디톡스 역량강화</strong>
+          <p>디지털 과몰입을 예방하고 업무 집중력과 팀 소통을 회복하는 웰니스 중심 교육입니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./leadership-training.html">
-          <div class="sc-tag">LEADERSHIP</div>
-          <h3>리더십 역량강화</h3>
-          <p>조직을 이끄는 리더의 소통·의사결정·코칭 역량 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d2" href="./leadership-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">🏆</div>
+            <span class="sc-tag">리더십</span>
+          </div>
+          <strong>리더십 역량강화 교육</strong>
+          <p>조직을 이끄는 리더의 소통·의사결정·코칭 역량을 강화합니다. 팀장·부서장 맞춤 리더십 프로그램.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
-        <a class="service-card" href="./business-manner-speech-training.html">
-          <div class="sc-tag">MANNER</div>
-          <h3>비즈니스 매너 스피치</h3>
-          <p>비즈니스 상황별 매너와 설득력 있는 스피치 역량 교육.</p>
-          <span class="sc-link">자세히 보기 →</span>
+        <a class="service-card reveal reveal-d3" href="./business-manner-speech-training.html">
+          <div class="sc-top">
+            <div class="sc-icon">🗣️</div>
+            <span class="sc-tag">비즈니스 매너</span>
+          </div>
+          <strong>비즈니스 매너·스피치</strong>
+          <p>비즈니스 상황별 매너와 설득력 있는 스피치 역량을 교육합니다. 프레젠테이션·협상·보고 스킬을 다룹니다.</p>
+          <div class="sc-footer"><span class="sc-arrow">→</span></div>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- ══ §4 GUIDE ══ -->
+  <section class="sec sec--alt" id="guide">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">PROGRAM GUIDE</p>
+        <h2><span class="em">어떤 프로그램<svg viewBox="0 0 160 14" fill="none" preserveAspectRatio="none"><path d="M2 10 C32 3, 80 13, 128 7 C143 4, 158 10, 159 8" stroke="rgba(74,104,255,0.6)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M4 13 C34 8, 83 14, 131 10 C145 7, 158 12, 159 10" stroke="rgba(127,146,255,0.3)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></span>이 맞나요?</h2>
+        <p>조직 상황에 맞는 교육 조합을 찾아보세요.</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card reveal reveal-d1">
+          <div class="gc-who">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 6l2 2 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            AI 도입 추진 기업
+          </div>
+          <div class="gc-combo">
+            <a href="./enterprise-ai-training.html">AI 활용교육</a>
+            <span>+</span>
+            <a href="./cs-training.html">AI 상향평준화</a>
+          </div>
+          <p>전사 AI 리터러시를 높이고 실무 적용까지 연결하는 체계적인 교육 로드맵을 설계합니다.</p>
+          <a class="gc-link" href="./enterprise-ai-training.html">AI 활용 교육 자세히 보기 →</a>
+        </div>
+        <div class="guide-card guide-card--featured reveal reveal-d2">
+          <div class="gc-who">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 6l2 2 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            채용·HR 담당자
+          </div>
+          <div class="gc-combo">
+            <a href="./interviewer-training.html">면접관교육</a>
+            <span>+</span>
+            <a href="./leadership-training.html">리더십교육</a>
+          </div>
+          <p>공정한 면접 프로세스 구축과 리더십 역량 강화를 동시에 실현하는 통합 HR 교육 패키지.</p>
+          <a class="gc-link" href="./interviewer-training.html">면접관 교육 자세히 보기 →</a>
+        </div>
+        <div class="guide-card reveal reveal-d3">
+          <div class="gc-who">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 6l2 2 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            고객 응대팀·서비스 부서
+          </div>
+          <div class="gc-combo">
+            <a href="./customer-service-training.html">CS교육</a>
+            <span>+</span>
+            <a href="./business-manner-speech-training.html">매너·스피치</a>
+          </div>
+          <p>고객 만족도를 높이는 서비스 역량과 비즈니스 커뮤니케이션 스킬을 함께 강화합니다.</p>
+          <a class="gc-link" href="./customer-service-training.html">CS 교육 자세히 보기 →</a>
+        </div>
+      </div>
+      <p class="guide-footer">
+        어떤 교육이 맞을지 모르겠다면? <a href="#cta">교육 담당자에게 직접 물어보세요 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ §5 WHY ══ -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">WHY BIGLINKER BIZ</p>
+        <h2>빅링커 기업교육이 <span class="em">다른 3가지 이유<svg viewBox="0 0 200 14" fill="none" preserveAspectRatio="none"><path d="M2 10 C40 3, 100 13, 160 7 C178 4, 198 10, 199 8" stroke="rgba(74,104,255,0.6)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M4 13 C42 8, 103 14, 163 10 C180 7, 198 12, 199 10" stroke="rgba(127,146,255,0.3)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <p>단순한 강의가 아닙니다. 조직 변화에 필요한 것만 정확히, 전략적으로.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal reveal-d1">
+          <p class="wc-num">01</p>
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="14" width="5" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="9.5" y="9" width="5" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="3" width="5" height="19" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <strong>기업 맞춤 설계</strong>
+          <p>조직의 현황·목표·인원을 분석해 맞춤형 커리큘럼을 설계합니다. 동일한 교육은 없습니다. 모든 프로그램은 귀사를 위해 새롭게 설계됩니다.</p>
+          <ul>
+            <li>기업 현황 사전 진단</li>
+            <li>부서·직급별 맞춤 설계</li>
+            <li>교육 목표 KPI 설정</li>
+          </ul>
+        </div>
+        <div class="why-card why-card--featured reveal reveal-d2">
+          <p class="wc-num">02</p>
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>7개 프로그램 원스톱</strong>
+          <p>AI·면접관·CS·리더십·디지털·매너·스피치까지 하나의 파트너로 통합 운영합니다. 여러 업체를 관리하는 번거로움을 없앱니다.</p>
+          <ul>
+            <li>연간 교육 계획 통합 관리</li>
+            <li>프로그램 간 연계 설계</li>
+            <li>전담 교육 매니저 배정</li>
+          </ul>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <p class="wc-num">03</p>
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="8" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M1 21c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 14c2.21 0 4 1.79 4 4v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <strong>실측 가능한 성과</strong>
+          <p>교육 전·후 역량 측정과 사후 리포트를 제공합니다. 교육 효과를 수치로 확인하고 지속적인 개선으로 연결합니다.</p>
+          <ul>
+            <li>사전·사후 역량 측정</li>
+            <li>교육 효과 분석 리포트</li>
+            <li>후속 교육 연계 지원</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §6 HOW ══ -->
+  <section class="sec sec--alt" id="how">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">HOW TO START</p>
+        <h2>교육 도입, 딱 3단계</h2>
+        <p>복잡한 절차 없이 문의부터 교육 실행까지 빠르게 연결됩니다.</p>
+      </div>
+      <div class="how-steps reveal">
+        <div class="how-step">
+          <div class="how-step__circle">
+            <span class="how-step__num">1</span>
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M7 12h10M7 7.5h10M7 16.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <strong>교육 문의</strong>
+          <p>온라인 폼 또는 전화로 문의. 교육 목적·인원·일정만 간단히 알려주세요.</p>
+        </div>
+        <div class="how-connector" aria-hidden="true">→</div>
+        <div class="how-step">
+          <div class="how-step__circle">
+            <span class="how-step__num">2</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 4.69 5 8c0 1.56.65 2.97 1.7 4.01L6 16l4.1-1.35C10.68 14.87 11.33 15 12 15c3.87 0 7-2.69 7-6s-3.13-7-7-7z" stroke="currentColor" stroke-width="1.7"/></svg>
+          </div>
+          <strong>니즈 분석 미팅</strong>
+          <p>전담 교육 매니저가 조직 현황을 분석하고 최적의 프로그램과 커리큘럼을 제안합니다.</p>
+        </div>
+        <div class="how-connector" aria-hidden="true">→</div>
+        <div class="how-step">
+          <div class="how-step__circle">
+            <span class="how-step__num">3</span>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 12l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.7"/></svg>
+          </div>
+          <strong>맞춤 교육 실행</strong>
+          <p>설계된 커리큘럼으로 교육을 진행합니다. 교육 후 효과 리포트와 사후 관리까지 제공합니다.</p>
+        </div>
+      </div>
+      <p class="how-note">
+        문의 후 3영업일 내 제안서 발송 &nbsp;·&nbsp; 방문·온라인 교육 모두 가능 &nbsp;·&nbsp; 소기업~대기업 모두 지원 &nbsp;·&nbsp;
+        <a href="#cta">지금 문의하기 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ §7 CASES ══ -->
+  <section class="sec" id="cases">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">EDUCATION CASES</p>
+        <h2>빅링커 <span class="em">기업교육 사례<svg viewBox="0 0 160 14" fill="none" preserveAspectRatio="none"><path d="M2 10 C32 3, 80 13, 128 7 C143 4, 158 10, 159 8" stroke="rgba(74,104,255,0.6)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M4 13 C34 8, 83 14, 131 10 C145 7, 158 12, 159 10" stroke="rgba(127,146,255,0.3)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <p>실제 기업교육을 진행한 기업 목록입니다</p>
+      </div>
+      <div class="cases-carousel-wrap reveal" style="padding: 0 60px;">
+        <button class="cases-nav cases-nav--prev" id="casesPrev" aria-label="이전" style="left:0;">‹</button>
+        <div class="cases-overflow">
+          <div class="cases-track" id="casesTrack"></div>
+        </div>
+        <button class="cases-nav cases-nav--next" id="casesNext" aria-label="다음" style="right:0;">›</button>
+      </div>
+      <div class="cases-dots" id="casesDots"></div>
+    </div>
+  </section>
+
+  <!-- ══ §8 COACHES ══ -->
+  <section class="sec sec--alt" id="coaches">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">OUR COACHES</p>
+        <h2>검증된 전문 강사진</h2>
+        <p>각 분야 전문 강사가 기업 맞춤 교육을 진행합니다.</p>
+      </div>
+      <div class="coaches-carousel-wrap reveal" style="position:relative;">
+        <button class="cases-nav cases-nav--prev" id="coachPrev" aria-label="이전">‹</button>
+        <div class="cases-overflow">
+          <div class="coaches-track" id="coachTrack"></div>
+        </div>
+        <button class="cases-nav cases-nav--next" id="coachNext" aria-label="다음">›</button>
+      </div>
+      <div class="cases-dots" id="coachDots"></div>
+      <div class="coaches-more">
+        <a href="https://gobiglinker.com/%EC%BB%A8%EC%84%A4%ED%84%B4%ED%8A%B8-%EB%B0%8F-%ED%98%91%EB%A0%A5%EC%82%AC" target="_blank" rel="noopener">
+          전체 강사진 보기 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §9 REVIEWS ══ -->
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-eyebrow">REVIEW</p>
+        <h2>실제 교육 후기</h2>
+        <p>실제 기업교육을 진행한 담당자·참가자의 경험담입니다.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal reveal-d1">
+          <div class="rc-stars">★★★★★</div>
+          <p class="rc-quote">AI 활용 교육을 여러 업체에서 받아봤는데 빅링커는 달랐습니다. 실무 중심으로 설계되어 교육 다음 날부터 바로 업무에 적용할 수 있었습니다.</p>
+          <div class="rc-meta">
+            <span class="rc-avatar">박</span>
+            <div>
+              <strong class="rc-name">박○○ 팀장</strong>
+              <span class="rc-desc">IT 기업 교육담당자 · AI 활용 교육</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card review-card--featured reveal reveal-d2">
+          <div class="rc-stars">★★★★★</div>
+          <p class="rc-quote">면접관 교육을 도입한 이후 채용 과정의 일관성이 눈에 띄게 좋아졌습니다. 편향 없는 평가 기준이 생기니 팀 전체의 채용 만족도도 올라갔습니다.</p>
+          <div class="rc-meta">
+            <span class="rc-avatar">이</span>
+            <div>
+              <strong class="rc-name">이○○ HR 담당</strong>
+              <span class="rc-desc">제조 기업 인사팀 · 면접관 역량강화</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal reveal-d3">
+          <div class="rc-stars">★★★★★</div>
+          <p class="rc-quote">리더십 교육은 많이 받았지만 이렇게 실질적인 변화가 생긴 건 처음입니다. 코치님이 우리 조직 상황을 정확히 파악하고 맞춤 피드백을 주신 덕분입니다.</p>
+          <div class="rc-meta">
+            <span class="rc-avatar">김</span>
+            <div>
+              <strong class="rc-name">김○○ 부장</strong>
+              <span class="rc-desc">금융 기업 부서장 · 리더십 역량강화</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ §10 CTA ══ -->
+  <section class="sec sec--brand" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge reveal">
+          <span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);display:inline-block;"></span>
+          기업 맞춤 설계 · 빠른 제안서 발송
+        </div>
+        <h2 class="reveal">지금 바로<br><span class="em">교육 전략<svg viewBox="0 0 120 14" fill="none" preserveAspectRatio="none"><path d="M2 10 C24 3, 60 13, 96 7 C107 4, 118 10, 119 8" stroke="rgba(255,255,255,0.55)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M4 13 C26 8, 63 14, 99 10 C109 7, 118 12, 119 10" stroke="rgba(255,255,255,0.25)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></span>을 시작하세요</h2>
+        <p class="reveal">7가지 맞춤형 프로그램으로 조직의 성장을 함께 설계합니다.<br>문의 후 3영업일 내 맞춤 제안서를 발송해 드립니다.</p>
+        <div class="cta-actions reveal">
+          <a class="btn-white" href="#">교육 문의하기 →</a>
+          <a class="btn-ghost-white" href="#">프로그램 소개서 받기</a>
+        </div>
+        <div class="cta-trust reveal">
+          <span>✓ 기업 맞춤 설계</span>
+          <span>✓ 200+ 기업 교육</span>
+          <span>✓ 98% 만족도</span>
+          <span>✓ 효과 리포트 제공</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 <!-- /MAIN -->
+
+<!-- PAGE_SCRIPTS -->
+<script>
+(function () {
+  var GF = 'https://www.google.com/s2/favicons?sz=64&domain=';
+  var bizData = [
+    {tag:'AI 활용',name:'삼성전자',dept:'AI 활용법 교육',initial:'삼',src:GF+'samsung.com'},
+    {tag:'리더십',name:'LG전자',dept:'리더십 역량강화',initial:'LG',src:GF+'lg.com'},
+    {tag:'면접관',name:'현대자동차',dept:'면접관 역량강화',initial:'현',src:GF+'hyundai.com'},
+    {tag:'CS 역량',name:'신한은행',dept:'고객서비스 교육',initial:'신',src:GF+'shinhan.com'},
+    {tag:'AI 활용',name:'카카오',dept:'AI 상향평준화',initial:'K',src:GF+'kakao.com'},
+    {tag:'매너·스피치',name:'롯데그룹',dept:'비즈니스 매너 교육',initial:'롯',src:GF+'lotte.com'},
+    {tag:'디지털 웰니스',name:'SK텔레콤',dept:'디지털디톡스 교육',initial:'SK',src:GF+'sktelecom.com'},
+    {tag:'면접관',name:'포스코',dept:'면접관 역량강화',initial:'P',src:GF+'posco.com'},
+    {tag:'리더십',name:'KB국민은행',dept:'리더십 코칭 프로그램',initial:'KB',src:GF+'kbstar.com'},
+    {tag:'AI 활용',name:'CJ제일제당',dept:'AI 활용법 교육',initial:'CJ',src:GF+'cjfreshway.co.kr'},
+    {tag:'CS 역량',name:'현대카드',dept:'고객서비스 역량강화',initial:'현',src:GF+'hyundaicard.com'},
+    {tag:'매너·스피치',name:'GS칼텍스',dept:'비즈니스 스피치',initial:'GS',src:GF+'gscaltex.com'},
+  ];
+  var TAG_STYLE = {
+    'AI 활용':'background:#eef0ff;color:#4a68ff',
+    '리더십':'background:#f5f3ff;color:#7c3aed',
+    '면접관':'background:#ecfdf5;color:#059669',
+    'CS 역량':'background:#fff3e0;color:#d97706',
+    '디지털 웰니스':'background:#fdf2f8;color:#c026d3',
+    '매너·스피치':'background:#eff6ff;color:#2563eb',
+  };
+  var PER_PAGE = 12;
+  var currentPage = 0;
+  var track = document.getElementById('casesTrack');
+  var dotsEl = document.getElementById('casesDots');
+  var prevBtn = document.getElementById('casesPrev');
+  var nextBtn = document.getElementById('casesNext');
+  if (!track) return;
+  function tagStyle(tag) { return TAG_STYLE[tag] || 'background:#eef0ff;color:#4a68ff'; }
+  function render() {
+    var totalPages = Math.ceil(bizData.length / PER_PAGE);
+    var html = '';
+    for (var p = 0; p < totalPages; p++) {
+      var slice = bizData.slice(p * PER_PAGE, (p + 1) * PER_PAGE);
+      html += '<div class="cases-slide"><div class="cases-grid">';
+      slice.forEach(function (card) {
+        var init = card.initial || card.name[0];
+        var logoHtml = card.src
+          ? '<div class="case-logo-wrap"><img src="' + card.src + '" alt="' + card.name + '" onerror="var p=this.parentElement;p.classList.add(\'placeholder\');p.textContent=\'' + init + '\';this.remove()"></div>'
+          : '<div class="case-logo-wrap placeholder">' + init + '</div>';
+        html += '<div class="case-card">' + logoHtml + '<div class="case-info">'
+          + '<span class="case-tag" style="' + tagStyle(card.tag) + '">' + card.tag + '</span>'
+          + '<strong class="case-name">' + card.name + '</strong>'
+          + '<span class="case-dept">' + card.dept + '</span>'
+          + '</div></div>';
+      });
+      html += '</div></div>';
+    }
+    track.innerHTML = html;
+    track.style.transform = 'translateX(0)';
+    var dotsHtml = '';
+    for (var i = 0; i < totalPages; i++) {
+      dotsHtml += '<button class="cases-dot' + (i === 0 ? ' is-active' : '') + '" data-page="' + i + '"></button>';
+    }
+    dotsEl.innerHTML = dotsHtml;
+    dotsEl.querySelectorAll('.cases-dot').forEach(function (d) {
+      d.addEventListener('click', function () { goTo(+this.dataset.page); startAuto(); });
+    });
+    currentPage = 0;
+  }
+  function goTo(page) {
+    var totalPages = Math.ceil(bizData.length / PER_PAGE);
+    currentPage = ((page % totalPages) + totalPages) % totalPages;
+    track.style.transform = 'translateX(-' + currentPage * 100 + '%)';
+    dotsEl.querySelectorAll('.cases-dot').forEach(function (d, i) { d.classList.toggle('is-active', i === currentPage); });
+  }
+  var timer;
+  function startAuto() { clearInterval(timer); timer = setInterval(function () { goTo(currentPage + 1); }, 4000); }
+  prevBtn.addEventListener('click', function () { goTo(currentPage - 1); startAuto(); });
+  nextBtn.addEventListener('click', function () { goTo(currentPage + 1); startAuto(); });
+  render();
+  startAuto();
+})();
+
+(function () {
+  var COACHES = [
+    {name:'김재환',role:'조직문화·리더십',img:'https://lh3.googleusercontent.com/MjuUZ0sJudzIrCXMDeM7CkhIqwpDtBuhyxcp9C1sUcCVoeAZefo_NyiI1PuACxJJVWX2ZYvhp3EoFPrcHqtn50s5WFcr6QvZrv8LJc5NMZPqiG7DKUfBsw=w700-h500-n'},
+    {name:'유장현',role:'조직개발·리더십컨설팅',img:'https://lh3.googleusercontent.com/0XzLqDswe1J-UxsAVo6UC7wc1kYZOg0rOF0nQ9XDRPB9j_Uctdm6Io5ybe8uepv3Mmm_CJHoWlHUxT9VM8pv7BpO3JwlPTlb9fSlTDGbsifFi2PvQ=w700-h500-n'},
+    {name:'안세영',role:'비즈니스전략·지속가능경영',img:'https://lh3.googleusercontent.com/RG77Xn73SmiPpPpt8PdaH6SYPfVo7MxnFH0xcxy-qqfQHSo1JBLATt6W1iLUIYp03jNgCvQCDDcMJgUYuC717Oe6EVsvTzBsoO-fghAu1tYxJMj9YXgXlxo=w700-h500-n'},
+    {name:'방병권',role:'HR 데이터분석·채용',img:'https://lh3.googleusercontent.com/kUPH7xuj-hEyuKmvWgMU0VWS6h9VOxLztXzoHqjC9iJ5KXidhwwrXjtjCWj4ByT0cL8OvlQFs9TNhzPUCOtTSEXFknm6yzyi1my-oYnuu0cM9pAbOiWXoA=w700-h500-n'},
+    {name:'우소연',role:'스피치·이미지메이킹',img:'https://lh3.googleusercontent.com/xHiJz1H4d6Aa4UlL1EzK1vVOBIgj9LMO1ZblT4ui6KRbWU-VFNrH6M94luuzOYaSEQlk7u4N1EBQ9uCwTqVMEqdFxBh_Waaa1avCqvQ3co4Vy3HS2GSWqQ=w700-h500-n'},
+    {name:'이은선',role:'조직문화·커뮤니케이션',img:'https://lh3.googleusercontent.com/IhK4Y3pP5fBrcR03RIBWqblZTSk8IXzNRTUPKpP-oSWL69jcO8RU-mNbANas_nJ4ol23svQK97X2pM9uf9gZo879l-9E6gGumjIeDSFow1BAPlcRWnHz=w700-h500-n'},
+    {name:'전성은',role:'리더십·커뮤니케이션',img:'https://lh3.googleusercontent.com/YVMPxwEl0n8l6KIFJa1iXyY_qcXhPAG1FPJ_DYINvQMpoloIKsGqK8Z4wclYoSqUijeJNxQ8sytwWaWQkXKR8Xy9TesIFMCjCN3rmuRwmsuwCzP9Jm8kVw=w700-h500-n'},
+    {name:'정종우',role:'산업안전·조직관리',img:'https://lh3.googleusercontent.com/ueavdVwOhGIx9tMf-EgMQcp-OFqfKhl8PMle0T4mmK_-lBE5ogzrpSs6OGKEPAEI-DIlwFDJk3nGoysHSAd2JCo089F2PsSlllFFGK8Dl144f-GgJTCK1g=w700-h500-n'},
+    {name:'박미진',role:'서비스·고객만족',img:'https://lh3.googleusercontent.com/KbolDxXgfZoa-GXJ-Jyo26mSr33irXHbuIJt2bo2MEjAEf0wyazpcaaksmb2fPz-FPws6HIqiR5-FFB7HhAXnEkFcmY0NAdXQkivfE_HYKljGKvn8SGGUg=w700-h500-n'},
+    {name:'박일용',role:'운동처방·웰니스',img:'https://lh3.googleusercontent.com/O1hqaf-9__LHNqjJFlQBazF5iDXM66I4MFMDARyUbsuQAIEsHTWq8fzLYYtxk-VL2H55N0h1OvUhiRHLFuK2BoZZFxDzN-b4kH-HYIpSeiL9KC_oHaFwSQ=w700-h500-n'},
+  ];
+  var PER = 10;
+  var cPage = 0;
+  var cTrack = document.getElementById('coachTrack');
+  var cDots = document.getElementById('coachDots');
+  var cPrev = document.getElementById('coachPrev');
+  var cNext = document.getElementById('coachNext');
+  if (!cTrack) return;
+  var totalPages = Math.ceil(COACHES.length / PER);
+  function coachRender() {
+    var html = '';
+    for (var p = 0; p < totalPages; p++) {
+      var slice = COACHES.slice(p * PER, (p + 1) * PER);
+      html += '<div class="coaches-slide"><div class="coaches-grid">';
+      slice.forEach(function (c) {
+        html += '<div class="coach-card"><div class="coach-photo"><img src="' + c.img + '" alt="' + c.name + ' 강사" loading="lazy"></div><p class="coach-name">' + c.name + '</p><p class="coach-role">' + c.role + '</p></div>';
+      });
+      html += '</div></div>';
+    }
+    cTrack.innerHTML = html;
+    cTrack.style.transform = 'translateX(0)';
+    var dotsHtml = '';
+    for (var i = 0; i < totalPages; i++) {
+      dotsHtml += '<button class="cases-dot' + (i === 0 ? ' is-active' : '') + '" data-page="' + i + '"></button>';
+    }
+    cDots.innerHTML = dotsHtml;
+    cDots.querySelectorAll('.cases-dot').forEach(function (d) {
+      d.addEventListener('click', function () { coachGoTo(+this.dataset.page); coachStartAuto(); });
+    });
+  }
+  function coachGoTo(page) {
+    cPage = ((page % totalPages) + totalPages) % totalPages;
+    cTrack.style.transform = 'translateX(-' + cPage * 100 + '%)';
+    cDots.querySelectorAll('.cases-dot').forEach(function (d, i) { d.classList.toggle('is-active', i === cPage); });
+  }
+  var coachTimer;
+  function coachStartAuto() { clearInterval(coachTimer); coachTimer = setInterval(function () { coachGoTo(cPage + 1); }, 4000); }
+  cPrev.addEventListener('click', function () { coachGoTo(cPage - 1); coachStartAuto(); });
+  cNext.addEventListener('click', function () { coachGoTo(cPage + 1); coachStartAuto(); });
+  coachRender();
+  coachStartAuto();
+})();
+
+(function () {
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+})();
+
+(function () {
+  function countUp(el, target, suffix, duration) {
+    var start = performance.now();
+    function update(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target).toLocaleString() + suffix;
+      if (p < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      var val = parseInt(el.dataset.count, 10);
+      var suffix = el.textContent.replace(/[0-9,]/g, '');
+      countUp(el, val, suffix, 1600);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { obs.observe(el); });
+})();
+
+(function () {
+  var shell = document.getElementById('topShell');
+  if (!shell) return;
+  window.addEventListener('scroll', function () { shell.classList.toggle('is-scrolled', window.scrollY > 10); }, { passive: true });
+})();
+</script>
+<!-- /PAGE_SCRIPTS -->

@@ -9,7 +9,7 @@
             <div class="brand-copy"><span>{{BRAND_COPY}}</span></div>
           </a>
           <div class="header-actions">
-            <a class="cta-btn" href="#cta">상담 신청</a>
+            <a class="cta-btn" href="#cta">교육 문의</a>
           </div>
         </div>
       </div>
@@ -28,17 +28,33 @@
     </div>
   </div>
 
-  <div class="sticky-category-shell">
+  <!-- Mobile-only category bar (hidden on PC via CSS) -->
+  <div class="sticky-category-shell biz-mobile-cat" id="bizMobileCat">
     <div class="inner">
-      <div class="category-row">
-        <div class="category-balance" aria-hidden="true"></div>
-        <nav class="category-tabs" aria-label="서비스 카테고리">
+      <div class="biz-mobile-nav-row">
+        <button class="biz-menu-toggle" id="bizMenuToggle" type="button" aria-expanded="false" aria-controls="bizMenuPanel">
+          <span class="biz-menu-toggle__label" id="bizMenuLabel">메뉴</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+      </div>
+      <div class="biz-menu-panel" id="bizMenuPanel" hidden>
+        <div class="biz-menu-panel__list">
 {{CATEGORY_TABS}}
-        </nav>
-        <div class="category-utility" aria-label="콘텐츠 바로가기">
-          <button class="utility-link" type="button">블로그</button>
-          <button class="utility-link" type="button">리얼 TIP</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- PC Sidebar (hidden on mobile via CSS) -->
+  <aside class="biz-sidebar" id="bizSidebar" aria-label="서비스 메뉴">
+    <div class="biz-sidebar__brand">
+      <a href="./index.html">
+        <img src="./assets/biglinker-logo.png" alt="빅링커" width="100" height="33">
+      </a>
+    </div>
+    <div class="biz-sidebar__section-label">기업교육 서비스</div>
+{{BIZ_SIDEBAR_ITEMS}}
+    <div class="biz-sidebar__footer">
+      <a class="biz-sidebar__cta" href="#cta">교육 문의하기</a>
+    </div>
+  </aside>

@@ -41,12 +41,20 @@ def extract_section(content, tag):
     return m.group(1).strip() if m else ''
 
 def build_category_tabs(active_tab):
-    """active_tab에 맞게 is-active 클래스 붙인 탭 HTML 생성"""
+    """active_tab에 맞게 is-active 클래스 붙인 탭 HTML 생성 (모바일 드로어용)"""
     tabs = []
     for slug, label in cfg.CATEGORY_TABS_ITEMS:
         active = ' is-active' if slug == active_tab else ''
         tabs.append(f'          <a class="category-tab{active}" href="./{slug}.html">{label}</a>')
     return '\n'.join(tabs)
+
+def build_biz_sidebar_items(active_tab):
+    """PC 사이드바용 아이템 HTML 생성"""
+    items = []
+    for slug, label in cfg.CATEGORY_TABS_ITEMS:
+        active = ' is-active' if slug == active_tab else ''
+        items.append(f'    <a class="biz-sidebar__item{active}" href="./{slug}.html">{label}</a>')
+    return '\n'.join(items)
 
 def build_page(fname):
     page_path = PAGES + f"{fname}.page.html"
@@ -79,8 +87,9 @@ def build_page(fname):
     # Substitute header HTML variables
     vars_map = {
         **cfg.SITE_VARS,
-        'HEADER_PROMO':   header_promo,
-        'CATEGORY_TABS':  build_category_tabs(active_tab),
+        'HEADER_PROMO':        header_promo,
+        'CATEGORY_TABS':       build_category_tabs(active_tab),
+        'BIZ_SIDEBAR_ITEMS':   build_biz_sidebar_items(active_tab),
     }
     for k, v in vars_map.items():
         header_html = header_html.replace('{{' + k + '}}', v)

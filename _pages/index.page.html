@@ -1,0 +1,117 @@
+<!-- META
+TITLE: BigLinker Biz — 기업교육 코칭 전문 플랫폼
+HEADER_PROMO: 2026 기업교육 프로그램 오픈
+ACTIVE_TAB:
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-line: #e5e8ef; --header-line-strong: #d7dbe5;
+      --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --text: #f6f7fb; --muted: rgba(255,255,255,0.66);
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-lg: 22px; --radius-md: 18px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Noto Sans KR", "Pretendard", sans-serif; background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%), linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%); color: var(--text); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .hero { padding: 100px 0 60px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.6vw,60px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 560px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; }
+    .service-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); transition: border-color 0.2s, background 0.2s; }
+    .service-card:hover { border-color: rgba(74,104,255,0.4); background: rgba(74,104,255,0.06); }
+    .service-card .sc-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); font-size: 10px; font-weight: 800; color: var(--brand-2); margin-bottom: 12px; letter-spacing: 0.05em; }
+    .service-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+    .service-card p { font-size: 12.5px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .service-card .sc-link { font-size: 12px; font-weight: 700; color: var(--brand-2); }
+    .site-footer { background: #090c11; border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 40px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: var(--muted); font-size: 11px; font-weight: 700; cursor: pointer; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .footer-nav-group a:hover { color: #fff; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 12px; }
+    .footer-legal { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: rgba(255,255,255,0.3); }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">기업교육 · BigLinker</div>
+      <h1>조직의 역량을<br><em>체계적으로</em> 강화합니다</h1>
+      <p>AI 활용부터 리더십·고객서비스·면접관 교육까지, 기업 맞춤형 역량 강화 프로그램을 설계합니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의</a>
+        <a class="btn-secondary" href="#">프로그램 소개서</a>
+      </div>
+
+      <div class="service-grid">
+        <a class="service-card" href="./enterprise-ai-training.html">
+          <div class="sc-tag">AI</div>
+          <h3>기업 AI 활용법</h3>
+          <p>업무 생산성을 높이는 AI 도구 활용 실습 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./interviewer-training.html">
+          <div class="sc-tag">INTERVIEW</div>
+          <h3>면접관 역량강화</h3>
+          <p>공정하고 효과적인 면접 진행 역량을 키우는 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./cs-training.html">
+          <div class="sc-tag">CS</div>
+          <h3>AI 상향평준화 교육</h3>
+          <p>조직 전체의 AI 리터러시를 높이는 체계적 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./customer-service-training.html">
+          <div class="sc-tag">SERVICE</div>
+          <h3>고객서비스 역량강화</h3>
+          <p>고객 응대의 질을 높이는 실전형 서비스 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./digital-detox-training.html">
+          <div class="sc-tag">DIGITAL</div>
+          <h3>디지털디톡스 역량강화</h3>
+          <p>디지털 과몰입을 예방하고 업무 집중력을 높이는 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./leadership-training.html">
+          <div class="sc-tag">LEADERSHIP</div>
+          <h3>리더십 역량강화</h3>
+          <p>조직을 이끄는 리더의 소통·의사결정·코칭 역량 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+        <a class="service-card" href="./business-manner-speech-training.html">
+          <div class="sc-tag">MANNER</div>
+          <h3>비즈니스 매너 스피치</h3>
+          <p>비즈니스 상황별 매너와 설득력 있는 스피치 역량 교육.</p>
+          <span class="sc-link">자세히 보기 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

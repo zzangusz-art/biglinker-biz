@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigLinker 디지털디톡스 역량강화 기업교육</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+:root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* ── HEADER ── */
+    .top-shell {
+      position: sticky; top: 0; z-index: 120;
+      background: rgba(255,255,255,0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--header-line);
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+    .top-shell.is-collapsed { transform: translateY(-100%); opacity: 0; }
+    .sticky-category-shell {
+      position: sticky; top: 0; z-index: 110;
+      background: rgba(247,248,252,0.98);
+      border-top: 1px solid #edf0f6; border-bottom: 1px solid var(--header-line);
+      backdrop-filter: blur(12px);
+    }
+    .family-bar { background: #fff; }
+    .family-outer { display: flex; justify-content: center; padding: 10px 0; }
+    .family-wrap {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 46px; padding: 4px; border: 1px solid var(--header-line-strong);
+      border-radius: 16px; background: #fff; box-shadow: 0 4px 16px rgba(32,43,73,0.08);
+      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+    }
+    .family-wrap::-webkit-scrollbar, .category-tabs::-webkit-scrollbar { display: none; }
+    .family-link { flex: 0 0 auto; padding: 8px 12px; border-radius: 10px; font-size: 13px; font-weight: 700; color: var(--header-muted); }
+    .family-link.is-active { background: var(--brand-soft); color: var(--brand); }
+    .main-header { background: #fff; }
+    .main-header-wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; min-height: 78px; }
+    .header-promo {
+      justify-self: start; align-self: stretch; display: flex; align-items: center;
+      padding: 0 16px; border-radius: 0 0 14px 14px; border: 1px solid #dfe3ff; border-top: 0;
+      background: linear-gradient(180deg, #eef2ff 0%, #f6f8ff 100%);
+      color: var(--brand); font-size: 13px; font-weight: 800; white-space: nowrap;
+    }
+    .brand { display: flex; flex-direction: column; align-items: center; justify-self: center; text-align: center; gap: 6px; }
+    .brand-mark { width: 132px; height: 44px; object-fit: contain; }
+    .brand-copy span { display: block; color: var(--header-muted); font-size: 12px; line-height: 1.45; }
+    .header-actions { display: flex; align-items: center; justify-self: end; gap: 8px; }
+    .cta-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--brand); background: var(--brand); color: #fff; font-weight: 700; font-size: 13px; }
+    .category-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 58px; gap: 12px; }
+    .category-balance { justify-self: start; width: 120px; }
+    .category-tabs { display: flex; align-items: center; justify-content: center; gap: 2px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+    .category-tab { flex: 0 0 auto; position: relative; padding: 0 16px; min-height: 48px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700; color: var(--header-muted); }
+    .category-tab.is-active { color: var(--brand); }
+    .category-tab.is-active::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 0; height: 3px; background: var(--brand); border-radius: 999px; }
+    .category-utility { display: flex; align-items: center; justify-self: end; gap: 6px; width: 240px; }
+    .utility-link { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid #e4e7ef; background: #f8f9fc; color: #6f7786; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .utility-link:hover { background: var(--brand-soft); color: var(--brand); }
+
+    /* ── SECTION BASE ── */
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; --header-text: var(--text); --header-muted: var(--muted); --brand-soft: rgba(74,104,255,0.12); }
+    .section-dark .light-card { --header-text: #17191f; --header-muted: #6e7687; --brand-soft: #eef0ff; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+
+    /* ── HERO ── */
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    .hero-diff-cards { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .hero-diff-card { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 22px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); min-width: 148px; text-align: center; }
+    .hero-diff-card .diff-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--brand-2); }
+    .hero-diff-card strong { font-size: 13px; font-weight: 700; color: var(--text); }
+    .hero-diff-card p { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+    /* ── 교육 제안 개요 ── */
+    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .overview-points { display: grid; gap: 16px; }
+    .overview-point { display: flex; align-items: flex-start; gap: 14px; padding: 22px 22px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .overview-point .op-ic { flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 16px; margin-top: 1px; }
+    .overview-point p { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; }
+    .overview-point p strong { color: var(--text); font-weight: 700; }
+
+    /* ── 문제 진단 섹션 ── */
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .problem-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .problem-card .p-icon { font-size: 28px; margin-bottom: 16px; }
+    .problem-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .problem-card p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; }
+    .problem-stat { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(74,104,255,0.12); border: 1px solid rgba(74,104,255,0.2); font-size: 12px; font-weight: 700; color: var(--brand-2); }
+
+    /* ── 교육 과정표 (LIGHT) ── */
+    .edu-table-wrap { overflow-x: auto; }
+    .edu-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #e7ebf3; }
+    .edu-table th { padding: 14px 18px; font-size: 12px; font-weight: 800; text-align: center; letter-spacing: 0.04em; background: var(--brand); color: #fff; }
+    .edu-table th:first-child { text-align: left; width: 160px; }
+    .edu-table td { padding: 16px 18px; font-size: 13px; border-top: 1px solid #edf0f6; vertical-align: top; line-height: 1.65; }
+    .edu-table td:first-child { font-weight: 700; color: var(--brand); background: #f4f6ff; font-size: 13px; white-space: nowrap; }
+    .edu-table td.sub { color: var(--header-muted); }
+    .edu-table td.main { color: var(--header-text); }
+    .edu-table td.method { color: var(--header-muted); font-size: 12.5px; }
+    .edu-table td.time { color: var(--brand); font-weight: 700; font-size: 12.5px; text-align: center; white-space: nowrap; }
+    .edu-table tr:last-child td { border-bottom: none; }
+
+    /* ── 기대 효과 4개 ── */
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    /* ── 결론 (PANEL) ── */
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: center; }
+    .conclusion-left h2 { margin-bottom: 12px; }
+    .conclusion-left p { font-size: 14px; color: var(--header-muted); line-height: 1.8; }
+    .conclusion-points { display: grid; gap: 16px; }
+    .conclusion-point { display: flex; align-items: flex-start; gap: 12px; padding: 22px 24px; border-radius: var(--radius-sm); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .conclusion-point .cp-ic { flex-shrink: 0; color: var(--brand); font-size: 16px; margin-top: 2px; }
+    .conclusion-point p { font-size: 14px; color: var(--header-muted); line-height: 1.75; margin: 0; }
+    .conclusion-point p strong { color: var(--header-text); font-weight: 700; }
+
+    /* ── CTA ── */
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+
+    /* ── MOBILE ── */
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .conclusion-grid { grid-template-columns: 1fr; gap: 32px; }
+      .edu-table th, .edu-table td { padding: 12px 14px; font-size: 12px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+    /* ══════════════════════════════════════════
+       HEADER — common (partials/header.css)
+    ══════════════════════════════════════════ */
+    .top-shell {
+      position: sticky; top: 0; z-index: 120;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--header-line);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+    }
+    .top-shell.is-scrolled { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .top-shell.is-collapsed { transform: translateY(-100%); opacity: 0; }
+    .sticky-category-shell {
+      position: sticky; top: 0; z-index: 110;
+      background: rgba(248,249,252,0.96);
+      border-bottom: 1px solid var(--header-line);
+      backdrop-filter: blur(12px);
+    }
+    .family-bar { background: transparent; }
+    .family-outer { display: flex; justify-content: center; padding: 8px 0; }
+    .family-wrap {
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px; min-height: 40px; padding: 3px;
+      border: 1px solid var(--header-line-strong); border-radius: 14px;
+      background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+    }
+    .family-wrap::-webkit-scrollbar { display: none; }
+    .family-link {
+      flex: 0 0 auto; padding: 6px 14px; border-radius: 10px;
+      font-size: 12px; font-weight: 700; color: var(--header-muted);
+      transition: background 0.18s, color 0.18s;
+    }
+    .family-link.is-active { background: var(--brand-soft); color: var(--brand); }
+    .family-link:not(.is-active):hover { background: #f8f9fc; color: var(--header-text); }
+    .main-header { background: transparent; }
+    .main-header-wrap {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 16px; min-height: 70px;
+    }
+    .header-promo {
+      justify-self: start; align-self: stretch; display: flex; align-items: center;
+      padding: 0 14px; border-radius: 0 0 12px 12px;
+      border: 1px solid #dde2ff; border-top: 0;
+      background: var(--brand-soft);
+      color: var(--brand); font-size: 12px; font-weight: 700; white-space: nowrap;
+    }
+    .brand { display: flex; flex-direction: column; align-items: center; justify-self: center; text-align: center; gap: 4px; }
+    .brand-mark { width: 120px; height: 40px; object-fit: contain; }
+    .brand-copy span { display: block; color: var(--header-muted); font-size: 11px; line-height: 1.4; }
+    .header-actions { display: flex; align-items: center; justify-self: end; gap: 8px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 0 16px; border-radius: 10px;
+      border: 1px solid var(--brand); background: var(--brand);
+      color: #fff; font-weight: 700; font-size: 13px;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .cta-btn:hover { background: #3a58ef; transform: translateY(-1px); }
+    .category-row {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; min-height: 52px; gap: 12px;
+    }
+    .category-balance { justify-self: start; width: 120px; }
+    .category-tabs {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2px; overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+    }
+    .category-tabs::-webkit-scrollbar { display: none; }
+    .category-tab {
+      flex: 0 0 auto; position: relative; padding: 0 14px; min-height: 44px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--header-muted);
+      transition: color 0.18s;
+    }
+    .category-tab:hover { color: var(--header-text); }
+    .category-tab.is-active { color: var(--brand); }
+    .category-tab.is-active::after {
+      content: ""; position: absolute; left: 14px; right: 14px; bottom: 0;
+      height: 2px; background: var(--brand); border-radius: 999px;
+    }
+    .category-utility { display: flex; align-items: center; justify-self: end; gap: 6px; width: 200px; }
+    .utility-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 26px; padding: 0 10px; border-radius: 999px;
+      border: 1px solid var(--header-line); background: #fff;
+      color: var(--header-muted); font-size: 11px; font-weight: 700; cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .utility-link:hover { background: var(--brand-soft); color: var(--brand); border-color: #dde2ff; }
+    @media (max-width: 760px) {
+      .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; gap: 10px; }
+      .header-promo, .header-actions { display: none; }
+      .brand { justify-self: center; }
+      .category-balance { display: none; }
+      .category-tabs, .category-utility { justify-content: flex-start; }
+      .sticky-category-shell .category-utility { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER (generated from _partials/header.html) ══ -->
+  <div class="top-shell" id="topShell">
+    <header class="main-header">
+      <div class="inner">
+        <div class="main-header-wrap">
+          <div class="header-promo">2026 기업교육 프로그램 오픈</div>
+          <a class="brand" href="./index.html">
+            <img class="brand-mark" src="./assets/biglinker-logo.png" alt="빅링커 로고">
+            <div class="brand-copy"><span>기업교육 코칭 전문 플랫폼</span></div>
+          </a>
+          <div class="header-actions">
+            <a class="cta-btn" href="#cta">상담 신청</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="family-bar">
+      <div class="inner">
+        <div class="family-outer">
+          <div class="family-wrap">
+            <a class="family-link " href="https://transfer.gobiglinker.com/">대학&amp;편입</a>
+            <a class="family-link " href="https://graduate.gobiglinker.com/">대학원&amp;논문</a>
+            <a class="family-link " href="https://job.gobiglinker.com/">취업</a>
+            <a class="family-link is-active" href="https://biz.gobiglinker.com/">기업교육</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-category-shell">
+    <div class="inner">
+      <div class="category-row">
+        <div class="category-balance" aria-hidden="true"></div>
+        <nav class="category-tabs" aria-label="서비스 카테고리">
+          <a class="category-tab" href="./enterprise-ai-training.html">기업 AI 활용법</a>
+          <a class="category-tab" href="./interviewer-training.html">면접관 역량강화</a>
+          <a class="category-tab" href="./cs-training.html">AI 상향평준화 교육</a>
+          <a class="category-tab" href="./customer-service-training.html">고객서비스 역량강화</a>
+          <a class="category-tab is-active" href="./digital-detox-training.html">디지털디톡스 역량강화</a>
+          <a class="category-tab" href="./leadership-training.html">리더십 역량강화</a>
+          <a class="category-tab" href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
+        </nav>
+        <div class="category-utility" aria-label="콘텐츠 바로가기">
+          <button class="utility-link" type="button">블로그</button>
+          <button class="utility-link" type="button">리얼 TIP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-kicker">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#7f92ff" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="#7f92ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          CORPORATE EDUCATION · DIGITAL DETOX TRAINING
+        </div>
+        <h1>디지털디톡스 <em>역량 강화</em><br>기업 교육</h1>
+        <p>스마트폰·SNS 과의존에서 벗어나<br>집중력과 몰입도를 회복하는<br>실전 디지털 웰니스 역량 강화 프로그램</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#cta">교육 문의하기 →</a>
+          <a class="btn-secondary" href="#curriculum">교육 과정 보기</a>
+        </div>
+        <div class="hero-diff-cards">
+          <div class="hero-diff-card">
+            <div class="diff-icon">📵</div>
+            <strong>과의존 자가진단</strong>
+            <p>디지털 사용 패턴<br>객관적 진단·분석</p>
+          </div>
+          <div class="hero-diff-card">
+            <div class="diff-icon">🧠</div>
+            <strong>집중력 회복 훈련</strong>
+            <p>딥워크·마인드풀니스<br>실전 실습 중심</p>
+          </div>
+          <div class="hero-diff-card">
+            <div class="diff-icon">🌿</div>
+            <strong>디지털 웰니스 습관</strong>
+            <p>지속 가능한<br>건강한 사용 루틴 설계</p>
+          </div>
+          <div class="hero-diff-card">
+            <div class="diff-icon">🏢</div>
+            <strong>조직 문화 혁신</strong>
+            <p>팀 단위 디지털<br>소통 규범 정립</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 문제 진단 (DARK) ══ -->
+    <section class="section-dark" id="problem">
+      <div class="wrap">
+        <div class="section-eyebrow center">Why Digital Detox</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:10px;">디지털 과의존이<br>조직 생산성을 갉아먹습니다</h2>
+        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:44px;">임직원의 디지털 기기 과의존은 집중력 저하·번아웃·소통 단절로 이어집니다</p>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="p-icon">📉</div>
+            <h3>집중력·생산성 저하</h3>
+            <p>알림과 멀티태스킹으로 인해 깊은 집중(딥워크) 시간이 현저히 줄고, 업무 완료 속도와 품질이 동시에 떨어집니다.</p>
+            <div class="problem-stat">⚠ 집중 방해 복구에 평균 23분 소요</div>
+          </div>
+          <div class="problem-card">
+            <div class="p-icon">😵</div>
+            <h3>번아웃·정신 건강 악화</h3>
+            <p>퇴근 후에도 이어지는 업무 메시지, 끊임없는 SNS 피로감이 만성 스트레스와 번아웃으로 이어집니다.</p>
+            <div class="problem-stat">⚠ 직장인 68% 디지털 피로 경험</div>
+          </div>
+          <div class="problem-card">
+            <div class="p-icon">🔇</div>
+            <h3>대면 소통·창의성 단절</h3>
+            <p>회의 중 스마트폰 사용, 문자 위주 소통이 팀 신뢰도와 창의적 협업 역량을 약화시킵니다.</p>
+            <div class="problem-stat">⚠ 회의 중 스마트폰 사용률 62%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 교육 제안 개요 (DARK) ══ -->
+    <section class="section-dark" id="overview">
+      <div class="wrap">
+        <div class="overview-grid">
+          <div>
+            <div class="section-eyebrow">Program Overview</div>
+            <h2 class="sec-h2" style="color:var(--text);margin-bottom:16px;">디지털디톡스 교육<br>제안 개요</h2>
+            <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:0;">디지털 기기를 끊는 것이 아닌,<br>올바르게 사용하는 힘을 기르는 프로그램입니다.</p>
+          </div>
+          <div class="overview-points">
+            <div class="overview-point">
+              <div class="op-ic">🎯</div>
+              <p>단순 금지·제한이 아닌, <strong>디지털 사용 습관을 스스로 설계하고 조절하는 자기주도 역량</strong>을 키웁니다.</p>
+            </div>
+            <div class="overview-point">
+              <div class="op-ic">🧘</div>
+              <p>마인드풀니스·딥워크 기법을 바탕으로 <strong>몰입 집중 환경을 만드는 실전 훈련</strong>을 제공합니다.</p>
+            </div>
+            <div class="overview-point">
+              <div class="op-ic">🤝</div>
+              <p>개인 역량 강화를 넘어 <strong>팀·조직 단위의 건강한 디지털 소통 문화</strong>를 함께 설계합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 교육 과정표 (LIGHT) ══ -->
+    <section class="section-light" id="curriculum">
+      <div class="wrap">
+        <div class="section-eyebrow center">Curriculum</div>
+        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:10px;">핵심 교육 영역 및 목표</h2>
+        <p style="text-align:center;font-size:15px;color:var(--header-muted);margin-bottom:44px;">4개 영역 · 총 약 5시간 30분</p>
+        <div class="edu-table-wrap">
+          <table class="edu-table">
+            <thead>
+              <tr>
+                <th>교육 영역</th>
+                <th>세부 목표</th>
+                <th>주요 내용</th>
+                <th>방법</th>
+                <th>준비물</th>
+                <th>시간</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>디지털 과의존<br>이해 및 자가진단</td>
+                <td class="sub">자신의 디지털 사용 패턴<br>객관적 인식 및 진단</td>
+                <td class="main">디지털 과의존 개념 이해,<br>스마트폰 사용 시간 분석,<br>자가진단 도구 활용</td>
+                <td class="method">강의, 자가진단,<br>그룹 토론</td>
+                <td class="method">진단 체크리스트,<br>강의 자료</td>
+                <td class="time">약 50분</td>
+              </tr>
+              <tr>
+                <td>집중력 회복<br>실전 훈련</td>
+                <td class="sub">딥워크·마인드풀니스로<br>몰입 집중 역량 강화</td>
+                <td class="main">딥워크 개념과 실천법,<br>포모도로 기법 실습,<br>마인드풀니스 호흡 훈련,<br>알림 환경 설계</td>
+                <td class="method">강의, 체험 실습,<br>명상 훈련</td>
+                <td class="method">타이머, 실습지,<br>명상 가이드</td>
+                <td class="time">약 1시간 30분</td>
+              </tr>
+              <tr>
+                <td>디지털 경계 설정<br>&amp; 습관 디자인</td>
+                <td class="sub">지속 가능한 디지털 사용<br>루틴 및 경계 직접 설계</td>
+                <td class="main">개인 디지털 경계 설정,<br>테크 프리 타임 설계,<br>SNS·메신저 사용 루틴,<br>수면 전 디지털 디톡스</td>
+                <td class="method">워크숍, 실습,<br>1:1 플랜 작성</td>
+                <td class="method">습관 설계 워크시트,<br>실천 플랜 양식</td>
+                <td class="time">약 1시간 30분</td>
+              </tr>
+              <tr>
+                <td>팀·조직 디지털<br>문화 혁신</td>
+                <td class="sub">조직 차원의 건강한<br>디지털 소통 규범 수립</td>
+                <td class="main">팀 커뮤니케이션 채널 정비,<br>디지털 소통 규범 수립,<br>회의 문화 개선 실습,<br>조직 디지털 웰니스 선언</td>
+                <td class="method">팀 워크숍,<br>그룹 토의, 발표</td>
+                <td class="method">규범 작성 양식,<br>토의 가이드</td>
+                <td class="time">약 1시간 40분</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 기대 효과 (DARK) ══ -->
+    <section class="section-dark" id="effects">
+      <div class="wrap">
+        <div class="section-eyebrow center">Expected Effects</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:10px;">디지털디톡스 교육 기대 효과</h2>
+        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:44px;">교육 후 개인과 조직 전반에 걸쳐 나타나는 실질적인 변화</p>
+        <div class="effect-grid">
+          <div class="effect-card">
+            <div class="effect-num">01</div>
+            <div class="effect-body">
+              <h3>업무 집중력 및 생산성 향상</h3>
+              <p>딥워크 환경 구축과 알림 관리로 몰입 시간을 확보해 업무 완성도와 처리 속도를 동시에 높입니다.</p>
+            </div>
+          </div>
+          <div class="effect-card">
+            <div class="effect-num">02</div>
+            <div class="effect-body">
+              <h3>번아웃 예방 및 정신 건강 증진</h3>
+              <p>디지털 경계 설정과 테크 프리 타임으로 만성 피로와 스트레스를 줄이고 심리적 안정감을 높입니다.</p>
+            </div>
+          </div>
+          <div class="effect-card">
+            <div class="effect-num">03</div>
+            <div class="effect-body">
+              <h3>건강한 디지털 소통 문화 정착</h3>
+              <p>팀 단위 디지털 규범 수립으로 불필요한 메시지 과부하를 줄이고 진정성 있는 대면 소통을 강화합니다.</p>
+            </div>
+          </div>
+          <div class="effect-card">
+            <div class="effect-num">04</div>
+            <div class="effect-body">
+              <h3>일·생활 균형(워라밸) 개선</h3>
+              <p>퇴근 후 디지털 단절 습관 형성으로 충분한 회복 시간을 확보하고 장기적 직무 만족도를 높입니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 결론 (PANEL) ══ -->
+    <section class="section-panel" id="conclusion">
+      <div class="wrap">
+        <div class="conclusion-grid">
+          <div class="conclusion-left">
+            <div class="section-eyebrow">Conclusion</div>
+            <h2 class="sec-h2" style="color:var(--header-text);">디지털디톡스 교육의<br>전략적 가치</h2>
+            <p style="margin-top:16px;">기술에 지배당하지 않고, 기술을 주도적으로 활용하는 인재가 미래 조직의 핵심입니다.</p>
+          </div>
+          <div class="conclusion-points">
+            <div class="conclusion-point">
+              <div class="cp-ic">→</div>
+              <p>디지털디톡스 역량강화 교육은 단순한 사용 제한이 아닌, <strong>임직원이 스스로 디지털 환경을 설계하고 통제하는 자기주도 역량</strong>을 기릅니다.</p>
+            </div>
+            <div class="conclusion-point">
+              <div class="cp-ic">→</div>
+              <p>개인의 집중력 회복과 팀 디지털 문화 혁신을 동시에 이루어, <strong>조직 전체의 생산성과 구성원 웰빙을 지속 가능하게 향상</strong>시킵니다.</p>
+            </div>
+            <div class="conclusion-point">
+              <div class="cp-ic">→</div>
+              <p>본 프로그램을 통해 귀사는 <strong>디지털 스트레스 없이 몰입과 혁신이 공존하는 고성과 조직 문화</strong>를 구축할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-band" id="cta">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div class="cta-badge">기업 맞춤 디지털디톡스 교육 문의</div>
+          <h2>디지털 웰니스 역량,<br>빅링커와 함께 강화하세요</h2>
+          <p>귀사의 조직 규모와 업무 환경에 맞는<br>커스텀 디지털디톡스 교육 프로그램을 설계해드립니다.</p>
+          <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 →</a>
+          <div class="cta-contact">
+            <div class="cta-contact-item">📞 <strong>02-2039-8584</strong></div>
+            <div class="cta-contact-item">✉️ <strong>biglinkerkor@gmail.com</strong></div>
+            <div class="cta-contact-item">👤 Kate.Lee <strong>010-2507-0174</strong></div>
+            <div class="cta-contact-item">👤 Kevin.Lee <strong>010-9253-7319</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-area">
+          <div class="footer-logo">BigLinker</div>
+          <p class="footer-brand-desc">기업교육 코칭 전문 플랫폼.<br>조직의 역량을 체계적으로 강화합니다.</p>
+          <div class="footer-sns">
+            <button class="footer-sns-btn" aria-label="Instagram">IG</button>
+            <button class="footer-sns-btn" aria-label="YouTube">YT</button>
+            <button class="footer-sns-btn" aria-label="Blog">BL</button>
+          </div>
+        </div>
+        <div class="footer-nav-grid">
+          <div class="footer-nav-group">
+            <h4>서비스</h4>
+            <a href="./enterprise-ai-training.html">기업 AI 활용법</a>
+            <a href="./interviewer-training.html">면접관 역량강화</a>
+            <a href="./cs-training.html">AI 상향평준화 교육</a>
+            <a href="./customer-service-training.html">고객서비스 역량강화</a>
+            <a href="./digital-detox-training.html">디지털디톡스 역량강화</a>
+            <a href="./leadership-training.html">리더십 역량강화</a>
+            <a href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
+          </div>
+          <div class="footer-nav-group">
+            <h4>콘텐츠</h4>
+            <a href="#">블로그</a>
+            <a href="#">리얼 TIP</a>
+            <a href="#">교육 사례</a>
+            <a href="#">가이드북</a>
+          </div>
+          <div class="footer-nav-group">
+            <h4>회사</h4>
+            <a href="#">빅링커 소개</a>
+            <a href="#">강사 소개</a>
+            <a href="#">교육 문의</a>
+            <a href="#">개인정보처리방침</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          © 2026 BigLinker. All rights reserved.<br>
+          사업자등록번호 000-00-00000 · 통신판매업 제0000-서울-0000호
+        </div>
+        <div class="footer-policy-links">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<div class="mobile-floating-cta">
+    <div>
+      <strong>디지털디톡스 역량강화 교육</strong>
+      <span>기업 맞춤 커스텀 문의</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 →</a>
+  </div>
+
+  <!-- Social Proof Toast Layer -->
+  <div class="sp-layer" aria-label="실시간 현황">
+    <div id="sp-visitor" class="sp-toast sp-toast--visitor is-hidden" role="status" aria-live="polite">
+      <span class="sp-toast__dot"></span>
+      <span class="sp-toast__text">현재 <strong id="sp-visitor-count">23</strong>명이 보고 계십니다</span>
+    </div>
+    <div id="sp-success" class="sp-toast sp-toast--success is-hidden" role="status" aria-live="polite">
+      <span class="sp-toast__avatar">김</span>
+      <div class="sp-toast__body">
+        <strong class="sp-toast__name">김○○ 학생</strong>
+        <span class="sp-toast__action">연세대 합격</span>
+        <span class="sp-toast__time">방금 전</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const topShell = document.getElementById('topShell');
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 220 && y > lastY) topShell.classList.add('is-collapsed');
+      else topShell.classList.remove('is-collapsed');
+      lastY = y;
+    }, { passive: true });
+  </script>
+  <script src="./script.js"></script>
+
+</body>
+</html>

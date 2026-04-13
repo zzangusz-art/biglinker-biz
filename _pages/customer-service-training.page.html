@@ -1,0 +1,757 @@
+<!-- META
+TITLE: BigLinker 고객서비스 역량강화 기업교육
+HEADER_PROMO: 2026 기업교육 프로그램 오픈
+ACTIVE_TAB: customer-service-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* ── HEADER ── */
+    .top-shell {
+      position: sticky; top: 0; z-index: 120;
+      background: rgba(255,255,255,0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--header-line);
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+    .top-shell.is-collapsed { transform: translateY(-100%); opacity: 0; }
+    .sticky-category-shell {
+      position: sticky; top: 0; z-index: 110;
+      background: rgba(247,248,252,0.98);
+      border-top: 1px solid #edf0f6; border-bottom: 1px solid var(--header-line);
+      backdrop-filter: blur(12px);
+    }
+    .family-bar { background: #fff; }
+    .family-outer { display: flex; justify-content: center; padding: 10px 0; }
+    .family-wrap {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 46px; padding: 4px; border: 1px solid var(--header-line-strong);
+      border-radius: 16px; background: #fff; box-shadow: 0 4px 16px rgba(32,43,73,0.08);
+      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+    }
+    .family-wrap::-webkit-scrollbar, .category-tabs::-webkit-scrollbar { display: none; }
+    .family-link { flex: 0 0 auto; padding: 8px 12px; border-radius: 10px; font-size: 13px; font-weight: 700; color: var(--header-muted); }
+    .family-link.is-active { background: var(--brand-soft); color: var(--brand); }
+    .main-header { background: #fff; }
+    .main-header-wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; min-height: 78px; }
+    .header-promo {
+      justify-self: start; align-self: stretch; display: flex; align-items: center;
+      padding: 0 16px; border-radius: 0 0 14px 14px; border: 1px solid #dfe3ff; border-top: 0;
+      background: linear-gradient(180deg, #eef2ff 0%, #f6f8ff 100%);
+      color: var(--brand); font-size: 13px; font-weight: 800; white-space: nowrap;
+    }
+    .brand { display: flex; flex-direction: column; align-items: center; justify-self: center; text-align: center; gap: 6px; }
+    .brand-mark { width: 132px; height: 44px; object-fit: contain; }
+    .brand-copy span { display: block; color: var(--header-muted); font-size: 12px; line-height: 1.45; }
+    .header-actions { display: flex; align-items: center; justify-self: end; gap: 8px; }
+    .cta-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--brand); background: var(--brand); color: #fff; font-weight: 700; font-size: 13px; }
+    .category-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 58px; gap: 12px; }
+    .category-balance { justify-self: start; width: 120px; }
+    .category-tabs { display: flex; align-items: center; justify-content: center; gap: 2px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+    .category-tab { flex: 0 0 auto; position: relative; padding: 0 16px; min-height: 48px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700; color: var(--header-muted); }
+    .category-tab.is-active { color: var(--brand); }
+    .category-tab.is-active::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 0; height: 3px; background: var(--brand); border-radius: 999px; }
+    .category-utility { display: flex; align-items: center; justify-self: end; gap: 6px; width: 240px; }
+    .utility-link { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid #e4e7ef; background: #f8f9fc; color: #6f7786; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .utility-link:hover { background: var(--brand-soft); color: var(--brand); }
+
+    /* ── SECTION BASE ── */
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark {
+      padding: 110px 0;
+      --header-text: var(--text); --header-muted: var(--muted); --brand-soft: rgba(74,104,255,0.12);
+    }
+    .section-dark .light-card { --header-text: #17191f; --header-muted: #6e7687; --brand-soft: #eef0ff; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+
+    /* ── HERO ── */
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.6vw,60px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 560px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* ── 채용 변화 ── */
+    .trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .trend-left h2 { margin-bottom: 16px; }
+    .trend-left p { font-size: 14.5px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+    .trend-flow { display: flex; align-items: center; gap: 12px; padding: 20px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); margin-bottom: 20px; flex-wrap: wrap; }
+    .trend-box { flex: 1; min-width: 100px; text-align: center; }
+    .trend-box .t-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+    .trend-box .t-val { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .trend-arrow { color: var(--brand-2); font-size: 18px; flex-shrink: 0; }
+    .eval-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .eval-card { padding: 20px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .eval-card .e-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .eval-card p { font-size: 12.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* ── WHY ── */
+    .why-4grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .why-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .why-card .w-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+    .why-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+    /* ── FOR WHO ── */
+    .who-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .who-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .who-card .wc-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 12px; border-radius: 999px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); font-size: 11px; font-weight: 800; color: var(--brand-2); margin-bottom: 14px; }
+    .who-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .who-card ul { list-style: none; display: grid; gap: 7px; }
+    .who-card ul li { display: flex; align-items: flex-start; gap: 7px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .who-card ul li::before { content: "•"; color: var(--brand-2); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+
+    /* ── 비교표 (LIGHT) ── */
+    .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #e7ebf3; }
+    .compare-table th { padding: 16px 22px; font-size: 13px; font-weight: 800; text-align: center; }
+    .compare-table th:first-child { text-align: left; background: #f8f9fc; color: var(--header-muted); width: 130px; }
+    .compare-table th.ours { background: var(--brand); color: #fff; }
+    .compare-table th.theirs { background: #f0f1f7; color: var(--header-muted); }
+    .compare-table td { padding: 15px 22px; font-size: 13.5px; border-top: 1px solid #edf0f6; text-align: center; vertical-align: middle; line-height: 1.6; }
+    .compare-table td:first-child { text-align: left; background: #fafbfc; color: var(--header-muted); font-size: 12px; font-weight: 700; }
+    .compare-table td.ours { background: rgba(74,104,255,0.06); color: var(--header-text); font-weight: 600; }
+    .compare-table td.theirs { color: #a0a8b8; }
+    .compare-note { text-align: center; font-size: 13px; color: var(--header-muted); margin-top: 20px; font-style: italic; }
+
+    /* ── 4단계 프로세스 (DARK) ── */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .process-grid::before { content: ""; position: absolute; top: 40px; left: 12.5%; right: 12.5%; height: 2px; background: rgba(74,104,255,0.25); z-index: 0; }
+    .process-item { position: relative; z-index: 1; text-align: center; padding: 0 10px; }
+    .proc-circle { width: 80px; height: 80px; border-radius: 999px; background: var(--bg-soft); border: 2px solid rgba(74,104,255,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; margin: 0 auto 18px; }
+    .proc-circle.active { background: var(--brand); border-color: var(--brand); }
+    .proc-step { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--brand-2); }
+    .proc-circle.active .proc-step { color: rgba(255,255,255,0.8); }
+    .proc-num { font-size: 20px; font-weight: 900; color: var(--text); line-height: 1; }
+    .process-item h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .process-item ul { list-style: none; display: grid; gap: 5px; }
+    .process-item ul li { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ── 4주 커리큘럼 (PANEL) ── */
+    .week-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .week-card { padding: 26px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .week-card.highlight { background: var(--brand); border-color: var(--brand); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 10px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .week-card.highlight .week-tag { background: rgba(255,255,255,0.25); color: #fff; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 12px; line-height: 1.35; }
+    .week-card.highlight h3 { color: #fff; }
+    .week-list { display: grid; gap: 6px; list-style: none; }
+    .week-list li { font-size: 12px; color: var(--header-muted); line-height: 1.6; display: flex; align-items: flex-start; gap: 6px; }
+    .week-list li::before { content: "—"; color: var(--brand); flex-shrink: 0; font-size: 11px; margin-top: 1px; }
+    .week-card.highlight .week-list li { color: rgba(255,255,255,0.8); }
+    .week-card.highlight .week-list li::before { color: rgba(255,255,255,0.5); }
+    .week-output { display: flex; align-items: center; gap: 6px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #edf0f6; font-size: 11px; font-weight: 700; color: var(--brand); }
+    .week-card.highlight .week-output { border-top-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); }
+
+    /* ── 직무별 분야 (DARK) ── */
+    .domain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .domain-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .domain-card .d-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .domain-card .d-icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .domain-card h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+    .domain-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .domain-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); font-size: 11.5px; color: var(--muted); }
+
+    /* ── 성공 사례 (LIGHT) ── */
+    .case-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; margin-bottom: 40px; }
+    .ba-box { padding: 26px 24px; border-radius: var(--radius-md); }
+    .ba-box.before { border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .ba-box.after { background: var(--brand); }
+    .ba-label { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .ba-box.before .ba-label { color: var(--header-muted); }
+    .ba-box.after .ba-label { color: rgba(255,255,255,0.7); }
+    .ba-list { display: grid; gap: 8px; }
+    .ba-item { display: flex; align-items: flex-start; gap: 7px; font-size: 13px; line-height: 1.65; }
+    .ba-box.before .ba-item { color: var(--header-muted); }
+    .ba-box.after .ba-item { color: rgba(255,255,255,0.9); }
+    .ba-dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 999px; margin-top: 7px; }
+    .ba-box.before .ba-dot { background: #cbd5e1; }
+    .ba-box.after .ba-dot { background: rgba(255,255,255,0.5); }
+    .case-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .case-card { padding: 22px 20px; border-radius: var(--radius-sm); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .case-badge { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 10px; }
+    .case-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; }
+    .case-card .c-result { font-size: 12px; font-weight: 700; color: var(--brand); margin-top: 10px; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
+
+    /* ── FAQ ── */
+    .faq-band { padding: 100px 0; background: var(--bg-soft); }
+    .faq-title { font-size: clamp(22px,2.5vw,34px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.3; color: var(--text); margin-bottom: 40px; text-align: center; }
+    details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    summary { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; cursor: pointer; list-style: none; font-size: 15px; font-weight: 600; color: var(--text); }
+    summary::-webkit-details-marker { display: none; }
+    .faq-arrow { font-size: 18px; color: var(--brand-2); transition: transform 0.2s; flex-shrink: 0; }
+    details[open] .faq-arrow { transform: rotate(180deg); }
+    details p { padding: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+    /* ── CTA ── */
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(26px,3.2vw,44px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+
+    /* ── MOBILE ── */
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .trend-grid { grid-template-columns: 1fr; gap: 32px; }
+      .eval-grid { grid-template-columns: 1fr; }
+      .why-4grid { grid-template-columns: 1fr; }
+      .who-cols { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid::before { display: none; }
+      .week-grid { grid-template-columns: 1fr 1fr; }
+      .domain-grid { grid-template-columns: 1fr; }
+      .case-intro { grid-template-columns: 1fr; }
+      .case-cards { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>면접관 역량 강화 교육</strong>
+      <span>지금 교육 문의하기</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">신청 →</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+<!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-kicker">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#7f92ff" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="#7f92ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          INTERVIEWER CAPABILITY TRAINING
+        </div>
+        <h1>면접관 역량 강화<br><em>기업 교육</em></h1>
+        <p>채용 트렌드 변화에 맞춰 면접관의 질문 설계, 평가 기준, 태도, 운영 역량을 체계적으로 강화하는 실전형 기업교육 페이지입니다.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#cta">교육 문의하기 →</a>
+          <a class="btn-secondary" href="#curriculum">교육 과정 보기</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="s-num">15명↓</div><div class="s-label">권장 교육 인원</div></div>
+          <div class="hero-stat"><div class="s-num">7-8H</div><div class="s-label">기본 교육 시간</div></div>
+          <div class="hero-stat"><div class="s-num">3개</div><div class="s-label">핵심 모듈 구성</div></div>
+          <div class="hero-stat"><div class="s-num">실습형</div><div class="s-label">모의면접 포함</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ OVERVIEW ══ -->
+    <section class="section-dark" id="why-now">
+      <div class="wrap">
+        <div class="trend-grid">
+          <div class="trend-left">
+            <div class="section-eyebrow">Proposal Overview</div>
+            <h2 class="sec-h2" style="color:var(--text);margin-bottom:16px;">과정 개요와<br>학습 목표</h2>
+            <p>이 과정은 면접에 대한 학습과 스킬이 필요한 내부 면접관을 대상으로 하며, 면접 질문 개발부터 평가 오류 예방, 모의면접 실습까지 한 흐름으로 설계됩니다.</p>
+            <div class="trend-flow">
+              <div class="trend-box">
+                <div class="t-label">과정명</div>
+                <div class="t-val">면접관<br>역량강화과정</div>
+              </div>
+              <div class="trend-arrow">→</div>
+              <div class="trend-box">
+                <div class="t-label">대상</div>
+                <div class="t-val">내부 면접관<br>및 평가자</div>
+              </div>
+              <div class="trend-arrow">→</div>
+              <div class="trend-box">
+                <div class="t-label">방법</div>
+                <div class="t-val" style="color:var(--brand-2);font-weight:700;">강의·토의·실습<br>(모의면접)</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:18px;">교육 목표</p>
+            <div class="eval-grid">
+              <div class="eval-card">
+                <div class="e-title">질문 및 평가기법 이해</div>
+                <p>효과적인 면접 질문과 평가기법, 의사소통 방법, 태도 기준을 명확히 파악합니다.</p>
+              </div>
+              <div class="eval-card">
+                <div class="e-title">실전 질문 개발</div>
+                <p>조직의 직무와 인재상을 바탕으로 실제 면접에서 활용할 질문을 직접 개발합니다.</p>
+              </div>
+              <div class="eval-card">
+                <div class="e-title">모의면접 운영 역량</div>
+                <p>모의면접을 통해 면접 진행과 평가 스킬을 실습하며 운영 감각을 익힙니다.</p>
+              </div>
+              <div class="eval-card">
+                <div class="e-title">공정성 및 전문성 강화</div>
+                <p>평가 오류와 법적 이슈를 이해하고 보다 공정하고 체계적인 면접 운영 역량을 확보합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TREND ══ -->
+    <section class="section-dark" id="why-us">
+      <div class="wrap">
+        <div class="section-eyebrow center">Hiring Trend</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:12px;">채용 트렌드는 조직문화 적합성 검증과<br>면접관의 역량</h2>
+        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:44px;">이미지 자료 기준 2025년 채용 트렌드에서 조직문화 적합성 검증, 면접관의 역량과 자질, 직무 중심 채용, 공정 채용이 핵심 축으로 나타납니다.</p>
+        <div class="why-4grid">
+          <div class="why-card">
+            <div class="w-icon">62%</div>
+            <h3>조직문화 적합성 검증</h3>
+            <p>채용은 스펙 비교보다 조직과 맞는 인재를 정교하게 검증하는 방향으로 이동하고 있습니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="w-icon">59%</div>
+            <h3>면접관의 역량과 자질</h3>
+            <p>면접관의 태도와 질문 수준, 평가 기준의 일관성이 채용 성과를 좌우하는 핵심 요소가 되었습니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="w-icon">58%</div>
+            <h3>직무 중심 채용</h3>
+            <p>실무형 인재 선별을 위해 질문 설계와 평가 항목도 직무 중심으로 바뀌고 있습니다.</p>
+          </div>
+          <div class="why-card">
+            <div class="w-icon">51%</div>
+            <h3>공정 채용</h3>
+            <p>평가 오류와 법적 리스크를 줄이는 공정한 운영 체계가 면접관 교육의 필수 기준이 됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BRANDING IMPACT ══ -->
+    <section class="section-light" id="for-who">
+      <div class="wrap">
+        <div class="section-eyebrow center">Hiring Brand</div>
+        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:44px;">입사 결정과 채용 브랜딩에 미치는<br>면접관의 영향</h2>
+        <div class="case-intro">
+          <div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="ba-box before">
+                <div class="ba-label">지원자 반응</div>
+                <div class="ba-list">
+                  <div class="ba-item"><div class="ba-dot"></div>취준생 10명 중 8명은 면접관 태도의 영향을 체감</div>
+                  <div class="ba-item"><div class="ba-dot"></div>45%는 영향이 있다고 응답</div>
+                  <div class="ba-item"><div class="ba-dot"></div>41%는 매우 크게 영향 있다고 응답</div>
+                </div>
+              </div>
+              <div class="ba-box after">
+                <div class="ba-label">개선 포인트</div>
+                <div class="ba-list">
+                  <div class="ba-item"><div class="ba-dot"></div>지원자 경청과 존중 태도 습득</div>
+                  <div class="ba-item"><div class="ba-dot"></div>역량을 정확히 확인하는 질문 준비</div>
+                  <div class="ba-item"><div class="ba-dot"></div>면접관 간 팀워크와 진행 설계 체계화</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:15px;color:var(--header-text);font-weight:700;margin-bottom:6px;">"면접관의 태도는 채용 성패뿐 아니라 기업의 채용 브랜드 가치에도 직접 연결됩니다."</p>
+            <p style="font-size:14px;color:var(--header-muted);line-height:1.8;">강압적 태도, 사적 질문, 형식적인 질문, 면접관 간 호흡 불일치는 지원자 경험을 크게 떨어뜨립니다. 반대로 공정한 질문과 존중 기반 운영은 우수 인재 확보 가능성을 높입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ IMPORTANCE ══ -->
+    <section class="section-dark" id="programs">
+      <div class="wrap">
+        <div class="section-eyebrow center">Why It Matters</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:44px;">면접관의 중요성</h2>
+        <div class="who-cols">
+          <div class="who-card">
+            <div class="wc-tag">성과관리 관점</div>
+            <h3>기업 성과 창출에 영향</h3>
+            <ul>
+              <li>성과관리의 시작은 조직과 직무에 최적화된 인재 선별</li>
+              <li>면접 단계에서 적합한 인재를 고르는 역량이 중요</li>
+              <li>초기 선발 정확도가 이후 성과와 연결</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <div class="wc-tag">인력관리 관점</div>
+            <h3>조직/인력관리에 영향</h3>
+            <ul>
+              <li>부적합 인력 채용 시 업무와 태도 개선에 많은 자원 소모</li>
+              <li>면접관 역량은 채용 리스크를 줄이는 장치</li>
+              <li>평가 기준이 명확할수록 선발 품질 향상</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <div class="wc-tag">조직문화 관점</div>
+            <h3>조직 구현에 영향</h3>
+            <ul>
+              <li>부적합 인력 채용은 갈등 상황과 조직문화 악화로 연결</li>
+              <li>채용 단계에서 문화 적합성 검증이 중요</li>
+              <li>면접관의 체계적 관리가 조직 안정성을 높임</li>
+            </ul>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:28px;">성과관리, 인력관리, 조직문화 관점에서 면접관의 역할이 중요하므로 체계적인 교육이 필요합니다.</p>
+      </div>
+    </section>
+
+    <!-- ══ CURRICULUM ══ -->
+    <section class="section-panel" id="curriculum">
+      <div class="wrap">
+        <div class="section-eyebrow center">Curriculum</div>
+        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:10px;">교육과정 모듈 구성</h2>
+        <p style="text-align:center;font-size:15px;color:var(--header-muted);margin-bottom:44px;">교육은 강의, 실습/토의, 팀활동, 피드백, 롤플레잉을 결합한 3개 모듈로 구성됩니다.</p>
+        <div class="week-grid">
+          <div class="week-card">
+            <div class="week-tag">M1</div>
+            <h3>면접관 마인드셋</h3>
+            <ul class="week-list">
+              <li>면접의 의미와 목적 재정리</li>
+              <li>면접관의 기본 자세와 역할 점검</li>
+              <li>차별·개인 신상 질문 금지 등 법적 제한사항 재확인</li>
+              <li>평가 오류 분석과 예방 방법 공유</li>
+            </ul>
+            <div class="week-output">2.0H</div>
+          </div>
+          <div class="week-card">
+            <div class="week-tag">M2</div>
+            <h3>채용트렌드 및 면접 전략 수립</h3>
+            <ul class="week-list">
+              <li>최신 채용 트렌드와 성공 기업 사례 분석</li>
+              <li>우수 인재 선별을 위한 전략적 접근법 학습</li>
+              <li>PT면접, 경험면접, 상황면접 대응법 정리</li>
+              <li>심층 질문 구성과 면접 프로세스 최적화</li>
+            </ul>
+            <div class="week-output">2.0H</div>
+          </div>
+          <div class="week-card highlight">
+            <div class="week-tag">M3</div>
+            <h3>질문 개발 및 모의 면접 실습</h3>
+            <ul class="week-list">
+              <li>STAR 기반 구조화 질문 개발</li>
+              <li>평가표 작성 및 적용 실습</li>
+              <li>실전형 Role-play 모의면접 진행</li>
+              <li>개별 및 그룹 피드백을 통한 개선점 도출</li>
+            </ul>
+            <div class="week-output">3.0H</div>
+          </div>
+          <div class="week-card">
+            <div class="week-tag">METHOD</div>
+            <h3>운영 방식</h3>
+            <ul class="week-list">
+              <li>강의</li>
+              <li>실습/토의</li>
+              <li>팀활동</li>
+              <li>피드백 및 롤플레잉</li>
+            </ul>
+            <div class="week-output">총 7~8시간 권장</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ MOCK INTERVIEW ══ -->
+    <section class="section-dark" id="process">
+      <div class="wrap">
+        <div class="section-eyebrow center">Mock Interview Practice</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:10px;">모의면접 실습 운영방안</h2>
+        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:56px;">회차별 3명의 면접관이 실습조를 이루고, 관찰자 그룹과 퍼실리테이터가 함께 평가와 피드백을 제공하는 구조입니다.</p>
+        <div class="process-grid">
+          <div class="process-item">
+            <div class="proc-circle">
+              <span class="proc-step">STEP</span>
+              <span class="proc-num">01</span>
+            </div>
+            <h3>사전준비</h3>
+            <ul>
+              <li>교육생 및 모의면접자 확인</li>
+              <li>실습 역량과 역할 확인</li>
+              <li>실습 운영 안내</li>
+            </ul>
+          </div>
+          <div class="process-item">
+            <div class="proc-circle">
+              <span class="proc-step">STEP</span>
+              <span class="proc-num">02</span>
+            </div>
+            <h3>Orientation</h3>
+            <ul>
+              <li>실습 진행 과정 안내</li>
+              <li>면접위원장·담당 역할 배정</li>
+              <li>평가 기준과 관찰 포인트 공유</li>
+            </ul>
+          </div>
+          <div class="process-item">
+            <div class="proc-circle">
+              <span class="proc-step">STEP</span>
+              <span class="proc-num">03</span>
+            </div>
+            <h3>모의면접 진행</h3>
+            <ul>
+              <li>조당 30분 내외 실전형 모의 실습</li>
+              <li>실제 상황과 유사한 형태로 진행</li>
+              <li>관찰자 그룹 피드백 병행</li>
+            </ul>
+          </div>
+          <div class="process-item">
+            <div class="proc-circle active">
+              <span class="proc-step">STEP</span>
+              <span class="proc-num">04</span>
+            </div>
+            <h3>피드백 및 질의</h3>
+            <ul>
+              <li>퍼실리테이터의 평가 코칭 제공</li>
+              <li>실습 내용과 평가 오류 피드백</li>
+              <li>질의응답으로 개선안 정리</li>
+            </ul>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:40px;">실제 취업준비생 활용안과 교육생 Role Play 활용안을 모두 적용할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- ══ INSTRUCTORS ══ -->
+    <section class="section-dark" id="domains">
+      <div class="wrap">
+        <div class="section-eyebrow center">Recommended Instructors</div>
+        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:10px;">추천 강사 및 운영 포지션</h2>
+        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:44px;">제공된 이미지에는 상세 프로필이 없어서, 콘텐츠 흐름상 필요한 강사 역할과 운영 포지션 기준으로 재구성했습니다.</p>
+        <div class="domain-grid">
+          <div class="domain-card">
+            <div class="d-head"><div class="d-icon">🧭</div><h3>채용 전략 전문가</h3></div>
+            <div class="domain-tags">
+              <span class="domain-tag">채용 트렌드 분석</span>
+              <span class="domain-tag">면접 전략 설계</span>
+              <span class="domain-tag">평가 체계 구축</span>
+            </div>
+          </div>
+          <div class="domain-card">
+            <div class="d-head"><div class="d-icon">⚖️</div><h3>공정 채용/법률 기준 강사</h3></div>
+            <div class="domain-tags">
+              <span class="domain-tag">차별 질문 예방</span>
+              <span class="domain-tag">법적 제한사항</span>
+              <span class="domain-tag">평가 오류 관리</span>
+            </div>
+          </div>
+          <div class="domain-card">
+            <div class="d-head"><div class="d-icon">🎯</div><h3>면접 퍼실리테이터</h3></div>
+            <div class="domain-tags">
+              <span class="domain-tag">Role-play 운영</span>
+              <span class="domain-tag">실시간 피드백</span>
+              <span class="domain-tag">질문 코칭</span>
+            </div>
+          </div>
+          <div class="domain-card">
+            <div class="d-head"><div class="d-icon">👥</div><h3>현업 평가자 코치</h3></div>
+            <div class="domain-tags">
+              <span class="domain-tag">직무형 질문 설계</span>
+              <span class="domain-tag">조직문화 적합성</span>
+              <span class="domain-tag">실전 평가 사례</span>
+            </div>
+          </div>
+          <div class="domain-card">
+            <div class="d-head"><div class="d-icon">📋</div><h3>운영 매니저</h3></div>
+            <div class="domain-tags">
+              <span class="domain-tag">실습조 편성</span>
+              <span class="domain-tag">관찰자 그룹 운영</span>
+              <span class="domain-tag">피드백 정리</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EXPECTED OUTCOME ══ -->
+    <section class="section-light" id="cases">
+      <div class="wrap">
+        <div class="section-eyebrow center">Expected Outcome</div>
+        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:44px;">교육 후 기대 효과</h2>
+        <div class="case-cards">
+          <div class="case-card">
+            <div class="case-badge">평가 정확도 향상</div>
+            <p>질문 설계와 평가표 적용을 표준화해 면접관 간 편차를 줄이고 평가 일관성을 높입니다.</p>
+            <div class="c-result">→ 선발 품질 개선</div>
+          </div>
+          <div class="case-card">
+            <div class="case-badge">지원자 경험 개선</div>
+            <p>존중 기반 태도와 공정한 진행 방식이 채용 브랜드 가치를 높이고 우수 인재 유입에 긍정적으로 작용합니다.</p>
+            <div class="c-result">→ 채용 브랜딩 강화</div>
+          </div>
+          <div class="case-card">
+            <div class="case-badge">실전 대응력 확보</div>
+            <p>모의면접과 구체적 피드백을 통해 실제 면접 상황에서 질문, 평가, 피드백 대응력이 향상됩니다.</p>
+            <div class="c-result">→ 현업 적용도 상승</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ REVIEW MARQUEE ══ -->
+    <section class="review-band">
+      <div class="review-band-head">
+        <h2>면접관 교육 후기</h2>
+        <p>면접관 역량 강화 교육과 모의면접을 경험한 기업 담당자들의 반응</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row">
+          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"면접관마다 질문 수준이 달랐는데, 교육 후 평가 기준이 정리되면서 면접 품질이 훨씬 안정됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김하은</strong><span>인사팀 채용 담당</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"모의면접 실습이 특히 유용했습니다. 실제 면접에서 어떤 피드백을 해야 하는지 감이 잡혔습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이민재</strong><span>현업 면접위원</span></div></div></div>
+          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"법적 제한사항과 평가 오류 사례를 같이 다뤄서 공정 채용 기준을 내부에 정리하는 데 도움이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박수정</strong><span>HRBP</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"지원자 경험까지 고려한 면접 태도 교육이라 채용 브랜딩 측면에서 만족도가 높았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최도윤</strong><span>채용브랜딩 담당</span></div></div></div>
+          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"STAR 질문 설계와 평가표 실습을 병행해서 바로 현업 프로세스에 반영할 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정세린</strong><span>교육기획자</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"관찰자 그룹 피드백 구조가 좋아서 단순 강의보다 참여도가 훨씬 높았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한준호</strong><span>사업부 관리자</span></div></div></div>
+        </div>
+        <div class="review-marquee-row">
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"면접관 간 호흡이 맞지 않았는데, 교육 후 진행 역할이 정리되어 실제 운영이 매끄러워졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오지민</strong><span>인재확보팀</span></div></div></div>
+          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"실제 취업준비생을 활용한 안과 Role Play 안을 비교해볼 수 있어 상황별 운영 기준을 세우기 좋았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">윤</div><div class="review-mini-info"><strong>윤서현</strong><span>교육 운영 담당</span></div></div></div>
+          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"직무 중심 질문을 어떻게 구조화해야 하는지 명확해져서 면접 시간이 훨씬 효율적이었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">강</div><div class="review-mini-info"><strong>강지훈</strong><span>현업 팀장</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"평가 오류를 사례 중심으로 짚어줘서 면접위원 교육 자료를 다시 정비하는 계기가 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신가영</strong><span>채용 운영 매니저</span></div></div></div>
+          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"질문을 많이 하는 것보다 정확히 검증하는 질문이 중요하다는 점을 내부 면접관들이 공감했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임태윤</strong><span>러닝앤개발 담당</span></div></div></div>
+        </div>
+        <div class="review-marquee-row">
+          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"질문 개발부터 피드백까지 이어지는 구조라 한 번의 교육으로도 체감 효과가 컸습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류현아</strong><span>채용 전략 담당</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"면접 태도가 입사 결정에 미치는 영향을 데이터로 보여줘서 면접관 설득이 쉬웠습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문성호</strong><span>HR 기획</span></div></div></div>
+          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"관찰자 그룹과 퍼실리테이터 구조가 있어서 단순 롤플레잉보다 훨씬 정교한 피드백이 가능했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배수민</strong><span>교육 운영 실무자</span></div></div></div>
+          <div class="review-mini"><div class="star-row">★★★★★</div><p>"성과관리, 인력관리, 조직문화 세 관점으로 설명한 부분이 관리자 설득에 가장 도움이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">전</div><div class="review-mini-info"><strong>전유찬</strong><span>HRD 매니저</span></div></div></div>
+          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"신입 면접관 교육용으로도, 기존 면접관 리마인드 과정으로도 모두 활용 가능성이 높았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">장</div><div class="review-mini-info"><strong>장민정</strong><span>교육혁신 TFT</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section class="faq-band">
+      <div class="wrap">
+        <div style="max-width:780px;margin:0 auto;">
+          <div class="faq-title">자주 묻는 질문</div>
+          <details open>
+            <summary>교육 대상은 누구로 보는 게 적합한가요? <span class="faq-arrow">▾</span></summary>
+            <p>면접에 대한 학습과 스킬이 필요한 내부 면접관, 현업 평가자, 팀장, 채용 담당자에게 적합합니다. 이미지 자료 기준 기본 권장 인원은 15명 이하입니다.</p>
+          </details>
+          <details>
+            <summary>교육 시간과 방식은 어떻게 구성되나요? <span class="faq-arrow">▾</span></summary>
+            <p>기본 구성은 7~8시간이며, 강의, 토의, 실습, 팀활동, 피드백, 롤플레잉을 결합합니다. 필요에 따라 2회차 분할 운영도 가능합니다.</p>
+          </details>
+          <details>
+            <summary>모의면접은 실제 지원자로 진행하나요? <span class="faq-arrow">▾</span></summary>
+            <p>두 가지 안을 모두 적용할 수 있습니다. 실제 취업준비생을 활용하는 방식과, 교육생이 면접자 역할을 수행하는 Role Play 방식 중 환경에 맞춰 선택할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>교육 후 어떤 변화가 기대되나요? <span class="faq-arrow">▾</span></summary>
+            <p>면접관 간 평가 편차 감소, 질문 품질 향상, 지원자 경험 개선, 공정 채용 기준 강화, 모의면접 운영 역량 향상 같은 변화를 기대할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>기업 맞춤형으로 질문 유형이나 사례를 조정할 수 있나요? <span class="faq-arrow">▾</span></summary>
+            <p>가능합니다. 직무별 채용 방식, PT면접/경험면접/상황면접 비중, 조직의 인재상에 맞춰 사례와 실습 문제를 조정할 수 있습니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-band" id="cta">
+      <div class="wrap">
+        <div class="cta-inner">
+          <div class="cta-badge">면접관 역량 강화 기업교육</div>
+          <h2>공정하고 정확한 면접 운영을 위한<br>실전형 교육</h2>
+          <p>채용 트렌드, 질문 개발, 평가 기준, 모의면접 실습까지 한 번에 연결합니다.<br>귀사의 채용 방식에 맞춘 면접관 교육안으로 조정할 수 있습니다.</p>
+          <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 →</a>
+          <div class="cta-contact">
+            <div class="cta-contact-item">📞 <strong>02-2039-8584</strong></div>
+            <div class="cta-contact-item">📱 <strong>Kate.Lee 010-2507-0174</strong></div>
+            <div class="cta-contact-item">📱 <strong>Kevin.Lee 010-9253-7319</strong></div>
+            <div class="cta-contact-item">✉️ <strong>biglinkerkor@gmail.com</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- /MAIN -->

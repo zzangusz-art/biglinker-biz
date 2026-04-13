@@ -1,0 +1,19 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+# Clean URL: /page-name → /page-name.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L,QSA]
+
+# biz.gobiglinker.com 라우팅 맵
+# / → index.html
+# /enterprise-ai-training              → enterprise-ai-training.html
+# /interviewer-training                → interviewer-training.html
+# /cs-training                         → cs-training.html
+# /customer-service-training           → customer-service-training.html
+# /digital-detox-training              → digital-detox-training.html
+# /leadership-training                 → leadership-training.html
+# /business-manner-speech-training     → business-manner-speech-training.html

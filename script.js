@@ -144,10 +144,11 @@ function initBizMobileMenu() {
   const menuLabel  = document.getElementById('bizMenuLabel');
   if (!toggleBtn || !menuPanel) return;
 
-  /* Set label from active tab */
+  /* Set current page indicator from active tab */
   const activeTab = menuPanel.querySelector('.category-tab.is-active');
-  if (activeTab && menuLabel) {
-    menuLabel.textContent = activeTab.textContent.trim();
+  const currentPageEl = document.getElementById('bizCurrentPage');
+  if (activeTab && currentPageEl) {
+    currentPageEl.textContent = activeTab.textContent.trim();
   }
 
   toggleBtn.addEventListener('click', () => {

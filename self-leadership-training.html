@@ -385,6 +385,128 @@
       .sticky-category-shell .category-utility { display: none !important; }
     }
 
+    /* ══ BIZ SIDEBAR — PC only ══════════════════════════════════ */
+    @media (min-width: 761px) {
+      /* Hide top shell and mobile category bar on PC */
+      .top-shell { display: none !important; }
+      .biz-mobile-cat { display: none !important; }
+
+      /* Sidebar: fixed left column */
+      .biz-sidebar {
+        position: fixed; left: 0; top: 0; bottom: 0;
+        width: 210px; z-index: 105;
+        background: #fff;
+        border-right: 1px solid var(--header-line);
+        overflow-y: auto; overflow-x: hidden;
+        display: flex; flex-direction: column;
+        scrollbar-width: thin; scrollbar-color: var(--header-line) transparent;
+      }
+      .biz-sidebar::-webkit-scrollbar { width: 4px; }
+      .biz-sidebar::-webkit-scrollbar-thumb { background: var(--header-line); border-radius: 4px; }
+
+      /* Topshell transplanted inside sidebar */
+      .biz-sidebar__topshell {
+        padding: 16px 16px 12px;
+        border-bottom: 1px solid var(--header-line);
+        flex-shrink: 0;
+        display: flex; flex-direction: column; gap: 10px;
+      }
+      .biz-sidebar__brand-link {
+        display: flex; align-items: center;
+      }
+      .biz-sidebar__brand-link img { width: 110px; height: auto; }
+      .biz-sidebar__family {
+        display: flex; flex-wrap: wrap; gap: 3px;
+        padding: 3px; border-radius: 10px;
+        border: 1px solid var(--header-line-strong);
+        background: #f8f9fc;
+      }
+      .biz-sidebar__family .family-link {
+        padding: 4px 8px; border-radius: 7px; font-size: 11px;
+      }
+
+      .biz-sidebar__section-label {
+        font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--header-muted);
+        padding: 14px 20px 8px; flex-shrink: 0;
+      }
+
+      .biz-sidebar__item {
+        display: flex; align-items: center;
+        margin: 1px 8px; padding: 10px 12px;
+        border-radius: 9px;
+        font-size: 13px; font-weight: 600; color: var(--header-muted);
+        transition: background 0.15s, color 0.15s;
+        text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      }
+      .biz-sidebar__item:hover { background: #f5f6fb; color: var(--header-text); }
+      .biz-sidebar__item.is-active {
+        background: var(--brand-soft); color: var(--brand); font-weight: 700;
+      }
+
+      .biz-sidebar__footer {
+        margin-top: auto; padding: 16px 12px; border-top: 1px solid var(--header-line);
+        flex-shrink: 0;
+      }
+      .biz-sidebar__cta {
+        display: block; text-align: center;
+        padding: 10px 16px; border-radius: 10px;
+        background: var(--brand); color: #fff;
+        font-size: 13px; font-weight: 700;
+        transition: background 0.18s;
+      }
+      .biz-sidebar__cta:hover { background: #3a58ef; }
+
+      /* Push all page content right to make room for sidebar */
+      body { padding-left: 210px; }
+    }
+
+    /* ══ BIZ MOBILE MENU ════════════════════════════════════════ */
+    @media (max-width: 760px) {
+      .biz-sidebar { display: none !important; }
+
+      .biz-mobile-cat {
+        position: sticky; top: 0; z-index: 110;
+        background: rgba(248,249,252,0.96);
+        border-bottom: 1px solid var(--header-line);
+        backdrop-filter: blur(12px);
+      }
+      .biz-mobile-nav-row {
+        display: flex; align-items: center; justify-content: space-between;
+        min-height: 48px; padding: 0 4px;
+      }
+      .biz-current-page {
+        font-size: 13px; font-weight: 700; color: var(--header-text);
+        padding: 0 8px;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        max-width: 55%;
+      }
+      .biz-menu-toggle {
+        display: flex; align-items: center; gap: 6px;
+        padding: 8px 14px 8px 12px; border-radius: 999px;
+        border: 1.5px solid var(--header-line); background: #fff;
+        font-size: 13px; font-weight: 700; color: var(--header-text);
+        cursor: pointer; transition: border-color 0.18s, color 0.18s;
+        flex-shrink: 0;
+      }
+      .biz-menu-toggle:hover,
+      .biz-menu-toggle[aria-expanded="true"] { border-color: var(--brand); color: var(--brand); }
+
+      .biz-menu-panel {
+        border-top: 1px solid var(--header-line); background: #fff;
+        padding: 6px 0 10px;
+      }
+      .biz-menu-panel__list { display: flex; flex-direction: column; }
+      .biz-menu-panel__list .category-tab {
+        padding: 11px 20px; min-height: auto;
+        justify-content: flex-start; font-size: 14px; border-radius: 0;
+      }
+      .biz-menu-panel__list .category-tab.is-active::after { display: none; }
+      .biz-menu-panel__list .category-tab.is-active {
+        background: var(--brand-soft); color: var(--brand);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -400,7 +522,7 @@
             <div class="brand-copy"><span>기업교육 코칭 전문 플랫폼</span></div>
           </a>
           <div class="header-actions">
-            <a class="cta-btn" href="#cta">상담 신청</a>
+            <a class="cta-btn" href="#cta">교육 문의</a>
           </div>
         </div>
       </div>
@@ -419,11 +541,18 @@
     </div>
   </div>
 
-  <div class="sticky-category-shell">
+  <!-- Mobile-only category bar (hidden on PC via CSS) -->
+  <div class="sticky-category-shell biz-mobile-cat" id="bizMobileCat">
     <div class="inner">
-      <div class="category-row">
-        <div class="category-balance" aria-hidden="true"></div>
-        <nav class="category-tabs" aria-label="서비스 카테고리">
+      <div class="biz-mobile-nav-row">
+        <span class="biz-current-page" id="bizCurrentPage">기업교육</span>
+        <button class="biz-menu-toggle" id="bizMenuToggle" type="button" aria-expanded="false" aria-controls="bizMenuPanel">
+          <span class="biz-menu-toggle__label" id="bizMenuLabel">전체 기업코칭</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+      </div>
+      <div class="biz-menu-panel" id="bizMenuPanel" hidden>
+        <div class="biz-menu-panel__list">
           <a class="category-tab" href="./enterprise-ai-training.html">기업 AI 활용법</a>
           <a class="category-tab" href="./interviewer-training.html">면접관 역량강화</a>
           <a class="category-tab" href="./cs-training.html">AI 상향평준화 교육</a>
@@ -431,14 +560,36 @@
           <a class="category-tab" href="./digital-detox-training.html">디지털디톡스 역량강화</a>
           <a class="category-tab is-active" href="./leadership-training.html">리더십 역량강화</a>
           <a class="category-tab" href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
-        </nav>
-        <div class="category-utility" aria-label="콘텐츠 바로가기">
-          <button class="utility-link" type="button">블로그</button>
-          <button class="utility-link" type="button">리얼 TIP</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- PC Sidebar (hidden on mobile via CSS) -->
+  <aside class="biz-sidebar" id="bizSidebar" aria-label="서비스 메뉴">
+    <div class="biz-sidebar__topshell">
+      <a class="biz-sidebar__brand-link" href="./index.html">
+        <img src="./assets/biglinker-logo.webp" alt="빅링커" width="110" height="auto">
+      </a>
+      <div class="biz-sidebar__family">
+        <a class="family-link " href="https://transfer.gobiglinker.com/">대학&amp;편입</a>
+        <a class="family-link " href="https://graduate.gobiglinker.com/">대학원&amp;논문</a>
+        <a class="family-link " href="https://job.gobiglinker.com/">취업</a>
+        <a class="family-link is-active" href="https://biz.gobiglinker.com/">기업교육</a>
+      </div>
+    </div>
+    <div class="biz-sidebar__section-label">기업교육 서비스</div>
+    <a class="biz-sidebar__item" href="./enterprise-ai-training.html">기업 AI 활용법</a>
+    <a class="biz-sidebar__item" href="./interviewer-training.html">면접관 역량강화</a>
+    <a class="biz-sidebar__item" href="./cs-training.html">AI 상향평준화 교육</a>
+    <a class="biz-sidebar__item" href="./customer-service-training.html">고객서비스 역량강화</a>
+    <a class="biz-sidebar__item" href="./digital-detox-training.html">디지털디톡스 역량강화</a>
+    <a class="biz-sidebar__item is-active" href="./self-leadership-training.html">리더십 역량강화</a>
+    <a class="biz-sidebar__item" href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
+    <div class="biz-sidebar__footer">
+      <a class="biz-sidebar__cta" href="#cta">교육 문의하기</a>
+    </div>
+  </aside>
 
 <!-- ══ HERO ══ -->
     <section class="hero">
@@ -989,14 +1140,6 @@
       <span class="sp-toast__dot"></span>
       <span class="sp-toast__text">현재 <strong id="sp-visitor-count">23</strong>명이 보고 계십니다</span>
     </div>
-    <div id="sp-success" class="sp-toast sp-toast--success is-hidden" role="status" aria-live="polite">
-      <span class="sp-toast__avatar">김</span>
-      <div class="sp-toast__body">
-        <strong class="sp-toast__name">김○○ 학생</strong>
-        <span class="sp-toast__action">연세대 합격</span>
-        <span class="sp-toast__time">방금 전</span>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -1010,6 +1153,7 @@
     }, { passive: true });
   </script>
   <script src="./script.js"></script>
+  <script src="./consult-panel.js"></script>
 
 </body>
 </html>

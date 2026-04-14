@@ -32,8 +32,9 @@
   <div class="sticky-category-shell biz-mobile-cat" id="bizMobileCat">
     <div class="inner">
       <div class="biz-mobile-nav-row">
+        <span class="biz-current-page" id="bizCurrentPage">기업교육</span>
         <button class="biz-menu-toggle" id="bizMenuToggle" type="button" aria-expanded="false" aria-controls="bizMenuPanel">
-          <span class="biz-menu-toggle__label" id="bizMenuLabel">메뉴</span>
+          <span class="biz-menu-toggle__label" id="bizMenuLabel">전체 기업코칭</span>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
         </button>
       </div>
@@ -47,10 +48,16 @@
 
   <!-- PC Sidebar (hidden on mobile via CSS) -->
   <aside class="biz-sidebar" id="bizSidebar" aria-label="서비스 메뉴">
-    <div class="biz-sidebar__brand">
-      <a href="./index.html">
-        <img src="./assets/biglinker-logo.webp" alt="빅링커" width="100" height="33">
+    <div class="biz-sidebar__topshell">
+      <a class="biz-sidebar__brand-link" href="./index.html">
+        <img src="./assets/biglinker-logo.webp" alt="빅링커" width="110" height="auto">
       </a>
+      <div class="biz-sidebar__family">
+        <a class="family-link {{FAMILY_ACTIVE_TRANSFER}}" href="https://transfer.gobiglinker.com/">대학&amp;편입</a>
+        <a class="family-link {{FAMILY_ACTIVE_GRADUATE}}" href="https://graduate.gobiglinker.com/">대학원&amp;논문</a>
+        <a class="family-link {{FAMILY_ACTIVE_JOB}}" href="https://job.gobiglinker.com/">취업</a>
+        <a class="family-link {{FAMILY_ACTIVE_BIZ}}" href="https://biz.gobiglinker.com/">기업교육</a>
+      </div>
     </div>
     <div class="biz-sidebar__section-label">기업교육 서비스</div>
 {{BIZ_SIDEBAR_ITEMS}}

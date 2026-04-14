@@ -129,13 +129,14 @@
       }
       .biz-sidebar__brand-link img { width: 110px; height: auto; }
       .biz-sidebar__family {
-        display: flex; flex-wrap: wrap; gap: 3px;
-        padding: 3px; border-radius: 10px;
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 3px; padding: 3px; border-radius: 10px;
         border: 1px solid var(--header-line-strong);
         background: #f8f9fc;
       }
       .biz-sidebar__family .family-link {
-        padding: 4px 8px; border-radius: 7px; font-size: 11px;
+        padding: 6px 4px; border-radius: 7px; font-size: 11px;
+        text-align: center;
       }
 
       .biz-sidebar__section-label {

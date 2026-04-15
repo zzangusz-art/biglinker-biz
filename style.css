@@ -287,7 +287,7 @@
     ====================================================== */
     .sp-layer {
       position: fixed;
-      bottom: 24px;
+      bottom: 90px;
       right: 24px;
       left: auto;
       top: auto;
@@ -299,15 +299,15 @@
     }
 
     .sp-toast {
-      background: var(--toast-bg);
-      border: 1px solid var(--toast-border);
+      background: rgba(22, 26, 38, 0.96);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 14px;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      padding: 12px 16px;
-      min-width: 240px;
-      max-width: 320px;
-      box-shadow: var(--shadow-float);
+      padding: 10px 14px;
+      min-width: 210px;
+      max-width: 290px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.28);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -570,6 +570,12 @@
     .section-dark .phi-icon,
     .section-dark .eval-icon,
     .section-dark .principle-icon { color: var(--brand-2); }
+
+    /* SP Layer: 모바일 — floating CTA 위로 이동 */
+    @media (max-width: 760px) {
+      .sp-layer { bottom: 96px; right: 12px; }
+      .sp-toast { min-width: 175px; max-width: calc(100vw - 60px); }
+    }
 
     /* SP Toast: 상담 패널 있을 때 사이드바 오른쪽 배치 (PC) */
     @media (min-width: 761px) {

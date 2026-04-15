@@ -1,0 +1,29 @@
+# BigLinker 기업교육
+
+> 기업 임직원 역량강화 전문 교육 코칭 플랫폼
+
+빅링커(BigLinker) 기업교육은 AI 활용·리더십·커뮤니케이션·안전보건 등 직무별 맞춤형 교육 프로그램을 제공합니다.
+기업 규모와 목표에 따라 표준 과정 선택 또는 완전 맞춤형 커리큘럼 설계가 가능합니다.
+
+## 교육 프로그램
+- [기업교육 홈](https://biz.gobiglinker.com/)
+- [AI 활용 기업교육](https://biz.gobiglinker.com/enterprise-ai-training.html)
+- [면접관 역량강화](https://biz.gobiglinker.com/interviewer-training.html)
+- [AI 상향평준화 CS 교육](https://biz.gobiglinker.com/cs-training.html)
+- [고객서비스 역량강화](https://biz.gobiglinker.com/customer-service-training.html)
+- [디지털디톡스 교육](https://biz.gobiglinker.com/digital-detox-training.html)
+- [리더십 역량강화](https://biz.gobiglinker.com/leadership-training.html)
+- [비즈니스 매너·스피치](https://biz.gobiglinker.com/business-manner-speech-training.html)
+- [근골격계 질환예방](https://biz.gobiglinker.com/musculoskeletal-training.html)
+- [셀프리더십](https://biz.gobiglinker.com/self-leadership-training.html)
+- [의사소통 역량강화](https://biz.gobiglinker.com/communication-training.html)
+- [진급자 역량강화](https://biz.gobiglinker.com/promotion-training.html)
+- [팀장·중간관리자 교육](https://biz.gobiglinker.com/manager-training.html)
+- [미디어 리터러시](https://biz.gobiglinker.com/media-literacy-training.html)
+- [인공지능 AI와 미래](https://biz.gobiglinker.com/ai-future-training.html)
+- [지속 가능한 푸드](https://biz.gobiglinker.com/sustainable-food-training.html)
+- [화장품 안전 교육](https://biz.gobiglinker.com/cosmetic-safety-training.html)
+- [감정 코칭·회복 탄력성](https://biz.gobiglinker.com/emotional-resilience-training.html)
+
+## 운영사
+- 빅링커(BigLinker) | https://gobiglinker.com

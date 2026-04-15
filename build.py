@@ -69,6 +69,139 @@ def resolve_partials(content, partials_dir):
         return ""
     return _re.sub(r"<!-- PARTIAL:\s*(.+?)\s*-->", replacer, content)
 
+
+# ── SEO / AEO helpers ────────────────────────────────────────
+import json as _json
+
+_DIR_NAME  = "biz"
+_DOMAIN    = "https://gobiglinker.com"
+_DIR_LABEL = "기업교육"
+_HOWTO = {'name': '기업 맞춤 교육 도입 방법', 'steps': ['현재 팀 역량 수준 및 교육 니즈 진단', '직무·목표별 맞춤 커리큘럼 설계', '파일럿 교육 진행 및 현업 적용도 확인', '정규 과정 전환 및 지속 운영 체계 수립']}
+
+
+def _page_url(slug):
+    subdomain = "https://" + _DIR_NAME + ".gobiglinker.com"
+    if slug == "index":
+        return subdomain + "/"
+    return subdomain + "/" + slug + ".html"
+
+def _strip_html(s):
+    import re as _re
+    return _re.sub(r'<[^>]+>', '', s).strip()
+
+def _extract_faq(html):
+    """Extract (q, a) pairs from <details>/<summary>/<p> FAQ structure."""
+    import re as _re
+    pairs = []
+    faq_m = _re.search(r'class="faq-band"(.*?)(?:</section>|\Z)', html, _re.DOTALL)
+    if not faq_m:
+        return pairs
+    block = faq_m.group(1)
+    for det in _re.findall(r'<details[^>]*>(.*?)</details>', block, _re.DOTALL):
+        q_m = _re.search(r'<summary>(.*?)<span', det, _re.DOTALL)
+        p_m = _re.search(r'<p>(.*?)</p>', det, _re.DOTALL)
+        if q_m and p_m:
+            q = _strip_html(q_m.group(1)).strip()
+            a = _strip_html(p_m.group(1)).strip()
+            if q and a:
+                pairs.append((q, a))
+    return pairs
+
+def build_seo_tags(title, description, slug):
+    url = _page_url(slug)
+    tags = []
+    if description:
+        tags.append(f'  <meta name="description" content="{description}">')
+    tags.append(f'  <link rel="canonical" href="{url}">')
+    tags.append(f'  <meta property="og:type"        content="website">')
+    tags.append(f'  <meta property="og:title"       content="{title}">')
+    if description:
+        tags.append(f'  <meta property="og:description" content="{description}">')
+    tags.append(f'  <meta property="og:url"         content="{url}">')
+    tags.append('  <meta property="og:image"       content="' + _DOMAIN + '/assets/og-default.jpg">')
+    tags.append(f'  <meta property="og:locale"      content="ko_KR">')
+    tags.append(f'  <meta property="og:site_name"   content="빅링커">')
+    tags.append('  <meta name="twitter:card"        content="summary_large_image">')
+    tags.append(f'  <meta name="twitter:title"       content="{title}">')
+    if description:
+        tags.append(f'  <meta name="twitter:description"  content="{description}">')
+    tags.append('  <meta name="twitter:image"       content="' + _DOMAIN + '/assets/og-default.jpg">')
+    return "\n".join(tags)
+
+def build_jsonld(title, description, slug, main_block):
+    url = _page_url(slug)
+    schemas = []
+
+    # Organization
+    org = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "빅링커",
+        "alternateName": "BigLinker",
+        "url": _DOMAIN,
+        "description": "기업교육·편입·대학원·취업 전문 교육 코칭 기관",
+        "knowsAbout": ["기업교육","AI 활용 교육","리더십 교육","편입 컨설팅","대학원 입시","취업 코칭"],
+        "areaServed": "KR",
+        "inLanguage": "ko"
+    }
+    schemas.append(org)
+
+    # BreadcrumbList
+    crumbs = [
+        {"@type":"ListItem","position":1,"name":"빅링커","item":_DOMAIN + "/"},
+        {"@type":"ListItem","position":2,"name":_DIR_LABEL,"item":"https://" + _DIR_NAME + ".gobiglinker.com/"},
+    ]
+    if slug != "index":
+        crumbs.append({"@type":"ListItem","position":3,"name":title,"item":url})
+    schemas.append({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": crumbs
+    })
+
+    # Service (sub-pages only)
+    if slug != "index" and description:
+        schemas.append({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": title,
+            "description": description,
+            "provider": {"@type":"Organization","name":"빅링커","url":_DOMAIN},
+            "areaServed": "KR",
+            "inLanguage": "ko",
+            "url": url
+        })
+
+
+    # HowTo (index only)
+    if slug == "index" and _HOWTO:
+        steps = [{"@type":"HowToStep","position":i+1,"text":s} for i,s in enumerate(_HOWTO["steps"])]
+        schemas.append({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": _HOWTO["name"],
+            "step": steps
+        })
+    # FAQPage
+    faq_pairs = _extract_faq(main_block)
+    if faq_pairs:
+        entities = []
+        for q, a in faq_pairs:
+            entities.append({
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type":"Answer","text":a}
+            })
+        schemas.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":entities})
+
+    blocks = []
+    for s in schemas:
+        blocks.append('  <script type="application/ld+json">')
+        blocks.append('  ' + _json.dumps(s, ensure_ascii=False, separators=(',',':')))
+        blocks.append('  </script>')
+    return "\n".join(blocks)
+# ── end SEO helpers ───────────────────────────────────────────
+
 def build_page(fname):
     page_path = PAGES + f"{fname}.page.html"
     if not os.path.exists(page_path):
@@ -81,6 +214,7 @@ def build_page(fname):
     title        = meta.get('TITLE', 'BigLinker')
     header_promo = meta.get('HEADER_PROMO', '2026 합격전략 가이드 오픈')
     active_tab   = meta.get('ACTIVE_TAB', '')
+    description  = meta.get('DESCRIPTION', '')
 
     page_css     = extract_section(page, 'PAGE_CSS')
     # PAGE_CSS 섹션 안에 <style> 태그가 포함된 경우 제거 (중첩 방지)
@@ -116,18 +250,22 @@ def build_page(fname):
     )
 
     # Assemble final HTML
+    seo_tags = build_seo_tags(title, description, fname)
+    json_ld  = build_jsonld(title, description, fname, main_block)
     html = f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
+{seo_tags}
 {fonts_link}
   <link rel="stylesheet" href="./style.css">
   <style>
 {page_css}
 {header_css}
   </style>
+{json_ld}
 </head>
 <body>
 

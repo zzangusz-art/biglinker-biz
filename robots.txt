@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biz.gobiglinker.com/sitemap.xml

@@ -64,7 +64,7 @@
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -118,6 +118,22 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -468,7 +484,7 @@
       <h2 class="sec-h2" style="margin-bottom:36px;">감정 소진이<br>조직의 성과를 갉아먹습니다</h2>
       <div class="point-grid">
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(239,68,68,0.12);">💔</div>
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h3>번아웃이 만연합니다</h3>
           <p>높은 업무 강도와 반복되는 실패, 갈등이 축적되면 번아웃이 발생하고 구성원의 몰입이 급격히 낮아집니다.</p>
         </div>
@@ -478,7 +494,7 @@
           <p>감정 조절이 안 될 때 판단력이 흐려지고 즉흥적인 말과 행동이 팀 관계와 고객 응대를 망치는 상황이 반복됩니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">🔄</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>실패 후 회복이 느립니다</h3>
           <p>한 번 크게 실패하거나 비판을 받으면 오래 침체되어 이후 도전을 회피하게 됩니다.</p>
         </div>
@@ -520,6 +536,73 @@
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">감정회복력 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">감정 소진 위험 직원</div>
+          <h3>고강도 대인 업무·스트레스 직원</h3>
+          <p>고객 응대·갈등 상황·과중한 업무로 감정 소진과 번아웃 위험이 높은 서비스직·관리직 직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">팀장·관리자</div>
+          <h3>팀원의 심리적 안전을 책임지는 리더</h3>
+          <p>팀 내 감정적 분위기를 조율하고 구성원의 번아웃을 예방해야 하는 팀장 및 중간 관리자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">HR·조직 문화 담당</div>
+          <h3>심리적 안전 문화를 설계하는 담당자</h3>
+          <p>직원 심리 건강 프로그램, 번아웃 예방 정책, 심리적 안전팀 문화를 설계·운영하는 HR 담당자</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">감정회복력 강화<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>감정 이해와 자기인식</h3>
+          <ul class="week-list">
+            <li>감정의 발생과 뇌 메커니즘</li><li>감정 일기와 트리거 파악</li><li>감정 표현과 억압의 차이</li><li>감정 조절 전략 입문</li>
+          </ul>
+          <div class="week-output">약 1시간 / 자기 탐색</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>스트레스와 번아웃 예방</h3>
+          <ul class="week-list">
+            <li>만성 스트레스 신호 인식</li><li>번아웃 3단계 진단</li><li>스트레스 반응 패턴 분석</li><li>에너지 회복 전략 수립</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 진단 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>회복력 강화 전략</h3>
+          <ul class="week-list">
+            <li>인지 재구성과 관점 전환</li><li>마음챙김(Mindfulness) 실습</li><li>감사·긍정 루틴 설계</li><li>회복 탄력성 근육 키우기</li>
+          </ul>
+          <div class="week-output">약 1시간 / 체험 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>심리적 안전 팀 문화</h3>
+          <ul class="week-list">
+            <li>심리적 안전감의 4단계</li><li>팀장이 만드는 안전한 공간</li><li>취약성을 허용하는 대화법</li><li>팀 감정 건강 지표 관리</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -849,10 +932,10 @@
         <p>번아웃 예방, 갈등 관리, 회복 탄력성 강화를 위한 맞춤 교육을 설계합니다.<br>구성원의 내적 역량이 곧 조직의 경쟁력입니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

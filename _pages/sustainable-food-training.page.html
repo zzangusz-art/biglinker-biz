@@ -61,7 +61,7 @@ ACTIVE_TAB: sustainable-food-training
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -115,6 +115,22 @@ ACTIVE_TAB: sustainable-food-training
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -204,6 +220,73 @@ ACTIVE_TAB: sustainable-food-training
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">지속가능식품 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">식품·유통 업계</div>
+          <h3>식품 개발·마케팅·영업 담당자</h3>
+          <p>지속가능 원료 트렌드와 소비자 니즈 변화에 대응해야 하는 식품·외식·유통 업계 담당자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">ESG 담당자</div>
+          <h3>ESG 전략과 식품 지속가능성을 연결하는 담당자</h3>
+          <p>공급망의 탄소 발자국, 식품 손실 저감, 순환경제 전략을 실무에 적용해야 하는 ESG·CSR 담당자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">구매·조달 담당자</div>
+          <h3>지속가능 원재료 조달 체계 구축 담당자</h3>
+          <p>지속가능 인증 원재료 선별, 공급업체 평가, 윤리적 조달 기준 수립이 필요한 구매·조달 팀</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">지속가능식품 교육<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>지속가능식품 트렌드 이해</h3>
+          <ul class="week-list">
+            <li>글로벌 식품 시스템과 환경 영향</li><li>대체 단백질·식물성 식품 시장</li><li>소비자 가치 변화와 구매 행동</li><li>국내외 규제와 인증 체계</li>
+          </ul>
+          <div class="week-output">약 1시간 / 이론 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>공급망과 원재료 관리</h3>
+          <ul class="week-list">
+            <li>지속가능 원재료 기준과 인증</li><li>공급업체 평가·선정 프로세스</li><li>공급망 탄소 발자국 측정</li><li>윤리적 조달 체크리스트</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>식품 손실·낭비 저감</h3>
+          <ul class="week-list">
+            <li>푸드 로스 발생 단계별 분석</li><li>유통기한 최적화 전략</li><li>부산물 업사이클링 사례</li><li>순환경제 모델 적용</li>
+          </ul>
+          <div class="week-output">약 1시간 / 사례 분석</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>ESG 경영과 식품 브랜딩</h3>
+          <ul class="week-list">
+            <li>ESG 지표와 식품 지속가능성 연결</li><li>그린워싱 방지와 투명한 소통</li><li>지속가능 식품 마케팅 전략</li><li>내부 교육·문화 확산 방안</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -264,10 +347,10 @@ ACTIVE_TAB: sustainable-food-training
         <p>귀사의 업종과 목적에 맞는 지속가능 푸드 교육을 설계합니다.<br>ESG 연계부터 급식 운영 개선까지 통합 교육 프로그램을 제안합니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

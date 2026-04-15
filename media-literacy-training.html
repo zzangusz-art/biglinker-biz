@@ -64,7 +64,7 @@
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -118,6 +118,22 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -468,7 +484,7 @@
       <h2 class="sec-h2" style="margin-bottom:36px;">잘못된 정보 하나가<br>조직 전체를 위험에 빠트립니다</h2>
       <div class="point-grid">
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(239,68,68,0.12);">📰</div>
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h3>가짜뉴스와 진짜 뉴스를 구분 못합니다</h3>
           <p>AI 생성 콘텐츠와 딥페이크 영상이 급증하면서 정보의 진위를 판단하지 못하고 공유하는 사례가 늘고 있습니다.</p>
         </div>
@@ -478,7 +494,7 @@
           <p>알고리즘 기반 소셜미디어는 확증 편향을 강화합니다. 이를 인식하지 못하면 비즈니스 판단에서 오류를 범할 수 있습니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚠️</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>디지털 콘텐츠 저작권 리스크</h3>
           <p>직원들이 온라인 이미지·텍스트를 무단으로 사용해 법적 문제를 일으키는 사례가 증가하고 있습니다.</p>
         </div>
@@ -520,6 +536,73 @@
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">미디어 리터러시 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">전 임직원</div>
+          <h3>디지털 정보 환경에 노출된 모든 직원</h3>
+          <p>소셜미디어·뉴스·영상 정보를 매일 접하지만 진위 판별과 비판적 수용 역량이 부족한 임직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">커뮤니케이션 담당자</div>
+          <h3>콘텐츠·마케팅·홍보 담당자</h3>
+          <p>조직 채널에서 콘텐츠를 생산·배포하며 오정보 전파 위험과 저작권·윤리 기준 이해가 필요한 담당자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">관리자·팀장</div>
+          <h3>조직 내 정보 흐름을 책임지는 리더</h3>
+          <p>팀원들의 정보 소비 패턴을 이해하고 건강한 미디어 문화를 조성해야 하는 관리자</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">미디어 리터러시 교육<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>미디어 환경 이해</h3>
+          <ul class="week-list">
+            <li>알고리즘과 필터버블 구조</li><li>소셜미디어 정보 전파 메커니즘</li><li>뉴스 vs 의견 vs 광고 구분</li><li>미디어 편향성 분석</li>
+          </ul>
+          <div class="week-output">약 1시간 / 이론 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>허위정보 식별과 팩트체크</h3>
+          <ul class="week-list">
+            <li>딥페이크·조작 이미지 판별법</li><li>팩트체크 도구 실습</li><li>출처 검증 5단계 프로세스</li><li>역정보·오정보·허위정보 구분</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>책임감 있는 콘텐츠 생산</h3>
+          <ul class="week-list">
+            <li>저작권·초상권·개인정보 기준</li><li>조직 채널 콘텐츠 가이드라인</li><li>편향 최소화 표현 방법</li><li>디지털 발자국과 평판 관리</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>건강한 디지털 정보 문화</h3>
+          <ul class="week-list">
+            <li>개인 미디어 소비 패턴 점검</li><li>정보 과부하 관리 전략</li><li>조직 내 미디어 리터러시 확산</li><li>지속 학습 커뮤니티 구축</li>
+          </ul>
+          <div class="week-output">약 30분 / 워크숍</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -849,10 +932,10 @@
         <p>귀사 직원들이 디지털 환경에서 정보를 정확히 판단하고 활용하도록<br>미디어 리터러시 교육을 설계합니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

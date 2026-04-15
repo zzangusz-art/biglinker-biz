@@ -61,7 +61,7 @@ ACTIVE_TAB: communication-training
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -115,6 +115,22 @@ ACTIVE_TAB: communication-training
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -152,17 +168,17 @@ ACTIVE_TAB: communication-training
       <h2 class="sec-h2" style="margin-bottom:36px;">소통 문제가<br>조직 성과를 갉아먹고 있습니다</h2>
       <div class="point-grid">
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(59,130,246,0.12);">📢</div>
+          <div class="p-icon" style="background:rgba(59,130,246,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
           <h3>말은 했는데 전달이 안 됩니다</h3>
           <p>내용은 맞는데 상대방이 이해하지 못하거나 의도가 왜곡되는 경우가 반복됩니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(239,68,68,0.12);">🔥</div>
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h3>갈등이 생기면 대화를 피합니다</h3>
           <p>불편한 피드백을 회피하거나 감정이 섞이면 건설적인 대화가 불가능해집니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">📋</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>보고서는 있는데 보고가 없습니다</h3>
           <p>문서는 잘 쓰는데 구두 보고·발표·회의에서 핵심을 전달하지 못해 의사결정이 느려집니다.</p>
         </div>
@@ -204,6 +220,73 @@ ACTIVE_TAB: communication-training
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">의사소통 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">신입·주니어</div>
+          <h3>보고·발표 기초가 필요한 직원</h3>
+          <p>처음 직장 생활을 시작하며 구두 보고·이메일·회의 발언 등 기본 커뮤니케이션 스킬이 필요한 직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">팀원·대리급</div>
+          <h3>협업과 설득 스킬이 필요한 직원</h3>
+          <p>횡적 협업과 이해관계자 설득이 늘어나는 팀원급에서 논리적 소통과 갈등 관리 역량이 필요한 직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">팀장·중간 관리자</div>
+          <h3>리더십 커뮤니케이션 향상이 필요한 리더</h3>
+          <p>팀원 동기부여·피드백·방향 제시를 효과적으로 전달해야 하는 팀장 및 중간 관리자</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">커뮤니케이션 역량강화<br>4개 모듈 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>핵심 전달 스킬</h3>
+          <ul class="week-list">
+            <li>PREP 구조 보고법 실습</li><li>1분 핵심 요약 훈련</li><li>시각 자료 활용 설명법</li><li>임원 보고 시뮬레이션</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>설득과 협상</h3>
+          <ul class="week-list">
+            <li>아리스토텔레스 설득 3요소</li><li>반론 대응 롤플레이</li><li>이해관계자 분석과 설득 전략</li><li>Win-Win 협상 시나리오</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 롤플레이</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>건설적 피드백</h3>
+          <ul class="week-list">
+            <li>SBI 피드백 모델 실습</li><li>받는 피드백을 성장으로 전환</li><li>칭찬과 인정의 언어</li><li>1:1 코칭 대화 스킬</li>
+          </ul>
+          <div class="week-output">약 1시간 / 체험 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>갈등 관리와 조율</h3>
+          <ul class="week-list">
+            <li>감정 언어 vs 판단 언어 구분</li><li>비폭력 대화(NVC) 적용</li><li>갈등 상황 롤플레이</li><li>공통 이해 찾기 기법</li>
+          </ul>
+          <div class="week-output">약 1시간 / 롤플레이</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -264,10 +347,10 @@ ACTIVE_TAB: communication-training
         <p>귀사 직급과 상황에 맞는 의사소통 역량강화 교육을 설계합니다.<br>보고·발표·갈등관리·피드백까지 실전 중심으로 구성해 드립니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

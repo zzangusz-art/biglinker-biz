@@ -61,7 +61,7 @@ ACTIVE_TAB: self-leadership-training
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -115,6 +115,22 @@ ACTIVE_TAB: self-leadership-training
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -162,7 +178,7 @@ ACTIVE_TAB: self-leadership-training
           <p>상사의 지시가 있을 때만 움직이는 수동적 구성원이 늘어나면 팀 전체의 자율성과 생산성이 낮아집니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">🔋</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>번아웃과 무기력이 반복됩니다</h3>
           <p>자기 기준 없이 외부 요구에만 반응하다 보면 에너지가 소진되고 업무 의미를 잃어버리게 됩니다.</p>
         </div>
@@ -204,6 +220,73 @@ ACTIVE_TAB: self-leadership-training
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">셀프리더십 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">신입·주니어</div>
+          <h3>입사 1~3년차 직원</h3>
+          <p>조직 적응 과정에서 자기 방향성과 자기관리 역량이 부족하다고 느끼는 신입 및 주니어 직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">성과 개선 희망자</div>
+          <h3>목표 설정·실행력이 필요한 직원</h3>
+          <p>업무 집중력·우선순위 설정·습관 형성 등 스스로의 성과 관리를 체계화하고 싶은 직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">번아웃 예방 대상</div>
+          <h3>지속 가능한 일의 방식을 찾는 직원</h3>
+          <p>과도한 업무 속에서 번아웃 없이 지속 가능하게 일하는 루틴과 회복력을 갖추고 싶은 직원</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">셀프리더십 역량강화<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>자기인식과 강점 탐색</h3>
+          <ul class="week-list">
+            <li>나를 움직이는 가치관 정의</li><li>강점 진단 도구 활용</li><li>내적 동기와 외적 동기 구분</li><li>리더십 스타일 프로파일링</li>
+          </ul>
+          <div class="week-output">약 1시간 / 진단 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>목표 설정과 실행 계획</h3>
+          <ul class="week-list">
+            <li>SMART 목표 설정 실습</li><li>OKR 개인 적용 방법</li><li>장기 목표를 주간 행동으로 분해</li><li>실행 방해 요인 제거</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>시간·에너지 관리</h3>
+          <ul class="week-list">
+            <li>에너지 사이클 파악과 활용</li><li>GTD 기반 업무 정리법</li><li>집중력 향상 환경 설계</li><li>디지털 도구 활용 시스템</li>
+          </ul>
+          <div class="week-output">약 1시간 / 체험 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>성장 마인드셋과 회복력</h3>
+          <ul class="week-list">
+            <li>고정형 vs 성장형 마인드셋</li><li>실패를 학습으로 전환하는 프레임</li><li>루틴과 습관 형성 원리</li><li>번아웃 신호 인식과 회복 루틴</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -264,10 +347,10 @@ ACTIVE_TAB: self-leadership-training
         <p>구성원 스스로 이끄는 힘을 키우는 셀프리더십 교육을 설계합니다.<br>귀사의 조직 문화와 업무 맥락에 맞는 맞춤형 프로그램을 제안합니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

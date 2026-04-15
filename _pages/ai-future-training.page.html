@@ -61,7 +61,7 @@ ACTIVE_TAB: ai-future-training
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -115,6 +115,22 @@ ACTIVE_TAB: ai-future-training
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -152,7 +168,7 @@ ACTIVE_TAB: ai-future-training
       <h2 class="sec-h2" style="margin-bottom:36px;">AI를 두려워하거나<br>무시하는 직원이 너무 많습니다</h2>
       <div class="point-grid">
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(239,68,68,0.12);">🤖</div>
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h3>AI가 내 일자리를 빼앗을까 두렵습니다</h3>
           <p>막연한 공포가 AI 도구 활용을 막고 변화에 저항하게 만들어 조직 전체의 디지털 전환을 방해합니다.</p>
         </div>
@@ -162,7 +178,7 @@ ACTIVE_TAB: ai-future-training
           <p>업무에서 AI 도구를 써야 하는데 기초 개념 이해가 없어 어디서 시작해야 할지 모르는 직원이 많습니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚖️</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>AI를 무분별하게 사용합니다</h3>
           <p>저작권·개인정보·편향 문제를 이해하지 못한 채 AI를 무분별하게 사용해 법적·윤리적 리스크를 만듭니다.</p>
         </div>
@@ -204,6 +220,73 @@ ACTIVE_TAB: ai-future-training
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">AI 미래 역량 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">전 임직원</div>
+          <h3>AI 변화에 대응해야 하는 모든 직원</h3>
+          <p>AI가 자신의 직무와 조직에 어떤 영향을 미칠지 이해하고 미래를 준비해야 하는 모든 임직원</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">팀장·중간 관리자</div>
+          <h3>AI 전환을 주도해야 하는 리더</h3>
+          <p>팀 업무에 AI를 어떻게 적용할지 전략을 수립하고 구성원을 이끌어야 하는 중간 관리자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">전략·기획 담당자</div>
+          <h3>AI 전환 로드맵을 그리는 담당자</h3>
+          <p>조직 차원의 AI 도입 계획과 변화 관리를 설계해야 하는 전략기획·HR·디지털 전환 담당자</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">AI 미래 역량강화<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>AI 기술의 현재와 전망</h3>
+          <ul class="week-list">
+            <li>생성형 AI의 작동 원리 이해</li><li>AI가 바꾼 산업별 사례</li><li>10년 내 AI 전망과 시나리오</li><li>과장 vs 실제: AI 능력 구분</li>
+          </ul>
+          <div class="week-output">약 1시간 / 이론 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>AI가 바꾸는 직무와 역할</h3>
+          <ul class="week-list">
+            <li>직무별 AI 대체·보완 분석</li><li>사라지는 업무 vs 새로 생기는 업무</li><li>인간만의 고유 역량 강화 방향</li><li>AI 협업 직무 재설계</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>AI 시대 필수 역량</h3>
+          <ul class="week-list">
+            <li>비판적 사고와 AI 검증 능력</li><li>프롬프트 엔지니어링 기초</li><li>데이터 해석과 인사이트 도출</li><li>창의성과 감성 역량 강화</li>
+          </ul>
+          <div class="week-output">약 1시간 / 체험 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>조직의 AI 전환 전략</h3>
+          <ul class="week-list">
+            <li>AI 도입 성숙도 진단</li><li>변화 관리와 구성원 저항 극복</li><li>조직 AI 거버넌스 기초</li><li>지속적 학습 문화 구축</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -264,10 +347,10 @@ ACTIVE_TAB: ai-future-training
         <p>전 직원이 AI 시대를 이해하고 준비하는 교육을 설계합니다.<br>입문부터 전략까지 직급·직무별 맞춤 AI 미래 교육을 제안합니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

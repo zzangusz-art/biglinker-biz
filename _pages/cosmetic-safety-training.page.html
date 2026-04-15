@@ -61,7 +61,7 @@ ACTIVE_TAB: cosmetic-safety-training
     .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
     .prog-list { list-style: none; display: grid; gap: 5px; }
     .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
-    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .prog-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
     .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
@@ -115,6 +115,22 @@ ACTIVE_TAB: cosmetic-safety-training
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── WHO SHOULD ATTEND ── */
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .who-card { padding: 24px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .who-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .who-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .who-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0; }
+    /* ── CURRICULUM ── */
+    .week-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .week-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: rgba(74,104,255,0.15); color: var(--brand-2); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .week-list { list-style: none; display: grid; gap: 6px; }
+    .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
+    .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
+    .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -152,12 +168,12 @@ ACTIVE_TAB: cosmetic-safety-training
       <h2 class="sec-h2" style="margin-bottom:36px;">화장품 산업의<br>법규와 안전 이슈가 복잡해졌습니다</h2>
       <div class="point-grid">
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚗️</div>
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3>성분 규제가 너무 복잡합니다</h3>
           <p>금지 원료, 사용 제한 원료, 기능성 성분 고시 등 화장품 성분 규제가 복잡해져 실무에서 판단하기 어려운 상황이 늘고 있습니다.</p>
         </div>
         <div class="point-card">
-          <div class="p-icon" style="background:rgba(239,68,68,0.12);">📋</div>
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
           <h3>화장품법 위반 리스크가 큽니다</h3>
           <p>화장품법 위반 시 판매 정지·과징금·형사처벌까지 이어질 수 있습니다. 법규를 모르면 회사 전체가 위험에 빠집니다.</p>
         </div>
@@ -204,6 +220,73 @@ ACTIVE_TAB: cosmetic-safety-training
     </div>
   </section>
 
+
+  <!-- == WHO == -->
+  <section class="section-panel" id="who">
+    <div class="wrap">
+      <div class="section-eyebrow">TARGET AUDIENCE</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">화장품 안전 교육,<br>이런 분들에게 필요합니다</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-tag">개발·QC 담당자</div>
+          <h3>원료 안전성과 제품 기준을 다루는 담당자</h3>
+          <p>원료 배합·완제품 안전성 평가·클레임 대응 등 제품 품질과 안전을 직접 다루는 개발·QC 팀</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">마케팅·영업 담당자</div>
+          <h3>표시·광고 규정 준수가 필요한 담당자</h3>
+          <p>화장품 표시 기재 사항, 광고 금지 표현, 기능성 화장품 기준을 이해해야 하는 마케팅·영업 담당자</p>
+        </div>
+        <div class="who-card">
+          <div class="who-tag">규제·인허가 담당자</div>
+          <h3>법령과 인증 체계를 담당하는 담당자</h3>
+          <p>국내외 화장품 규제 변화를 모니터링하고 인허가·수출 서류를 담당하는 RA·규제 업무 담당자</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == CURRICULUM == -->
+  <section class="section-dark" id="curriculum">
+    <div class="wrap">
+      <div class="section-eyebrow">CURRICULUM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">화장품 안전 전문 교육<br>4단계 커리큘럼</h2>
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-tag">MODULE 01</div>
+          <h3>화장품 규제 체계 이해</h3>
+          <ul class="week-list">
+            <li>화장품법 주요 개정 사항</li><li>기능성 화장품 인증 기준</li><li>국내외 규제 차이 비교</li><li>위반 사례와 제재 수위</li>
+          </ul>
+          <div class="week-output">약 1시간 / 이론 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 02</div>
+          <h3>원료 안전성 평가</h3>
+          <ul class="week-list">
+            <li>사용 금지·제한 원료 목록</li><li>원료 안전성 데이터 해석</li><li>IFRA·EU Cosmetics Regulation 기준</li><li>신원료 안전성 자료 구성</li>
+          </ul>
+          <div class="week-output">약 1.5시간 / 실습 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 03</div>
+          <h3>표시·광고 규정 준수</h3>
+          <ul class="week-list">
+            <li>화장품 표시 기재 필수 항목</li><li>광고 금지 문구와 허용 범위</li><li>기능성 표현과 임상 근거</li><li>실제 위반 사례 분석</li>
+          </ul>
+          <div class="week-output">약 1시간 / 사례 중심</div>
+        </div>
+        <div class="week-card">
+          <div class="week-tag">MODULE 04</div>
+          <h3>소비자 클레임과 대응</h3>
+          <ul class="week-list">
+            <li>피부 이상 반응 분류와 보고 체계</li><li>소비자 클레임 접수와 처리 절차</li><li>자진 회수·행정 처분 대응</li><li>안전 사고 예방 시스템 구축</li>
+          </ul>
+          <div class="week-output">약 1시간 / 실무 적용</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- == EFFECTS == -->
   <section class="section-dark" id="effects">
     <div class="wrap">
@@ -264,10 +347,10 @@ ACTIVE_TAB: cosmetic-safety-training
         <p>귀사 화장품 사업의 법규 준수와 품질 안전을 강화하는 맞춤 교육을 설계합니다.<br>직무별·수준별 화장품 전문 교육 프로그램을 제안합니다.</p>
         <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
         <div class="cta-contact">
-          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
-          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
-          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
-          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.12 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
     </div>

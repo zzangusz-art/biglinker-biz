@@ -131,6 +131,31 @@ ACTIVE_TAB: self-leadership-training
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -312,6 +337,20 @@ ACTIVE_TAB: self-leadership-training
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>셀프리더십 교육 후기</h2>
+        <p>스스로 목표를 세우고 실행하는 힘을 키운 수강생들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"목표 설정 실습에서 내 가치관과 행동이 얼마나 어긋났는지 처음으로 직면했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김나연</strong><span>주니어 기획자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"시간 관리 시스템을 바꿨더니 야근이 줄었습니다. 이 변화가 이렇게 빠를 줄 몰랐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이재원</strong><span>개발팀 대리</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"성장 마인드셋 파트가 가장 인상 깊었습니다. 실패를 보는 시각이 완전히 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박수진</strong><span>마케터</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"OKR을 개인에 적용하는 방법을 배웠는데 팀장이 칭찬할 정도로 업무 방향이 명확해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최민준</strong><span>영업팀 사원</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"목표 설정 실습에서 내 가치관과 행동이 얼마나 어긋났는지 처음으로 직면했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김나연</strong><span>주니어 기획자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"시간 관리 시스템을 바꿨더니 야근이 줄었습니다. 이 변화가 이렇게 빠를 줄 몰랐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이재원</strong><span>개발팀 대리</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"입사 2년차인데 이런 교육을 일찍 들었더라면 좋았을 것 같습니다. 정말 실용적이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정다은</strong><span>신입 HRD</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"번아웃 신호를 인식하는 법을 배우고 나서 무너지기 전에 스스로 조절할 수 있게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한소율</strong><span>CS 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"에너지 사이클 파악 실습이 독특했습니다. 내 집중력이 높은 시간대를 파악하고 업무 재배치했어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신건우</strong><span>콘텐츠 팀</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"목표를 주간 행동으로 쪼개는 방법이 너무 실용적이었습니다. 그날 바로 실천했어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오예린</strong><span>브랜드 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"입사 2년차인데 이런 교육을 일찍 들었더라면 좋았을 것 같습니다. 정말 실용적이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정다은</strong><span>신입 HRD</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"번아웃 신호를 인식하는 법을 배우고 나서 무너지기 전에 스스로 조절할 수 있게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한소율</strong><span>CS 담당</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"자기 강점 진단 결과가 업무에서 보완할 점을 정확히 짚어줬습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임찬혁</strong><span>QA 엔지니어</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"GTD 방식으로 업무 정리하는 법을 배웠는데 머릿속이 훨씬 정리되는 느낌이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배미나</strong><span>운영 담당자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"루틴 설계 파트가 특히 좋았어요. 3주 후 자연스럽게 좋은 습관이 자리 잡혔습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류정우</strong><span>기획 인턴</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"고정형 vs 성장형 마인드셋 이야기가 팀 내 피드백 문화 개선으로 이어졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문서연</strong><span>팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"자기 강점 진단 결과가 업무에서 보완할 점을 정확히 짚어줬습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임찬혁</strong><span>QA 엔지니어</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"GTD 방식으로 업무 정리하는 법을 배웠는데 머릿속이 훨씬 정리되는 느낌이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배미나</strong><span>운영 담당자</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- PARTIAL: trust-proof.html -->
 

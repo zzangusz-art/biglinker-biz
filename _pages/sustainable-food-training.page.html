@@ -131,6 +131,31 @@ ACTIVE_TAB: sustainable-food-training
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -312,6 +337,20 @@ ACTIVE_TAB: sustainable-food-training
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>지속가능식품 교육 후기</h2>
+        <p>공급망부터 ESG 전략까지, 실무에 연결된 인사이트를 얻은 분들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"대체 단백질 시장 전망 세션이 신제품 기획 회의에서 그대로 인용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김나리</strong><span>식품 개발팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"공급망 탄소 발자국 측정 방법을 배운 후 ESG 보고서 작성이 훨씬 수월해졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이형준</strong><span>ESG 담당자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"지속가능 원재료 인증 기준을 명확히 이해하고 나서 공급업체 선정 기준이 바뀌었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박서윤</strong><span>구매 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"푸드 로스 저감 사례가 자사 유통 프로세스 개선 아이디어로 이어졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최진우</strong><span>물류팀 팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"대체 단백질 시장 전망 세션이 신제품 기획 회의에서 그대로 인용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김나리</strong><span>식품 개발팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"공급망 탄소 발자국 측정 방법을 배운 후 ESG 보고서 작성이 훨씬 수월해졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이형준</strong><span>ESG 담당자</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"그린워싱 방지 기준을 배운 후 마케팅 카피 검토 방식이 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정유경</strong><span>마케팅 담당</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"윤리적 조달 체크리스트를 실무에 적용하면서 협력사와 대화가 더 구체적이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한민기</strong><span>구매팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"소비자 가치 변화 데이터가 신제품 포지셔닝 전략에 직접 활용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신지은</strong><span>브랜드 전략</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"업사이클링 사례들이 내부 폐기물 처리 방식 개선 제안의 출발점이 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오현준</strong><span>운영혁신팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"그린워싱 방지 기준을 배운 후 마케팅 카피 검토 방식이 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정유경</strong><span>마케팅 담당</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"윤리적 조달 체크리스트를 실무에 적용하면서 협력사와 대화가 더 구체적이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한민기</strong><span>구매팀</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"ESG 지표와 식품 지속가능성을 연결하는 프레임이 보고서 작성에 바로 활용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임소연</strong><span>지속가능경영팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"식품 규제 체계와 트렌드를 함께 다뤄줘서 글로벌 바이어와의 미팅 준비가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배종현</strong><span>수출 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"순환경제 모델을 식품 비즈니스에 어떻게 적용하는지 실제 사례로 배울 수 있었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류다은</strong><span>신사업 기획</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"직원들이 지속가능식품에 대한 기본 소양을 갖추게 돼 사내 논의 수준이 높아졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문하연</strong><span>교육기획 담당</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"ESG 지표와 식품 지속가능성을 연결하는 프레임이 보고서 작성에 바로 활용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임소연</strong><span>지속가능경영팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"식품 규제 체계와 트렌드를 함께 다뤄줘서 글로벌 바이어와의 미팅 준비가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배종현</strong><span>수출 담당</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- PARTIAL: trust-proof.html -->
 

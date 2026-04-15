@@ -134,6 +134,31 @@
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -628,6 +653,20 @@
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>화장품 안전 전문 교육 후기</h2>
+        <p>규제·원료·광고 기준을 실무로 연결한 화장품 업계 전문가들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"원료 사용 금지·제한 기준을 한 번에 정리할 수 있었어요. 기존에 흩어져 있던 지식이 체계화됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김선희</strong><span>QC 담당자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"광고 금지 표현 실사례 분석이 카피 검수 기준을 잡는 데 바로 쓰였습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이도훈</strong><span>마케팅 팀장</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"EU Cosmetics Regulation 비교 세션이 유럽 수출 서류 준비에 직접 도움됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박지수</strong><span>RA 담당자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"소비자 클레임 처리 절차를 배우고 나서 CS팀 응대 가이드라인을 재정비했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최현아</strong><span>CS 매니저</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"원료 사용 금지·제한 기준을 한 번에 정리할 수 있었어요. 기존에 흩어져 있던 지식이 체계화됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김선희</strong><span>QC 담당자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"광고 금지 표현 실사례 분석이 카피 검수 기준을 잡는 데 바로 쓰였습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이도훈</strong><span>마케팅 팀장</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"기능성 화장품 인증 기준이 이렇게 복잡한지 몰랐어요. 개발 단계부터 기준을 잡게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정승우</strong><span>제품 개발자</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"IFRA 기준 해석 실습이 향료 원료 선정에 실질적으로 도움됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한채원</strong><span>원료 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"자진 회수 절차를 배우고 나서 위기 대응 매뉴얼을 사전에 준비할 수 있었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신동현</strong><span>품질보증팀</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"표시 기재 항목을 체계적으로 배우니 승인 프로세스가 훨씬 수월해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오미래</strong><span>기획 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"기능성 화장품 인증 기준이 이렇게 복잡한지 몰랐어요. 개발 단계부터 기준을 잡게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정승우</strong><span>제품 개발자</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"IFRA 기준 해석 실습이 향료 원료 선정에 실질적으로 도움됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한채원</strong><span>원료 담당</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"실제 위반 사례 분석 파트가 가장 인상 깊었어요. 왜 문제가 됐는지 맥락이 잡혔습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임재원</strong><span>법무지원</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"안전성 평가 데이터 해석을 배운 후 공급사 서류 검토가 빨라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배나은</strong><span>구매팀</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"개정 규제 내용이 최신으로 업데이트되어 있어서 실무에 바로 적용할 수 있었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류지훈</strong><span>규제 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"개인정보 관련 성분 표시 기준까지 다뤄줘서 디지털 채널 운영에도 도움됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문수아</strong><span>이커머스 팀</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"실제 위반 사례 분석 파트가 가장 인상 깊었어요. 왜 문제가 됐는지 맥락이 잡혔습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임재원</strong><span>법무지원</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"안전성 평가 데이터 해석을 배운 후 공급사 서류 검토가 빨라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배나은</strong><span>구매팀</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- TRUST-PROOF PARTIAL ─────────────────────────────────────────────────────
      자격증 · 이력 + 카카오 합격 후기 (동적 애니메이션)

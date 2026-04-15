@@ -134,6 +134,31 @@
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -628,6 +653,20 @@
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>AI 미래 역량 교육 후기</h2>
+        <p>AI 변화에 대응하는 자신감과 전략을 얻은 수강생들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"AI 공포가 역량 개발 의욕으로 바뀌는 경험을 했습니다. 태도 자체가 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김해원</strong><span>일반 직원</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"내 직무에서 AI가 대체할 부분과 내가 집중해야 할 부분이 명확해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이준호</strong><span>중간 관리자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"프롬프트 엔지니어링 기초를 배운 후 ChatGPT 활용 효율이 눈에 띄게 높아졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박가람</strong><span>기획자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI 윤리 파트 덕분에 사내 AI 사용 가이드라인 초안을 잡을 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최도경</strong><span>컴플라이언스</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"AI 공포가 역량 개발 의욕으로 바뀌는 경험을 했습니다. 태도 자체가 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김해원</strong><span>일반 직원</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"내 직무에서 AI가 대체할 부분과 내가 집중해야 할 부분이 명확해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이준호</strong><span>중간 관리자</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI 전환 로드맵 세션이 전략기획 업무에 바로 활용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정상훈</strong><span>전략기획팀</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"딥러닝 원리를 쉽게 설명해줘서 비전공자도 충분히 이해할 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한효진</strong><span>마케팅 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI가 잘하는 것과 못하는 것을 구분하는 프레임이 업무 활용 판단에 도움됩니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신동엽</strong><span>HR 매니저</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"변화 저항 관리 전략을 배우고 나서 팀 내 AI 도입이 훨씬 부드럽게 진행됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오하린</strong><span>팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI 전환 로드맵 세션이 전략기획 업무에 바로 활용됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정상훈</strong><span>전략기획팀</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"딥러닝 원리를 쉽게 설명해줘서 비전공자도 충분히 이해할 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한효진</strong><span>마케팅 담당</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"10년 후 직업 변화 시나리오 세션이 커리어 전략을 다시 생각하게 만들었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임준서</strong><span>직무 전환 고려 중</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI 거버넌스 기초를 배운 후 IT 보안팀과의 대화가 훨씬 수월해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배수현</strong><span>DX 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"창의성과 감성 역량 파트가 AI 시대에 인간의 역할을 긍정적으로 바라보게 해줬어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류민채</strong><span>콘텐츠 제작자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"전 직원 대상으로 진행했는데 직급 무관하게 참여도가 높았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문경호</strong><span>HRD 담당자</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"10년 후 직업 변화 시나리오 세션이 커리어 전략을 다시 생각하게 만들었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임준서</strong><span>직무 전환 고려 중</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"AI 거버넌스 기초를 배운 후 IT 보안팀과의 대화가 훨씬 수월해졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배수현</strong><span>DX 담당</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- TRUST-PROOF PARTIAL ─────────────────────────────────────────────────────
      자격증 · 이력 + 카카오 합격 후기 (동적 애니메이션)

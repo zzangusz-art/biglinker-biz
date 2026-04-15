@@ -134,6 +134,31 @@
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -628,6 +653,20 @@
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>미디어 리터러시 교육 후기</h2>
+        <p>허위정보 구별력과 책임 있는 디지털 소통 역량을 키운 분들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"딥페이크 영상 판별 실습이 인상적이었습니다. 이렇게 쉽게 속는다는 걸 직접 체험했어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김민진</strong><span>커뮤니케이션 팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"팩트체크 5단계를 배운 후 보도 자료를 보는 시각이 달라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이준혁</strong><span>홍보 담당자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"조직 채널 콘텐츠 가이드라인 파트가 SNS 운영 기준을 잡는 데 바로 활용됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박지영</strong><span>마케팅 팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"알고리즘 필터버블을 이해하고 나서 정보 소비 방식이 의식적으로 바뀌었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최승현</strong><span>기획팀</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"딥페이크 영상 판별 실습이 인상적이었습니다. 이렇게 쉽게 속는다는 걸 직접 체험했어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김민진</strong><span>커뮤니케이션 팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"팩트체크 5단계를 배운 후 보도 자료를 보는 시각이 달라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이준혁</strong><span>홍보 담당자</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"저작권·초상권 기준을 명확히 배웠더니 콘텐츠 제작 시 불필요한 검토가 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정미래</strong><span>콘텐츠 크리에이터</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"뉴스 vs 의견 vs 광고 구분법이 사내 소통 자료 검토에 바로 쓰이고 있습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한도경</strong><span>대외협력 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"직원들의 정보 공유 행태를 보는 시각이 달라졌어요. 오정보 전파가 확실히 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신예원</strong><span>HR 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"미디어 편향성 분석 파트가 보고서 출처 다변화에 영향을 줬습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오성민</strong><span>전략기획</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"저작권·초상권 기준을 명확히 배웠더니 콘텐츠 제작 시 불필요한 검토가 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정미래</strong><span>콘텐츠 크리에이터</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"뉴스 vs 의견 vs 광고 구분법이 사내 소통 자료 검토에 바로 쓰이고 있습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한도경</strong><span>대외협력 담당</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"디지털 발자국 개념을 배우고 나서 직원들이 개인 SNS 사용에 더 신중해졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임지현</strong><span>홍보팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"정보 과부하 관리 전략 덕분에 업무 중 불필요한 뉴스 소비가 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배민우</strong><span>연구 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"출처 검증 실습이 가장 실용적이었어요. 팀 내 공유 문화가 달라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류다연</strong><span>편집팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"책임 있는 콘텐츠 생산 기준을 세우고 나서 승인 프로세스가 훨씬 명확해졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문석준</strong><span>브랜드 팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"디지털 발자국 개념을 배우고 나서 직원들이 개인 SNS 사용에 더 신중해졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임지현</strong><span>홍보팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"정보 과부하 관리 전략 덕분에 업무 중 불필요한 뉴스 소비가 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배민우</strong><span>연구 담당</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- TRUST-PROOF PARTIAL ─────────────────────────────────────────────────────
      자격증 · 이력 + 카카오 합격 후기 (동적 애니메이션)

@@ -201,6 +201,31 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -742,6 +767,20 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>디지털 디톡스 교육 후기</h2>
+        <p>과의존에서 벗어나 집중력과 웰빙을 되찾은 분들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"스마트폰 사용 패턴 진단에서 내가 하루 5시간 이상 쓴다는 걸 처음 알았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김도원</strong><span>기획 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"딥워크 시간을 설계하는 방법을 배운 후 오전 집중 업무량이 2배로 늘었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이소연</strong><span>개발자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"마인드풀니스 실습이 생각보다 훨씬 현실적이었습니다. 앱 없이도 할 수 있어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박태호</strong><span>영업 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"팀 디지털 소통 규범을 함께 설계하는 워크숍이 팀 문화 개선에 직접 연결됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최나은</strong><span>팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"스마트폰 사용 패턴 진단에서 내가 하루 5시간 이상 쓴다는 걸 처음 알았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김도원</strong><span>기획 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"딥워크 시간을 설계하는 방법을 배운 후 오전 집중 업무량이 2배로 늘었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이소연</strong><span>개발자</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"알림 최소화 방법 하나만으로 업무 중 산만함이 확실히 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정유하</strong><span>마케터</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"디지털 웰니스 점수를 팀원들과 공유하면서 자연스럽게 사용 습관이 화제가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한승재</strong><span>HR 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"저녁 화면 사용 제한 루틴을 도입한 후 수면의 질이 크게 좋아졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신보영</strong><span>운영 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"과의존 자가 체크리스트가 직원 건강검진에 디지털 항목을 추가하는 계기가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오세준</strong><span>복지 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"알림 최소화 방법 하나만으로 업무 중 산만함이 확실히 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정유하</strong><span>마케터</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"디지털 웰니스 점수를 팀원들과 공유하면서 자연스럽게 사용 습관이 화제가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한승재</strong><span>HR 담당</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"업무 외 시간 디지털 사용 가이드라인을 조직 차원에서 수립하는 데 이 교육이 기반됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임지수</strong><span>조직문화팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"집중력 회복 훈련 세션이 ADHD 성향 직원들에게 특히 유용했다는 피드백을 받았어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배현민</strong><span>HRD 담당</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"디지털 디톡스가 생산성과 연결된다는 데이터를 배우고 나서 경영진 설득이 쉬워졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류소진</strong><span>기획 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"직원 웰빙 프로그램으로 도입했는데 참여율이 가장 높은 교육이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문창우</strong><span>복지 매니저</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"업무 외 시간 디지털 사용 가이드라인을 조직 차원에서 수립하는 데 이 교육이 기반됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임지수</strong><span>조직문화팀</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"집중력 회복 훈련 세션이 ADHD 성향 직원들에게 특히 유용했다는 피드백을 받았어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배현민</strong><span>HRD 담당</span></div></div></div></div>
       </div>
     </section>
 

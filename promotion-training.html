@@ -134,6 +134,31 @@
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
     ══════════════════════════════════════════ */
@@ -628,6 +653,20 @@
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>승진자 역량강화 교육 후기</h2>
+        <p>팀장·임원으로 전환하며 진짜 필요했던 역량을 채운 리더들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"팀장이 되고 나서 가장 막막했던 "어떻게 지시해야 하나"에 대한 답을 찾았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김태양</strong><span>신임 팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"역할 전환 세션이 실무자 마인드에서 리더 마인드로 전환하는 데 결정적이었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이하늘</strong><span>부장 승진자</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"팀원 면담 스킬을 배운 후 1:1 미팅을 정례화했더니 팀 분위기가 달라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박성민</strong><span>팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"임원 보고 구조를 배우고 첫 경영진 보고에서 "간결하다"는 피드백을 받았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최지영</strong><span>차장 승진</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"팀장이 되고 나서 가장 막막했던 "어떻게 지시해야 하나"에 대한 답을 찾았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김태양</strong><span>신임 팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"역할 전환 세션이 실무자 마인드에서 리더 마인드로 전환하는 데 결정적이었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이하늘</strong><span>부장 승진자</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"OKR 기반 팀 목표 설정 방법을 배운 후 팀원들이 방향을 스스로 찾게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정현수</strong><span>신임 팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"다세대 구성원 이해 파트가 MZ 팀원과의 갈등을 보는 시각을 바꿨습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한미라</strong><span>부팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"리더십 스타일 진단에서 내 단점을 직면하고 구체적 개선 계획을 세울 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신준영</strong><span>팀장 1년차</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"의사결정 프레임워크를 배운 후 팀 회의에서 결론이 늦게 나오는 일이 줄었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오지현</strong><span>과장 승진</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"OKR 기반 팀 목표 설정 방법을 배운 후 팀원들이 방향을 스스로 찾게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정현수</strong><span>신임 팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"다세대 구성원 이해 파트가 MZ 팀원과의 갈등을 보는 시각을 바꿨습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한미라</strong><span>부팀장</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"심리적 안전감 만들기 파트가 팀 내 자유로운 의견 공유 문화를 만드는 데 도움됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임동현</strong><span>신임 팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"책임 리더십과 실패 대응 세션이 팀원에게 먼저 사과할 수 있는 용기를 줬습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배서연</strong><span>팀장</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"승진 전 이 교육을 들었다면 초반 6개월이 훨씬 수월했을 겁니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류재영</strong><span>부장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"성과 인정·보상 커뮤니케이션 파트 덕분에 팀원 이탈률이 눈에 띄게 줄었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문혜수</strong><span>팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"심리적 안전감 만들기 파트가 팀 내 자유로운 의견 공유 문화를 만드는 데 도움됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임동현</strong><span>신임 팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"책임 리더십과 실패 대응 세션이 팀원에게 먼저 사과할 수 있는 용기를 줬습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배서연</strong><span>팀장</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- TRUST-PROOF PARTIAL ─────────────────────────────────────────────────────
      자격증 · 이력 + 카카오 합격 후기 (동적 애니메이션)

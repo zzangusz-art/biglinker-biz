@@ -131,6 +131,31 @@ ACTIVE_TAB: emotional-resilience-training
     .week-list li { font-size: 12.5px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.6; }
     .week-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 6px; }
     .week-output { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: var(--brand-2); font-weight: 700; }
+
+    /* ── REVIEW MARQUEE ── */
+    .review-band { padding: 110px 0 130px; background: #0b0e13; }
+    .review-band-head { text-align: center; margin-bottom: 46px; }
+    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
+    .review-band-head p { font-size: 15px; color: var(--muted); }
+    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
+    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
+    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
+    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
+    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
+    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
+    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
+    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
+    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
+    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
+    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
+    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
+    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
+    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
 </style>
 <!-- /PAGE_CSS -->
 
@@ -312,6 +337,20 @@ ACTIVE_TAB: emotional-resilience-training
       </div>
     </div>
   </section>
+
+
+  <!-- == REVIEW == -->
+  <section class="review-band">
+      <div class="review-band-head">
+        <h2>감정회복력 교육 후기</h2>
+        <p>번아웃을 예방하고 심리적으로 건강한 팀을 만든 분들의 이야기</p>
+      </div>
+      <div class="review-marquee-wrap">
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"번아웃 3단계 진단에서 내가 이미 2단계였다는 걸 알았습니다. 제때 알아서 다행이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김채린</strong><span>CS 담당자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"마음챙김 실습이 3분도 안 걸리는데 스트레스 반응이 확실히 줄었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이현진</strong><span>개발팀 대리</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"감정 트리거를 파악하고 나서 특정 상황에서 과반응하던 패턴이 바뀌었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박민혁</strong><span>영업 담당</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"심리적 안전팀 문화 만들기 세션이 팀 미팅 방식을 바꾸는 계기가 됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최소윤</strong><span>팀장</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"번아웃 3단계 진단에서 내가 이미 2단계였다는 걸 알았습니다. 제때 알아서 다행이에요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김채린</strong><span>CS 담당자</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"마음챙김 실습이 3분도 안 걸리는데 스트레스 반응이 확실히 줄었어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이현진</strong><span>개발팀 대리</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini"><div class="star-row">★★★★★</div><p>"인지 재구성 프레임을 배운 후 같은 상황을 다르게 볼 수 있게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정호범</strong><span>기획자</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"취약성을 허용하는 대화법이 1:1 면담에서 팀원이 더 솔직하게 이야기하는 데 도움됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한유진</strong><span>팀장</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"에너지 회복 루틴을 설계하고 실천한 후 퇴근 후 피로 회복이 눈에 띄게 빨라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신하은</strong><span>인사팀</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"감사 일기 실습을 팀 전체에 공유했더니 주간 미팅 분위기가 완전히 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오준서</strong><span>팀원</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"인지 재구성 프레임을 배운 후 같은 상황을 다르게 볼 수 있게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정호범</strong><span>기획자</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"취약성을 허용하는 대화법이 1:1 면담에서 팀원이 더 솔직하게 이야기하는 데 도움됐어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한유진</strong><span>팀장</span></div></div></div></div>
+        <div class="review-marquee-row"><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"HR 담당자로서 번아웃 예방 프로그램을 설계할 수 있는 실질적인 기준을 얻었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임아영</strong><span>HRD 매니저</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"팀원의 번아웃 신호를 조기에 알아채는 법을 배웠어요. 관리자에게 꼭 필요한 교육입니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배재현</strong><span>팀장</span></div></div></div><div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"감정 소진이 높은 CS팀에 맞춤 적용했더니 이직 의향이 줄었다는 피드백을 받았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류민서</strong><span>HR 파트너</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"회복 탄력성이 단순 마음 다스리기가 아닌 구체적인 전략임을 알았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문지현</strong><span>조직문화 담당</span></div></div></div><div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"HR 담당자로서 번아웃 예방 프로그램을 설계할 수 있는 실질적인 기준을 얻었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임아영</strong><span>HRD 매니저</span></div></div></div><div class="review-mini"><div class="star-row">★★★★★</div><p>"팀원의 번아웃 신호를 조기에 알아채는 법을 배웠어요. 관리자에게 꼭 필요한 교육입니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배재현</strong><span>팀장</span></div></div></div></div>
+      </div>
+    </section>
 
   <!-- PARTIAL: trust-proof.html -->
 

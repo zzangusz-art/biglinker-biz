@@ -1,0 +1,275 @@
+<!-- META
+TITLE: 미디어 리터러시 기업교육 -- 빅링커
+HEADER_PROMO: 2026 미디어 리터러시 역량 강화 프로그램
+ACTIVE_TAB: media-literacy-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>미디어 리터러시 교육</strong>
+      <span>정보 판별·비판적 사고 역량</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">MEDIA LITERACY</div>
+      <h1>정보를 읽고 판단하는 힘,<br><em>미디어 리터러시</em> 교육</h1>
+      <p>가짜뉴스·편향 정보·딥페이크가 넘치는 디지털 환경에서 정보를 비판적으로 읽고 올바르게 활용하는 역량을 키웁니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">팩트체크</div><div class="s-label">정보 진위 판별 능력</div></div><div class="hero-stat"><div class="s-num">비판적사고</div><div class="s-label">편향 인식 역량</div></div><div class="hero-stat"><div class="s-num">저작권</div><div class="s-label">디지털 콘텐츠 법규</div></div><div class="hero-stat"><div class="s-num">실전형</div><div class="s-label">사례 기반 훈련</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">잘못된 정보 하나가<br>조직 전체를 위험에 빠트립니다</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);">📰</div>
+          <h3>가짜뉴스와 진짜 뉴스를 구분 못합니다</h3>
+          <p>AI 생성 콘텐츠와 딥페이크 영상이 급증하면서 정보의 진위를 판단하지 못하고 공유하는 사례가 늘고 있습니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">📱</div>
+          <h3>소셜미디어 정보를 그대로 믿습니다</h3>
+          <p>알고리즘 기반 소셜미디어는 확증 편향을 강화합니다. 이를 인식하지 못하면 비즈니스 판단에서 오류를 범할 수 있습니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚠️</div>
+          <h3>디지털 콘텐츠 저작권 리스크</h3>
+          <p>직원들이 온라인 이미지·텍스트를 무단으로 사용해 법적 문제를 일으키는 사례가 증가하고 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">4단계 미디어 리터러시<br>교육 모듈</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">정보 판별</div>
+          <h3>팩트체크 실습</h3>
+          <p>뉴스·SNS 게시물·통계 자료의 사실 여부를 검증하는 팩트체크 도구와 방법론을 실습합니다.</p>
+          <ul class="prog-list"><li>팩트체크 5단계 방법</li><li>신뢰할 수 있는 출처 판별</li><li>역방향 이미지 검색 활용</li><li>AI 생성 콘텐츠 식별법</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">비판적 읽기</div>
+          <h3>미디어 편향 인식</h3>
+          <p>다양한 미디어를 비교 분석해 편집 방향과 프레이밍 편향을 인식하는 역량을 키웁니다.</p>
+          <ul class="prog-list"><li>미디어 프레이밍 분석</li><li>확증 편향 극복법</li><li>다양한 시각 균형 유지</li><li>데이터 시각화 왜곡 이해</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">디지털 저작권</div>
+          <h3>콘텐츠 법적 이해</h3>
+          <p>저작권·초상권·공정 사용 원칙을 이해하고 온라인 콘텐츠를 올바르게 활용하는 방법을 학습합니다.</p>
+          <ul class="prog-list"><li>저작권 기초와 CCL 라이선스</li><li>이미지·텍스트·영상 사용 기준</li><li>퍼블리시티권과 초상권</li><li>저작권 침해 예방 체크리스트</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">콘텐츠 생산</div>
+          <h3>신뢰할 수 있는 정보 전달</h3>
+          <p>내부·외부 커뮤니케이션에서 신뢰할 수 있는 정보를 정확하게 전달하는 능력을 개발합니다.</p>
+          <ul class="prog-list"><li>데이터 기반 커뮤니케이션</li><li>출처 명시 원칙</li><li>소셜미디어 윤리 가이드</li><li>기업 SNS 운영 리스크 관리</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">미디어 리터러시 교육 후<br>기대되는 변화</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>의사결정 품질 향상</h3><p>정확한 정보를 기반으로 비즈니스 의사결정을 내리는 역량이 강화됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>디지털 리스크 감소</h3><p>가짜뉴스 공유·저작권 침해 등 디지털 환경 법적·평판 리스크를 예방합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>비판적 사고 강화</h3><p>정보를 그대로 받아들이지 않고 비판적으로 검토하는 사고 습관이 형성됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>조직 신뢰도 향상</h3><p>직원들이 신뢰할 수 있는 정보를 생산·공유함으로써 내외부 커뮤니케이션 신뢰도가 높아집니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIAL: trust-proof.html -->
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">미디어 리터러시 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 어느 부서에 가장 필요한 교육인가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>마케팅·PR·홍보팀처럼 정보를 다루는 부서에 특히 중요하지만, 전 직원 기초 교육으로도 활용됩니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 최신 AI 관련 내용도 포함되나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>AI 생성 이미지·텍스트·딥페이크 식별 방법 등 최신 이슈를 반영합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 법적 내용이 어렵지 않을까요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>저작권 내용은 실무 사례 중심으로 쉽게 풀어서 설명합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 교육 후 내부 가이드라인도 만들어주나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>교육 후 귀사 맞춤형 디지털 콘텐츠 사용 가이드라인 초안 제작을 추가 서비스로 제공합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">미디어 리터러시 교육</div>
+        <h2>정보를 올바르게 읽는<br>조직이 더 나은 결정을 합니다</h2>
+        <p>귀사 직원들이 디지털 환경에서 정보를 정확히 판단하고 활용하도록<br>미디어 리터러시 교육을 설계합니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

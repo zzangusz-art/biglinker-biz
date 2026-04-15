@@ -1,0 +1,275 @@
+<!-- META
+TITLE: 진급자 역량강화 기업교육 -- 빅링커
+HEADER_PROMO: 2026 진급자 온보딩 역량강화 프로그램
+ACTIVE_TAB: promotion-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>진급자 역량강화 교육</strong>
+      <span>새 역할 조기 정착 온보딩</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">PROMOTION READINESS</div>
+      <h1>새 역할에 빠르게 적응하는<br><em>진급자 역량강화</em> 교육</h1>
+      <p>팀원에서 팀장으로, 대리에서 과장으로 — 새 직책이 요구하는 역할 전환을 신속하게 완성하는 진급자 온보딩 프로그램입니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">역할전환</div><div class="s-label">새 직책 조기 정착</div></div><div class="hero-stat"><div class="s-num">3개월</div><div class="s-label">온보딩 가속화</div></div><div class="hero-stat"><div class="s-num">리더십</div><div class="s-label">팀 관리 스킬 집중</div></div><div class="hero-stat"><div class="s-num">실전형</div><div class="s-label">현업 시나리오 기반</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">진급 후 6개월이<br>가장 위험합니다</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(74,104,255,0.12);">👥</div>
+          <h3>팀원을 관리하는 게 처음입니다</h3>
+          <p>우수 실무자가 팀장이 되면 일 잘하는 방법과 팀을 이끄는 방법이 다름을 처음 경험합니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);">📊</div>
+          <h3>기대 수준과 현실이 다릅니다</h3>
+          <p>조직은 빠른 성과를 기대하지만 새 직책자는 이전 방식으로 일하려는 관성이 남아 충돌이 발생합니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">🤝</div>
+          <h3>위아래로 소통 방식이 달라졌습니다</h3>
+          <p>임원에게는 보고·설득, 동료에게는 협업, 부하에게는 코칭 — 복잡한 소통 역량이 동시에 필요합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">직책별 맞춤<br>진급자 온보딩 프로그램</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">대리 to 과장</div>
+          <h3>실무자에서 조율자로</h3>
+          <p>단독 실행에서 팀 조율과 프로젝트 관리로 역할을 전환하는 스킬과 마인드셋 변화 프로그램입니다.</p>
+          <ul class="prog-list"><li>프로젝트 관리 기초</li><li>수평·수직 소통 전략</li><li>업무 위임과 우선순위 설정</li><li>자기 주도적 보고 역량</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">과장 to 차장</div>
+          <h3>전문가에서 리더로</h3>
+          <p>전문성과 리더십을 결합해 팀 성과를 견인하고 부하 직원을 성장시키는 중간 리더 역량을 개발합니다.</p>
+          <ul class="prog-list"><li>팀 목표 설정과 관리</li><li>코칭 대화 스킬</li><li>성과 피드백 주고받기</li><li>갈등 조정과 팀 조화</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">첫 팀장 온보딩</div>
+          <h3>첫 팀장 역할 완성</h3>
+          <p>처음 팀을 이끄는 팀장이 빠르게 팀을 파악하고 신뢰를 구축해 성과를 만드는 첫 90일 전략을 수립합니다.</p>
+          <ul class="prog-list"><li>첫 90일 온보딩 계획 수립</li><li>팀원 파악과 관계 구축</li><li>팀 문화 진단과 방향 설정</li><li>성과 리뷰 루틴 설계</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">공통 역량</div>
+          <h3>진급자 공통 역량</h3>
+          <p>직급에 관계없이 진급 초기에 공통으로 필요한 책임 의식, 의사결정, 시간 관리를 다룹니다.</p>
+          <ul class="prog-list"><li>책임 중심 사고 전환</li><li>의사결정 프레임워크</li><li>우선순위 재설계</li><li>진급 초기 자기 관리</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">진급자 교육의<br>4가지 기대 성과</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>온보딩 기간 단축</h3><p>새 직책에 적응하는 시간을 평균 3개월 단축하여 빠른 성과 창출로 이어집니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>팀 관리 역량 강화</h3><p>팀원 동기부여, 목표 설정, 피드백 등 팀 관리의 핵심 역량이 집중 강화됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>이탈률 감소</h3><p>진급자의 역할 혼란과 스트레스를 줄여 조직 내 주요 인재의 이탈 위험을 낮춥니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>조직 성과 향상</h3><p>체계적으로 준비된 중간 리더가 많아질수록 팀 단위 성과와 조직 전체 효율이 높아집니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIAL: trust-proof.html -->
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">진급자 역량강화 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 어느 시점에 교육을 받는 것이 가장 좋을까요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>진급 발령 후 1~2개월 내 교육을 시작하는 것이 가장 효과적입니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 전 직급 진급자를 한꺼번에 교육할 수 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>직급 공통 모듈과 직급별 심화 모듈을 조합해 여러 직급 진급자를 동시에 커버할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 교육 기간은 얼마나 되나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>집중형(1~2일)부터 분산형(4~8주 시리즈)까지 선택 가능합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 관리자 교육과 진급자 교육이 어떻게 다른가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>관리자 교육은 현직 관리자 역량 강화에, 진급자 교육은 새로운 역할로의 전환과 온보딩에 집중합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">진급자 역량강화 교육</div>
+        <h2>새 역할의 첫 90일,<br>제대로 시작하세요</h2>
+        <p>진급자가 새 직책에서 빠르게 성과를 만들 수 있도록 맞춤형 온보딩 교육을 설계합니다.<br>직급별 역할 전환 프로그램을 귀사 맥락에 맞게 구성해 드립니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

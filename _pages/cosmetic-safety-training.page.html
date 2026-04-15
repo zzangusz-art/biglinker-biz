@@ -1,0 +1,275 @@
+<!-- META
+TITLE: 화장품 안전 기업교육 -- 빅링커
+HEADER_PROMO: 2026 화장품 안전·법규 교육 프로그램
+ACTIVE_TAB: cosmetic-safety-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>화장품 안전 교육</strong>
+      <span>화장품법·성분·품질 전문 교육</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">COSMETIC SAFETY</div>
+      <h1>화장품 안전과 법규,<br><em>전문 역량</em>으로 완성합니다</h1>
+      <p>화장품 제조·판매·수입·유통 종사자와 뷰티 관련 직군을 위한 화장품법, 안전성, 성분 이해, 소비자 커뮤니케이션 교육입니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">화장품법</div><div class="s-label">법규 준수 역량</div></div><div class="hero-stat"><div class="s-num">성분 이해</div><div class="s-label">안전성 평가 기초</div></div><div class="hero-stat"><div class="s-num">소비자 보호</div><div class="s-label">클레임 예방 역량</div></div><div class="hero-stat"><div class="s-num">실전형</div><div class="s-label">현장 즉시 적용</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">화장품 산업의<br>법규와 안전 이슈가 복잡해졌습니다</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚗️</div>
+          <h3>성분 규제가 너무 복잡합니다</h3>
+          <p>금지 원료, 사용 제한 원료, 기능성 성분 고시 등 화장품 성분 규제가 복잡해져 실무에서 판단하기 어려운 상황이 늘고 있습니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);">📋</div>
+          <h3>화장품법 위반 리스크가 큽니다</h3>
+          <p>화장품법 위반 시 판매 정지·과징금·형사처벌까지 이어질 수 있습니다. 법규를 모르면 회사 전체가 위험에 빠집니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">💬</div>
+          <h3>소비자 클레임이 증가하고 있습니다</h3>
+          <p>SNS를 통한 소비자 불만 확산과 화장품 성분 이슈가 맞물려 클레임 대응과 소비자 신뢰 관리가 어려워졌습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">직무별 맞춤<br>화장품 안전 교육 모듈</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">화장품법 기초</div>
+          <h3>법규 이해와 준수</h3>
+          <p>화장품법의 핵심 내용 — 기능성화장품, 사용 금지·제한 성분, 표시·광고 규정, 책임판매업 의무 — 를 이해하고 실무에 적용합니다.</p>
+          <ul class="prog-list"><li>화장품법 핵심 조항 정리</li><li>기능성화장품 신고·심사</li><li>표시·광고 법적 기준</li><li>화장품법 위반 사례 연구</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">성분과 안전성</div>
+          <h3>원료 이해와 위해평가</h3>
+          <p>화장품 주요 성분의 기능, 안전성 평가 방법, 위해 사례를 이해하고 성분 분석 기초 역량을 갖춥니다.</p>
+          <ul class="prog-list"><li>화장품 원료 분류와 기능</li><li>사용 금지·제한 원료 목록</li><li>피부 자극 테스트 이해</li><li>성분표 읽는 법 실습</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">제조·품질관리</div>
+          <h3>GMP와 품질 기준</h3>
+          <p>우수화장품 제조·품질관리기준(GMP) 이해와 품질 관리 절차를 학습해 생산 현장의 법규 준수 역량을 강화합니다.</p>
+          <ul class="prog-list"><li>화장품 GMP 이해</li><li>품질 관리 프로세스</li><li>제조 기록 작성법</li><li>실사 대비 체크리스트</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">소비자 커뮤니케이션</div>
+          <h3>클레임 예방과 대응</h3>
+          <p>화장품 부작용·성분 클레임에 올바르게 대응하고 소비자와 신뢰 관계를 구축하는 커뮤니케이션 전략을 훈련합니다.</p>
+          <ul class="prog-list"><li>화장품 이상반응 대응 절차</li><li>SNS 성분 이슈 대응법</li><li>과장 광고 예방 체크</li><li>소비자 신뢰 구축 사례</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">화장품 안전 교육의<br>4가지 기대 성과</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>법규 위반 리스크 감소</h3><p>화장품법과 규제 이해도가 높아져 실무에서 법규 위반 리스크를 선제적으로 예방합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>품질 관리 역량 강화</h3><p>GMP와 품질 관리 절차 이해가 높아져 제품 안전성과 일관성이 향상됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>클레임 대응력 향상</h3><p>소비자 클레임에 체계적으로 대응하는 역량이 강화되어 브랜드 신뢰를 보호합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>전문 인력 역량 강화</h3><p>화장품 산업 특화 전문 지식을 갖춘 인재를 육성해 조직 전체 역량이 높아집니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIAL: trust-proof.html -->
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">화장품 안전 교육 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 어떤 직군에게 가장 필요한가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>화장품 제조·연구개발·품질관리·마케팅·영업·고객서비스 등 화장품 가치사슬 전 직군에게 필요합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 최신 규제 변경 사항도 반영되나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>화장품법 및 고시 개정 사항을 지속 업데이트해 반영합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 실습이 포함되나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>성분표 읽기, 광고 카피 적법성 검토, 클레임 대응 롤플레이 등 실무 중심 실습이 포함됩니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 맞춤형 교육 개발도 가능한가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>귀사의 제품 카테고리·규모·직무에 맞는 맞춤 교육 교재와 케이스 스터디를 별도 개발합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">화장품 안전 교육</div>
+        <h2>화장품 안전과 법규,<br>전문가가 직접 가르칩니다</h2>
+        <p>귀사 화장품 사업의 법규 준수와 품질 안전을 강화하는 맞춤 교육을 설계합니다.<br>직무별·수준별 화장품 전문 교육 프로그램을 제안합니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

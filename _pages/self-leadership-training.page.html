@@ -1,0 +1,275 @@
+<!-- META
+TITLE: 셀프리더십 역량강화 기업교육 -- 빅링커
+HEADER_PROMO: 2026 셀프리더십 역량강화 프로그램
+ACTIVE_TAB: self-leadership-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>셀프리더십 교육</strong>
+      <span>자율 성과 창출 역량개발</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">SELF-LEADERSHIP</div>
+      <h1>스스로 이끄는 힘,<br><em>셀프리더십</em> 교육</h1>
+      <p>자기 관리·목표 설정·내적 동기 강화를 통해 구성원 스스로 성과를 만드는 셀프리더십 역량을 개발합니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">자기주도</div><div class="s-label">성과 창출 핵심역량</div></div><div class="hero-stat"><div class="s-num">목표설정</div><div class="s-label">OKR/SMART 실습</div></div><div class="hero-stat"><div class="s-num">내적동기</div><div class="s-label">지속 성장 동력</div></div><div class="hero-stat"><div class="s-num">실전형</div><div class="s-label">현업 적용 중심</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">이런 상황에<br>처해 있지 않으신가요?</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(74,104,255,0.12);">🎯</div>
+          <h3>목표는 있는데 실행이 안 됩니다</h3>
+          <p>연초에 세운 목표가 중반을 넘기면 흐릿해지고, 급한 업무에 밀려 중요한 일을 미루게 됩니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">⚡</div>
+          <h3>타인의 지시 없이는 움직이지 않습니다</h3>
+          <p>상사의 지시가 있을 때만 움직이는 수동적 구성원이 늘어나면 팀 전체의 자율성과 생산성이 낮아집니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);">🔋</div>
+          <h3>번아웃과 무기력이 반복됩니다</h3>
+          <p>자기 기준 없이 외부 요구에만 반응하다 보면 에너지가 소진되고 업무 의미를 잃어버리게 됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">셀프리더십 4단계<br>역량 개발 프로그램</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">자기 인식</div>
+          <h3>강점과 가치관 발견</h3>
+          <p>자신의 강점, 가치관, 동기 요인을 명확히 인식하고 고유한 리더십 스타일을 정의합니다.</p>
+          <ul class="prog-list"><li>강점 진단 도구 활용</li><li>개인 가치관 맵핑</li><li>동기 요인 분석 워크숍</li><li>자기 인식 피드백 리포트</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">목표 설정</div>
+          <h3>OKR·SMART 목표 설계</h3>
+          <p>막연한 목표를 실행 가능한 구체적 목표로 전환하고, 스스로 점검하는 루틴을 만듭니다.</p>
+          <ul class="prog-list"><li>OKR 목표 설정 실습</li><li>SMART 기준 목표 재정립</li><li>주간 리뷰 루틴 설계</li><li>우선순위 설정 매트릭스</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">자기 관리</div>
+          <h3>시간·에너지 관리</h3>
+          <p>시간 관리, 집중력 향상, 에너지 관리를 통해 생산성을 높이고 번아웃을 예방하는 습관을 형성합니다.</p>
+          <ul class="prog-list"><li>타임블로킹·포모도로 기법</li><li>에너지 관리 사이클 이해</li><li>딥워크 환경 설계</li><li>디지털 방해 요소 제거</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">내적 동기</div>
+          <h3>지속 성장의 원동력</h3>
+          <p>외적 보상 없이도 스스로 성장하려는 내적 동기를 강화하고 회복 탄력성을 키웁니다.</p>
+          <ul class="prog-list"><li>내적 동기 강화 기법</li><li>성장 마인드셋 전환</li><li>자기 효능감 높이는 방법</li><li>실패에서 배우는 반성 루틴</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">셀프리더십 교육의<br>4가지 기대 성과</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>자율 성과 창출</h3><p>구성원 스스로 목표를 설정하고 실행해 상시 관리 없이도 성과를 만드는 역량이 형성됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>번아웃 예방</h3><p>자기 관리 루틴과 에너지 관리 능력이 강화되어 지속 가능한 업무 몰입 상태를 유지합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>팀 자율성 향상</h3><p>구성원 각자의 셀프리더십이 올라가면 팀 전체의 자율성과 협업 효율이 동반 상승합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>조직 문화 개선</h3><p>시켜야 한다는 문화에서 스스로 한다는 문화로 전환되어 조직 활력과 혁신이 높아집니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIAL: trust-proof.html -->
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">셀프리더십 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 어떤 직급에 가장 효과적인가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>신입·주니어부터 시니어, 팀장급까지 모든 직급에 효과적입니다. 특히 자율적으로 업무를 조율해야 하는 중견 실무자에게 효과가 큽니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 1회 교육으로도 효과가 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>1회 집중 워크숍도 의미 있지만, 3~6개월 단위의 반복 교육과 후속 액션플랜 관리가 병행될 때 행동 변화가 지속됩니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 온라인 교육으로도 가능한가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>Zoom 기반 실시간 워크숍과 LMS 비동기 학습 방식 모두 가능합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 팀 단위로 진행할 수 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>팀 내 공통 목표 설정, 상호 피드백 루틴 등 팀 맥락을 반영한 커리큘럼으로 재구성합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">셀프리더십 기업교육</div>
+        <h2>자율 성과를 만드는<br>조직이 되고 싶다면</h2>
+        <p>구성원 스스로 이끄는 힘을 키우는 셀프리더십 교육을 설계합니다.<br>귀사의 조직 문화와 업무 맥락에 맞는 맞춤형 프로그램을 제안합니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

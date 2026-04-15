@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BigLinker 인공지능 AI와 미래 기업교육</title>
+  <title>인공지능 AI와 미래 기업교육 -- 빅링커</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -30,56 +30,6 @@
     a { color: inherit; text-decoration: none; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
     .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-
-    /* ── HEADER ── */
-    .top-shell {
-      position: sticky; top: 0; z-index: 120;
-      background: rgba(255,255,255,0.94); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--header-line);
-      transition: transform 0.28s ease, opacity 0.28s ease;
-    }
-    .top-shell.is-collapsed { transform: translateY(-100%); opacity: 0; }
-    .sticky-category-shell {
-      position: sticky; top: 0; z-index: 110;
-      background: rgba(247,248,252,0.98);
-      border-top: 1px solid #edf0f6; border-bottom: 1px solid var(--header-line);
-      backdrop-filter: blur(12px);
-    }
-    .family-bar { background: #fff; }
-    .family-outer { display: flex; justify-content: center; padding: 10px 0; }
-    .family-wrap {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      min-height: 46px; padding: 4px; border: 1px solid var(--header-line-strong);
-      border-radius: 16px; background: #fff; box-shadow: 0 4px 16px rgba(32,43,73,0.08);
-      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
-    }
-    .family-wrap::-webkit-scrollbar, .category-tabs::-webkit-scrollbar { display: none; }
-    .family-link { flex: 0 0 auto; padding: 8px 12px; border-radius: 10px; font-size: 13px; font-weight: 700; color: var(--header-muted); }
-    .family-link.is-active { background: var(--brand-soft); color: var(--brand); }
-    .main-header { background: #fff; }
-    .main-header-wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; min-height: 78px; }
-    .header-promo {
-      justify-self: start; align-self: stretch; display: flex; align-items: center;
-      padding: 0 16px; border-radius: 0 0 14px 14px; border: 1px solid #dfe3ff; border-top: 0;
-      background: linear-gradient(180deg, #eef2ff 0%, #f6f8ff 100%);
-      color: var(--brand); font-size: 13px; font-weight: 800; white-space: nowrap;
-    }
-    .brand { display: flex; flex-direction: column; align-items: center; justify-self: center; text-align: center; gap: 6px; }
-    .brand-mark { width: 132px; height: 44px; object-fit: contain; }
-    .brand-copy span { display: block; color: var(--header-muted); font-size: 12px; line-height: 1.45; }
-    .header-actions { display: flex; align-items: center; justify-self: end; gap: 8px; }
-    .cta-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--brand); background: var(--brand); color: #fff; font-weight: 700; font-size: 13px; }
-    .category-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 58px; gap: 12px; }
-    .category-balance { justify-self: start; width: 120px; }
-    .category-tabs { display: flex; align-items: center; justify-content: center; gap: 2px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
-    .category-tab { flex: 0 0 auto; position: relative; padding: 0 16px; min-height: 48px; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700; color: var(--header-muted); }
-    .category-tab.is-active { color: var(--brand); }
-    .category-tab.is-active::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 0; height: 3px; background: var(--brand); border-radius: 999px; }
-    .category-utility { display: flex; align-items: center; justify-self: end; gap: 6px; width: 240px; }
-    .utility-link { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid #e4e7ef; background: #f8f9fc; color: #6f7786; font-size: 12px; font-weight: 700; cursor: pointer; }
-    .utility-link:hover { background: var(--brand-soft); color: var(--brand); }
-
-    /* ── SECTION BASE ── */
     .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
     .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
     .section-eyebrow.center { justify-content: center; }
@@ -87,162 +37,56 @@
     .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
     .section-light { background: #fff; padding: 100px 0; }
     .section-panel { background: var(--panel); padding: 100px 0; }
-    .section-dark {
-      padding: 110px 0;
-      --header-text: var(--text); --header-muted: var(--muted); --brand-soft: rgba(74,104,255,0.12);
-    }
-    .section-dark .light-card { --header-text: #17191f; --header-muted: #6e7687; --brand-soft: #eef0ff; }
+    .section-dark { padding: 110px 0; }
     .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
-
-    /* ── HERO ── */
     .hero { padding: 88px 0 68px; text-align: center; }
     .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
-    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.6vw,60px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
     .hero h1 em { color: var(--brand-2); font-style: normal; }
-    .hero p { max-width: 560px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
     .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
     .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
     .btn-primary:hover { transform: translateY(-2px); }
     .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
-    .btn-secondary:hover { transform: translateY(-2px); }
-    .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
     .hero-stat { text-align: center; }
     .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
-    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
-
-    /* ── 개요 그리드 ── */
-    .trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .trend-left h2 { margin-bottom: 16px; }
-    .trend-left p { font-size: 14.5px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
-    .trend-flow { display: flex; align-items: center; gap: 12px; padding: 20px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); margin-bottom: 20px; flex-wrap: wrap; }
-    .trend-box { flex: 1; min-width: 100px; text-align: center; }
-    .trend-box .t-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
-    .trend-box .t-val { font-size: 13px; color: var(--muted); line-height: 1.55; }
-    .trend-arrow { color: var(--brand-2); font-size: 18px; flex-shrink: 0; }
-    .eval-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .eval-card { padding: 20px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
-    .eval-card .e-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .eval-card p { font-size: 12.5px; color: var(--muted); line-height: 1.65; margin: 0; }
-
-    /* ── WHY ── */
-    .why-4grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .why-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
-    .why-card .w-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
-    .why-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .why-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
-
-    /* ── FOR WHO ── */
-    .who-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .who-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
-    .who-card .wc-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 12px; border-radius: 999px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); font-size: 11px; font-weight: 800; color: var(--brand-2); margin-bottom: 14px; }
-    .who-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-    .who-card ul { list-style: none; display: grid; gap: 7px; }
-    .who-card ul li { display: flex; align-items: flex-start; gap: 7px; font-size: 13px; color: var(--muted); line-height: 1.65; }
-    .who-card ul li::before { content: "•"; color: var(--brand-2); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
-
-    /* ── 비교표 (LIGHT) ── */
-    .outcome-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #e7ebf3; }
-    .outcome-table th { padding: 16px 22px; font-size: 13px; font-weight: 800; text-align: center; }
-    .outcome-table th:first-child { text-align: left; background: #f8f9fc; color: var(--header-muted); width: 200px; }
-    .outcome-table th.ours { background: var(--brand); color: #fff; }
-    .outcome-table th.sub { background: #f0f1f7; color: var(--header-muted); }
-    .outcome-table td { padding: 15px 22px; font-size: 13.5px; border-top: 1px solid #edf0f6; text-align: center; vertical-align: middle; line-height: 1.6; }
-    .outcome-table td:first-child { text-align: left; background: #fafbfc; color: var(--header-muted); font-size: 12px; font-weight: 700; }
-    .outcome-table td.ours { background: rgba(74,104,255,0.06); color: var(--header-text); font-weight: 600; }
-    .outcome-table td.sub { color: #a0a8b8; }
-    .check { color: var(--brand); font-weight: 800; font-size: 15px; }
-
-    /* ── 4단계 프로세스 ── */
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-    .process-grid::before { content: ""; position: absolute; top: 40px; left: 12.5%; right: 12.5%; height: 2px; background: rgba(74,104,255,0.25); z-index: 0; }
-    .process-item { position: relative; z-index: 1; text-align: center; padding: 0 10px; }
-    .proc-circle { width: 80px; height: 80px; border-radius: 999px; background: var(--bg-soft); border: 2px solid rgba(74,104,255,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; margin: 0 auto 18px; }
-    .proc-circle.active { background: var(--brand); border-color: var(--brand); }
-    .proc-step { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--brand-2); }
-    .proc-circle.active .proc-step { color: rgba(255,255,255,0.8); }
-    .proc-num { font-size: 20px; font-weight: 900; color: var(--text); line-height: 1; }
-    .process-item h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-    .process-item ul { list-style: none; display: grid; gap: 5px; }
-    .process-item ul li { font-size: 12px; color: var(--muted); line-height: 1.6; }
-
-    /* ── 모듈 커리큘럼 (PANEL) ── */
-    .week-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .week-card { padding: 26px 20px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
-    .week-card.highlight { background: var(--brand); border-color: var(--brand); }
-    .week-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 10px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 10px; }
-    .week-card.highlight .week-tag { background: rgba(255,255,255,0.25); color: #fff; }
-    .week-card h3 { font-size: 14px; font-weight: 700; color: var(--header-text); margin-bottom: 12px; line-height: 1.35; }
-    .week-card.highlight h3 { color: #fff; }
-    .week-list { display: grid; gap: 6px; list-style: none; }
-    .week-list li { font-size: 12px; color: var(--header-muted); line-height: 1.6; display: flex; align-items: flex-start; gap: 6px; }
-    .week-list li::before { content: "—"; color: var(--brand); flex-shrink: 0; font-size: 11px; margin-top: 1px; }
-    .week-card.highlight .week-list li { color: rgba(255,255,255,0.8); }
-    .week-card.highlight .week-list li::before { color: rgba(255,255,255,0.5); }
-    .week-output { display: flex; align-items: center; gap: 6px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #edf0f6; font-size: 11px; font-weight: 700; color: var(--brand); }
-    .week-card.highlight .week-output { border-top-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); }
-
-    /* ── 도메인 카드 ── */
-    .domain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .domain-card { padding: 24px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
-    .domain-card .d-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .domain-card .d-icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-    .domain-card h3 { font-size: 14px; font-weight: 700; color: var(--text); }
-    .domain-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .domain-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); font-size: 11.5px; color: var(--muted); }
-
-    /* ── 기대효과 ── */
-    .case-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .case-card { padding: 22px 20px; border-radius: var(--radius-sm); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
-    .case-badge { display: inline-flex; align-items: center; min-height: 22px; padding: 0 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 10px; }
-    .case-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; }
-    .case-card .c-result { font-size: 12px; font-weight: 700; color: var(--brand); margin-top: 10px; }
-
-    /* ── REVIEW MARQUEE ── */
-    .review-band { padding: 110px 0 130px; background: #0b0e13; }
-    .review-band-head { text-align: center; margin-bottom: 46px; }
-    .review-band-head h2 { font-size: clamp(24px,3vw,40px); font-weight: 700; line-height: 1.24; letter-spacing: -0.045em; color: var(--text); margin-bottom: 10px; }
-    .review-band-head p { font-size: 15px; color: var(--muted); }
-    .review-marquee-wrap { width: 100vw; position: relative; left: 50%; margin-left: -50vw; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 8px 0 4px; }
-    .review-marquee-row { display: flex; gap: 14px; width: max-content; }
-    .review-marquee-row:nth-child(1) { animation: rmq-ltr 38s linear infinite; }
-    .review-marquee-row:nth-child(2) { animation: rmq-rtl 55s linear infinite; }
-    .review-marquee-row:nth-child(3) { animation: rmq-ltr 46s linear infinite; }
-    @keyframes rmq-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    @keyframes rmq-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
-    .review-mini { flex-shrink: 0; padding: 20px 22px 16px; border-radius: 18px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.09); display: flex; flex-direction: column; }
-    .review-mini:nth-child(4n+1) { width: 280px; } .review-mini:nth-child(4n+2) { width: 340px; } .review-mini:nth-child(4n+3) { width: 260px; } .review-mini:nth-child(4n+4) { width: 320px; }
-    .review-mini.accent-blue { background: rgba(74,104,255,0.10); border-color: rgba(74,104,255,0.25); }
-    .review-mini.accent-purple { background: rgba(167,139,250,0.10); border-color: rgba(167,139,250,0.22); }
-    .review-mini p { margin: 8px 0 auto; font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.7; flex: 1; }
-    .review-mini-meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .review-mini-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,#4a68ff,#a78bfa); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
-    .review-mini.accent-blue .review-mini-avatar { background: linear-gradient(135deg,#2563eb,#4a68ff); }
-    .review-mini.accent-purple .review-mini-avatar { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
-    .review-mini-info strong { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.9); }
-    .review-mini-info span { font-size: 10px; color: #7f92ff; font-weight: 600; }
-    .star-row { color: #f59e0b; font-size: 13px; margin-bottom: 8px; }
-
-    /* ── FAQ ── */
-    .faq-band { padding: 100px 0; background: var(--bg-soft); }
-    .faq-title { font-size: clamp(22px,2.5vw,34px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.3; color: var(--text); margin-bottom: 40px; text-align: center; }
-    details { border-bottom: 1px solid rgba(255,255,255,0.08); }
-    summary { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; cursor: pointer; list-style: none; font-size: 15px; font-weight: 600; color: var(--text); }
-    summary::-webkit-details-marker { display: none; }
-    .faq-arrow { font-size: 18px; color: var(--brand-2); transition: transform 0.2s; flex-shrink: 0; }
-    details[open] .faq-arrow { transform: rotate(180deg); }
-    details p { padding: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.8; }
-
-    /* ── CTA ── */
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
     .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
     .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
     .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
-    .cta-inner h2 { font-size: clamp(26px,3.2vw,44px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
     .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
     .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
     .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
     .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
-
-    /* ── FOOTER ── */
     .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
     .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
@@ -258,12 +102,9 @@
     .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
     .footer-policy-links { display: flex; gap: 16px; }
     .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
-
-    /* ── MOBILE ── */
     .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
     .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
     .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
-
     @media (max-width: 760px) {
       .wrap, .inner { padding: 0 16px; }
       .main-header-wrap, .category-row { grid-template-columns: 1fr; }
@@ -271,19 +112,11 @@
       .brand { justify-self: center; }
       .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
       .mobile-floating-cta { display: flex; }
-      .trend-grid { grid-template-columns: 1fr; gap: 32px; }
-      .eval-grid { grid-template-columns: 1fr; }
-      .why-4grid { grid-template-columns: 1fr; }
-      .who-cols { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-      .process-grid::before { display: none; }
-      .week-grid { grid-template-columns: 1fr 1fr; }
-      .domain-grid { grid-template-columns: 1fr; }
-      .case-cards { grid-template-columns: 1fr; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-nav-grid { grid-template-columns: 1fr 1fr; }
-      .outcome-table { font-size: 12px; }
-      .outcome-table th, .outcome-table td { padding: 12px 10px; }
     }
     /* ══════════════════════════════════════════
        HEADER — common (partials/header.css)
@@ -517,7 +350,7 @@
     <header class="main-header">
       <div class="inner">
         <div class="main-header-wrap">
-          <div class="header-promo">2026 기업교육 프로그램 오픈</div>
+          <div class="header-promo">2026 AI 미래 교육 프로그램</div>
           <a class="brand" href="./index.html">
             <img class="brand-mark" src="./assets/biglinker-logo.webp" alt="빅링커 로고">
             <div class="brand-copy"><span>기업교육 코칭 전문 플랫폼</span></div>
@@ -559,7 +392,7 @@
           <a class="category-tab" href="./cs-training.html">AI 상향평준화 교육</a>
           <a class="category-tab" href="./customer-service-training.html">고객서비스 역량강화</a>
           <a class="category-tab" href="./digital-detox-training.html">디지털디톡스 역량강화</a>
-          <a class="category-tab is-active" href="./leadership-training.html">리더십 역량강화</a>
+          <a class="category-tab" href="./leadership-training.html">리더십 역량강화</a>
           <a class="category-tab" href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
           <a class="category-tab" href="./musculoskeletal-training.html">근골격계 질환예방</a>
           <a class="category-tab" href="./self-leadership-training.html">셀프리더십</a>
@@ -567,7 +400,7 @@
           <a class="category-tab" href="./promotion-training.html">진급자 역량강화</a>
           <a class="category-tab" href="./manager-training.html">팀장·중간관리자</a>
           <a class="category-tab" href="./media-literacy-training.html">미디어 리터러시</a>
-          <a class="category-tab" href="./ai-future-training.html">인공지능 AI와 미래</a>
+          <a class="category-tab is-active" href="./ai-future-training.html">인공지능 AI와 미래</a>
           <a class="category-tab" href="./sustainable-food-training.html">지속 가능한 푸드</a>
           <a class="category-tab" href="./cosmetic-safety-training.html">화장품 안전 교육</a>
           <a class="category-tab" href="./emotional-resilience-training.html">감정 코칭·회복 탄력성</a>
@@ -612,487 +445,440 @@
     </div>
   </aside>
 
-<!-- ══ HERO ══ -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-kicker">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#7f92ff" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="#7f92ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          AI & FUTURE TRAINING
-        </div>
-        <h1>인공지능 AI와 미래<br><em>기업 교육</em></h1>
-        <p>AI 기술의 현재와 미래를 이해하고 업무에 활용하는 실전형 기업교육입니다. AI 기초 이해, 업무 자동화, 미래 직업 변화, AI 리터러시를 체계적으로 다룹니다.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#cta">교육 문의하기 →</a>
-          <a class="btn-secondary" href="#curriculum">교육 과정 보기</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="s-num">20명↓</div><div class="s-label">권장 교육 인원</div></div>
-          <div class="hero-stat"><div class="s-num">8-16H</div><div class="s-label">기본 교육 시간</div></div>
-          <div class="hero-stat"><div class="s-num">4개</div><div class="s-label">핵심 모듈 구성</div></div>
-          <div class="hero-stat"><div class="s-num">실습형</div><div class="s-label">워크숍·롤플레잉 포함</div></div>
-        </div>
+<!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">AI AND FUTURE SOCIETY</div>
+      <h1>AI 시대를 앞서가는<br><em>인공지능과 미래</em> 교육</h1>
+      <p>AI의 기술 원리부터 사회·산업·직업에 미치는 영향까지, 구성원 모두가 AI 시대를 준비하는 미래 역량 교육입니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
       </div>
-    </section>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">AI 이해</div><div class="s-label">기술 원리와 활용</div></div><div class="hero-stat"><div class="s-num">직업 변화</div><div class="s-label">미래 직무 대비</div></div><div class="hero-stat"><div class="s-num">윤리·리스크</div><div class="s-label">AI 책임 있는 활용</div></div><div class="hero-stat"><div class="s-num">전 직급</div><div class="s-label">입문~심화 선택</div></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ══ PROPOSAL BACKGROUND ══ -->
-    <section class="section-dark" id="background">
-      <div class="wrap">
-        <div class="trend-grid">
-          <div class="trend-left">
-            <div class="section-eyebrow">Proposal Background</div>
-            <h2 class="sec-h2" style="color:var(--text);margin-bottom:16px;">리더십 교육<br>제안 배경</h2>
-            <p>급격한 조직 환경 변화 속에서 리더의 역할은 단순 관리자에서 팀 성과를 촉진하는 코치로 진화하고 있습니다. 그러나 많은 조직에서 리더는 업무 전문성만으로 발탁되어 리더십 교육 없이 역할을 수행하는 경우가 많습니다.</p>
-            <div class="trend-flow">
-              <div class="trend-box">
-                <div class="t-label">과정명</div>
-                <div class="t-val">리더십<br>역량강화과정</div>
-              </div>
-              <div class="trend-arrow">→</div>
-              <div class="trend-box">
-                <div class="t-label">대상</div>
-                <div class="t-val">팀장·부서장<br>예비 리더</div>
-              </div>
-              <div class="trend-arrow">→</div>
-              <div class="trend-box">
-                <div class="t-label">방법</div>
-                <div class="t-val" style="color:var(--brand-2);font-weight:700;">강의·토의·실습<br>(워크숍·롤플레잉)</div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <p style="font-size:14px;color:var(--muted);margin-bottom:18px;">교육이 필요한 이유</p>
-            <div class="eval-grid">
-              <div class="eval-card">
-                <div class="e-title">리더십 공백 문제</div>
-                <p>전문성만으로 발탁된 리더는 관계 형성, 동기부여, 위임 등 리더십 핵심 역량이 부족한 경우가 많습니다.</p>
-              </div>
-              <div class="eval-card">
-                <div class="e-title">구성원 이탈 방지</div>
-                <p>직원 이직 원인 1위는 '상사와의 갈등'입니다. 리더의 소통 역량이 팀 유지에 직결됩니다.</p>
-              </div>
-              <div class="eval-card">
-                <div class="e-title">성과관리 체계 부재</div>
-                <p>명확한 목표 설정과 피드백 없이는 팀 성과가 개인 역량에 의존하게 되어 조직 성장이 한계에 부딪힙니다.</p>
-              </div>
-              <div class="eval-card">
-                <div class="e-title">조직문화 구현 역할</div>
-                <p>리더는 조직문화의 최전선입니다. 리더의 행동 방식이 팀 문화와 구성원 몰입도를 결정합니다.</p>
-              </div>
-            </div>
-          </div>
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">AI를 두려워하거나<br>무시하는 직원이 너무 많습니다</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(239,68,68,0.12);">🤖</div>
+          <h3>AI가 내 일자리를 빼앗을까 두렵습니다</h3>
+          <p>막연한 공포가 AI 도구 활용을 막고 변화에 저항하게 만들어 조직 전체의 디지털 전환을 방해합니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">💡</div>
+          <h3>AI가 무엇인지 잘 모릅니다</h3>
+          <p>업무에서 AI 도구를 써야 하는데 기초 개념 이해가 없어 어디서 시작해야 할지 모르는 직원이 많습니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(168,85,247,0.12);">⚖️</div>
+          <h3>AI를 무분별하게 사용합니다</h3>
+          <p>저작권·개인정보·편향 문제를 이해하지 못한 채 AI를 무분별하게 사용해 법적·윤리적 리스크를 만듭니다.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ══ LEADERSHIP TREND ══ -->
-    <section class="section-dark" id="why-us">
-      <div class="wrap">
-        <div class="section-eyebrow center">Leadership Trend</div>
-        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:12px;">현대 조직이 요구하는<br>리더십 역량의 변화</h2>
-        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:44px;">수직적 지시에서 수평적 코칭으로, 성과 압박에서 성장 촉진으로. 리더십 패러다임이 전환되고 있습니다.</p>
-        <div class="why-4grid">
-          <div class="why-card">
-            <div class="w-icon">🎯</div>
-            <h3>코칭형 리더십</h3>
-            <p>지시와 통제 대신 질문과 경청으로 구성원의 역량을 이끌어내는 코칭 리더십이 핵심 역량으로 부상하고 있습니다.</p>
-          </div>
-          <div class="why-card">
-            <div class="w-icon">🤝</div>
-            <h3>심리적 안전감 조성</h3>
-            <p>구성원이 자유롭게 의견을 제시하고 실패를 두려워하지 않는 환경 조성이 팀 혁신과 성과의 기반이 됩니다.</p>
-          </div>
-          <div class="why-card">
-            <div class="w-icon">📊</div>
-            <h3>데이터 기반 성과관리</h3>
-            <p>감(感)이 아닌 명확한 KPI와 피드백 체계로 팀 성과를 관리하고 개선 방향을 설계하는 역량이 요구됩니다.</p>
-          </div>
-          <div class="why-card">
-            <div class="w-icon">🌱</div>
-            <h3>구성원 성장 촉진</h3>
-            <p>구성원의 커리어 성장을 지원하고 강점을 활용하는 방식이 장기적 팀 생산성과 충성도를 높입니다.</p>
-          </div>
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">AI 시대 대비<br>4개 교육 모듈</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">AI 기초 이해</div>
+          <h3>AI가 무엇인지 알기</h3>
+          <p>머신러닝·딥러닝·생성형 AI의 작동 원리를 비전공자도 이해할 수 있는 언어로 설명하고 실제 적용 사례를 통해 친숙하게 만듭니다.</p>
+          <ul class="prog-list"><li>AI 핵심 개념 15가지</li><li>생성형 AI 작동 원리</li><li>ChatGPT·Copilot 실습 체험</li><li>AI가 잘하는 것과 못하는 것</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">미래 직업과 역할</div>
+          <h3>내 직업은 어떻게 변하나</h3>
+          <p>각 직무에서 AI가 대체하는 부분과 인간이 더 잘할 수 있는 부분을 분석해 미래 직업 변화에 주도적으로 대응합니다.</p>
+          <ul class="prog-list"><li>직무별 AI 영향도 분석</li><li>AI 시대 핵심 역량 5가지</li><li>하이브리드 역할 설계</li><li>개인 커리어 AI 대비 전략</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">AI 윤리와 리스크</div>
+          <h3>책임 있는 AI 활용</h3>
+          <p>AI 편향·개인정보·저작권·딥페이크 등 AI 활용 시 발생하는 윤리적·법적 문제를 이해하고 책임 있게 사용하는 기준을 학습합니다.</p>
+          <ul class="prog-list"><li>AI 편향과 공정성</li><li>개인정보 보호와 AI</li><li>AI 생성 콘텐츠 저작권</li><li>기업 AI 사용 정책 수립</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">AI 전략과 혁신</div>
+          <h3>조직의 AI 전환 전략</h3>
+          <p>경영진과 팀장을 위한 AI 도입 전략, 변화 관리, ROI 측정 방법을 다루어 조직 수준의 AI 전환을 실질적으로 설계합니다.</p>
+          <ul class="prog-list"><li>AI 전환 로드맵 설계</li><li>AI 도입 ROI 측정</li><li>변화 저항 관리 전략</li><li>AI 거버넌스 체계 구축</li></ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ══ PROGRAM OUTCOMES TABLE ══ -->
-    <section class="section-light" id="outcomes">
-      <div class="wrap">
-        <div class="section-eyebrow center">Program Outcomes &amp; Goals</div>
-        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:12px;">리더십 프로그램<br>핵심성과 및 목표</h2>
-        <p style="text-align:center;font-size:15px;color:var(--header-muted);margin-bottom:44px;">각 역량 영역별 학습 목표와 기대 성과를 한눈에 확인하세요.</p>
-        <div style="overflow-x:auto;">
-          <table class="outcome-table">
-            <thead>
-              <tr>
-                <th>역량 영역</th>
-                <th class="ours">학습 목표</th>
-                <th class="sub">교육 방법</th>
-                <th class="sub">기대 성과</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>리더십 셀프 인식</td>
-                <td class="ours">나의 리더십 스타일 진단 및 강점·개선점 파악</td>
-                <td class="sub">진단 도구·그룹 토의</td>
-                <td class="sub">자기 인식 강화 및 리더십 방향 설정</td>
-              </tr>
-              <tr>
-                <td>소통 &amp; 경청 역량</td>
-                <td class="ours">적극적 경청, 비폭력 대화, 피드백 기술 습득</td>
-                <td class="sub">롤플레잉·실습</td>
-                <td class="sub">팀 내 신뢰 형성 및 갈등 감소</td>
-              </tr>
-              <tr>
-                <td>성과관리 역량</td>
-                <td class="ours">목표 설정(OKR/KPI), 중간 점검, 피드백 체계 구축</td>
-                <td class="sub">워크숍·사례 분석</td>
-                <td class="sub">팀 성과 향상 및 목표 달성률 개선</td>
-              </tr>
-              <tr>
-                <td>코칭 스킬</td>
-                <td class="ours">GROW 모델 기반 1:1 코칭 대화 실습</td>
-                <td class="sub">페어 코칭·피드백</td>
-                <td class="sub">구성원 자율성·성장 동기 강화</td>
-              </tr>
-              <tr>
-                <td>의사결정 &amp; 문제해결</td>
-                <td class="ours">구조적 의사결정 프로세스와 팀 합의 도출 기술</td>
-                <td class="sub">케이스 스터디</td>
-                <td class="sub">의사결정 속도·품질 향상</td>
-              </tr>
-              <tr>
-                <td>조직문화 리더십</td>
-                <td class="ours">심리적 안전감 조성 및 팀 규범 설계</td>
-                <td class="sub">팀 액션플랜</td>
-                <td class="sub">팀 몰입도·이탈율 개선</td>
-              </tr>
-            </tbody>
-          </table>
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">AI 미래 교육의<br>4가지 기대 성과</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>AI 공포에서 역량으로</h3><p>막연한 AI 두려움을 제거하고 적극적으로 활용하는 역량으로 전환됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>디지털 전환 가속화</h3><p>전 직원의 AI 기초 이해가 높아져 조직의 디지털 전환 속도가 빨라집니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>리스크 예방</h3><p>AI 윤리·저작권·개인정보 리스크를 사전에 이해해 법적·평판 문제를 예방합니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>미래 경쟁력 확보</h3><p>AI 시대 핵심 역량을 갖춘 인재를 육성해 산업 변화에 주도적으로 대응합니다.</p></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ══ WHO IS IT FOR ══ -->
-    <section class="section-dark" id="for-who">
-      <div class="wrap">
-        <div class="section-eyebrow center">Who Is It For</div>
-        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:44px;">이런 분들께 꼭 필요합니다</h2>
-        <div class="who-cols">
-          <div class="who-card">
-            <div class="wc-tag">신임 리더</div>
-            <h3>처음 팀을 맡은 팀장</h3>
-            <ul>
-              <li>전문가에서 리더로의 역할 전환이 어려운 분</li>
-              <li>구성원 관리와 동기부여 방법을 배우고 싶은 분</li>
-              <li>리더십의 기초를 체계적으로 다지고 싶은 분</li>
-            </ul>
-          </div>
-          <div class="who-card">
-            <div class="wc-tag">중간 관리자</div>
-            <h3>경험 있는 팀장·부서장</h3>
-            <ul>
-              <li>기존 방식에서 벗어나 새로운 리더십 스타일이 필요한 분</li>
-              <li>성과관리 체계를 고도화하고 싶은 분</li>
-              <li>코칭형 리더십으로 전환을 원하는 분</li>
-            </ul>
-          </div>
-          <div class="who-card">
-            <div class="wc-tag">예비 리더</div>
-            <h3>리더십을 준비하는 핵심 인재</h3>
-            <ul>
-              <li>리더 후보군으로 사전 역량을 키우고 싶은 분</li>
-              <li>자기 리더십 스타일을 미리 발견하고 싶은 분</li>
-              <li>조직 내 영향력을 높이고 싶은 분</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- TRUST-PROOF PARTIAL ─────────────────────────────────────────────────────
+     자격증 · 이력 + 카카오 합격 후기 (동적 애니메이션)
+     cert  : assets/certificate/ (20장)
+     kakao : assets/kakao/       (49장)
+─────────────────────────────────────────────────────────────────────────── -->
+<style>
+/* ── TRUST SECTION ── */
+.trust-section{padding:90px 0;background:#fff}
+.trust-intro{text-align:center;max-width:560px;margin:0 auto 52px}
+.trust-intro h2{font-size:clamp(22px,2.8vw,36px);font-weight:700;color:var(--header-text,#17191f);margin-bottom:12px;letter-spacing:-0.04em}
+.trust-intro p{font-size:15px;color:var(--header-muted,#6e7687);line-height:1.8}
+.trust-label{font-size:12px;font-weight:800;color:var(--brand,#4a68ff);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
 
-    <!-- ══ CURRICULUM ══ -->
-    <section class="section-panel" id="curriculum">
-      <div class="wrap">
-        <div class="section-eyebrow center">Curriculum</div>
-        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:10px;">교육과정 모듈 구성</h2>
-        <p style="text-align:center;font-size:15px;color:var(--header-muted);margin-bottom:44px;">강의, 진단 도구, 워크숍, 롤플레잉, 그룹 피드백을 결합한 4개 모듈로 구성됩니다.</p>
-        <div class="week-grid">
-          <div class="week-card">
-            <div class="week-tag">M1</div>
-            <h3>리더십 셀프 인식 &amp; 마인드셋</h3>
-            <ul class="week-list">
-              <li>리더십 스타일 진단 (DiSC·MBTI 연계)</li>
-              <li>나의 리더십 강점과 개선 영역 탐색</li>
-              <li>리더의 역할과 책임 재정의</li>
-              <li>심리적 안전감이란 무엇인가</li>
-            </ul>
-            <div class="week-output">2.0H</div>
-          </div>
-          <div class="week-card">
-            <div class="week-tag">M2</div>
-            <h3>소통·경청·피드백 역량</h3>
-            <ul class="week-list">
-              <li>적극적 경청과 공감 대화 기술</li>
-              <li>건설적 피드백 주고받기 (SBI 모델)</li>
-              <li>어려운 대화 시나리오 롤플레잉</li>
-              <li>세대 간·성향 간 소통 전략</li>
-            </ul>
-            <div class="week-output">2.0~3.0H</div>
-          </div>
-          <div class="week-card highlight">
-            <div class="week-tag">M3</div>
-            <h3>코칭 스킬 &amp; 성과관리</h3>
-            <ul class="week-list">
-              <li>GROW 모델 기반 코칭 대화 실습</li>
-              <li>OKR·KPI 목표 설정 워크숍</li>
-              <li>1:1 면담 구조화 및 운영</li>
-              <li>성과 피드백과 인정·인정 방법</li>
-            </ul>
-            <div class="week-output">3.0H</div>
-          </div>
-          <div class="week-card">
-            <div class="week-tag">M4</div>
-            <h3>팀 문화 설계 &amp; 액션플랜</h3>
-            <ul class="week-list">
-              <li>우리 팀 문화 현황 진단</li>
-              <li>팀 규범과 협업 원칙 설계</li>
-              <li>현업 적용 개인 액션플랜 작성</li>
-              <li>그룹 공유 및 피드백</li>
-            </ul>
-            <div class="week-output">2.0~3.0H</div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* ── CERT TICKER ── */
+.cert-ticker-wrap{overflow:hidden;position:relative;padding:4px 0}
+.cert-ticker-wrap::before,.cert-ticker-wrap::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:1;pointer-events:none}
+.cert-ticker-wrap::before{left:0;background:linear-gradient(to right,#fff 60%,transparent)}
+.cert-ticker-wrap::after{right:0;background:linear-gradient(to left,#fff 60%,transparent)}
+.cert-ticker{display:flex;gap:16px;width:max-content;animation:cert-tick 50s linear infinite}
+.cert-ticker:hover{animation-play-state:paused}
+.cert-ticker img{width:200px;height:140px;border-radius:14px;object-fit:cover;border:1px solid #e7ebf3;box-shadow:0 4px 16px rgba(0,0,0,.07);flex-shrink:0;transition:transform .25s}
+.cert-ticker img:hover{transform:scale(1.04)}
+@keyframes cert-tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    <!-- ══ BASIC FLOW ══ -->
-    <section class="section-dark" id="process">
-      <div class="wrap">
-        <div class="section-eyebrow center">Training Flow</div>
-        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:10px;">리더십 교육 기본 흐름</h2>
-        <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:56px;">진단 → 학습 → 실습 → 현업 적용의 4단계 흐름으로 학습 전이를 극대화합니다.</p>
-        <div class="process-grid">
-          <div class="process-item">
-            <div class="proc-circle">
-              <span class="proc-step">STEP</span>
-              <span class="proc-num">01</span>
-            </div>
-            <h3>진단 &amp; 인식</h3>
-            <ul>
-              <li>리더십 스타일 사전 진단</li>
-              <li>강점·개선점 명확화</li>
-              <li>학습 목표 설정</li>
-            </ul>
-          </div>
-          <div class="process-item">
-            <div class="proc-circle">
-              <span class="proc-step">STEP</span>
-              <span class="proc-num">02</span>
-            </div>
-            <h3>핵심 역량 학습</h3>
-            <ul>
-              <li>소통·코칭·성과관리 이론</li>
-              <li>우수 리더 사례 분석</li>
-              <li>개념 적용 토의</li>
-            </ul>
-          </div>
-          <div class="process-item">
-            <div class="proc-circle">
-              <span class="proc-step">STEP</span>
-              <span class="proc-num">03</span>
-            </div>
-            <h3>실습 &amp; 피드백</h3>
-            <ul>
-              <li>롤플레잉·페어 코칭 실습</li>
-              <li>퍼실리테이터 즉시 피드백</li>
-              <li>그룹 관찰 및 상호 코칭</li>
-            </ul>
-          </div>
-          <div class="process-item">
-            <div class="proc-circle active">
-              <span class="proc-step">STEP</span>
-              <span class="proc-num">04</span>
-            </div>
-            <h3>현업 적용 계획</h3>
-            <ul>
-              <li>개인 액션플랜 수립</li>
-              <li>팀 문화 개선 과제 도출</li>
-              <li>사후 실행 점검 방안 안내</li>
-            </ul>
-          </div>
-        </div>
-        <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:40px;">조직 상황과 학습 목표에 따라 1일 집중형 또는 2회차 분할형으로 운영할 수 있습니다.</p>
-      </div>
-    </section>
+/* ── KAKAO FLIP GRID ── */
+.kakao-flip-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:44px}
+.kakao-flip-card{aspect-ratio:9/16;perspective:800px;cursor:pointer}
+.kakao-flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;border-radius:12px;
+  transition:transform .65s cubic-bezier(.4,.2,.2,1)}
+.kakao-flip-card.is-flipped .kakao-flip-inner{transform:rotateY(180deg)}
+.kakao-flip-front,.kakao-flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden}
+.kakao-flip-front{background:linear-gradient(135deg,rgba(74,104,255,.1),rgba(127,146,255,.06));
+  border:1.5px solid rgba(74,104,255,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.kakao-flip-front .kff-icon{font-size:22px;opacity:.7}
+.kakao-flip-front .kff-text{font-size:9px;font-weight:700;color:rgba(74,104,255,.55);text-align:center;padding:0 8px;line-height:1.45}
+.kakao-flip-back{transform:rotateY(180deg)}
+.kakao-flip-back img{width:100%;height:100%;object-fit:cover}
 
-    <!-- ══ CUSTOMIZATION ══ -->
-    <section class="section-dark" id="custom">
-      <div class="wrap">
-        <div class="section-eyebrow center">Customization</div>
-        <h2 class="sec-h2" style="color:var(--text);text-align:center;margin-bottom:44px;">기업 맞춤형 설계 옵션</h2>
-        <div class="domain-grid">
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">🏭</div><h3>산업별 맞춤 사례</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">제조·생산 현장</span>
-              <span class="domain-tag">IT·스타트업</span>
-              <span class="domain-tag">금융·서비스</span>
-              <span class="domain-tag">의료·공공기관</span>
-            </div>
-          </div>
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">📐</div><h3>리더 수준별 구성</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">예비 리더 입문</span>
-              <span class="domain-tag">신임 팀장 기초</span>
-              <span class="domain-tag">중간 관리자 심화</span>
-              <span class="domain-tag">임원 리더십</span>
-            </div>
-          </div>
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">🔧</div><h3>모듈 조합 선택</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">소통 집중형</span>
-              <span class="domain-tag">성과관리 집중형</span>
-              <span class="domain-tag">코칭 스킬 집중형</span>
-              <span class="domain-tag">전체 통합형</span>
-            </div>
-          </div>
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">🧰</div><h3>진단 도구 연계</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">DiSC 진단</span>
-              <span class="domain-tag">MBTI 연계</span>
-              <span class="domain-tag">360도 피드백</span>
-              <span class="domain-tag">강점 진단</span>
-            </div>
-          </div>
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">📅</div><h3>운영 방식</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">1일 집중 워크숍</span>
-              <span class="domain-tag">2회차 분할 운영</span>
-              <span class="domain-tag">온라인 혼합 방식</span>
-              <span class="domain-tag">사후 코칭 연계</span>
-            </div>
-          </div>
-          <div class="domain-card">
-            <div class="d-head"><div class="d-icon">📝</div><h3>사후 관리</h3></div>
-            <div class="domain-tags">
-              <span class="domain-tag">액션플랜 점검</span>
-              <span class="domain-tag">개별 코칭 세션</span>
-              <span class="domain-tag">온라인 자료 제공</span>
-              <span class="domain-tag">리더십 커뮤니티</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* ── SCATTER (꽃가루처럼 흩날리며 사라짐) ── */
+@keyframes tp-scatter{
+  0%  {opacity:1;transform:translateY(0) translateX(0) rotate(0deg) scale(1)}
+  100%{opacity:0;transform:translateY(var(--sy,-80px)) translateX(var(--sx,0px)) rotate(var(--sr,15deg)) scale(.55)}
+}
+.kakao-flip-card.is-scattering .kakao-flip-inner{
+  animation:tp-scatter .55s ease-out forwards;
+}
+/* ── FALL-IN (위에서 떨어지며 등장) ── */
+@keyframes tp-fallin{
+  0%  {opacity:0;transform:translateY(-50px) scale(.82)}
+  60% {opacity:1}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+.kakao-flip-card.is-falling .kakao-flip-inner{
+  animation:tp-fallin .45s ease-out forwards;
+  animation-delay:var(--fd,0ms);
+  opacity:0;
+}
 
-    <!-- ══ EXPECTED OUTCOME ══ -->
-    <section class="section-light" id="cases">
-      <div class="wrap">
-        <div class="section-eyebrow center">Expected Outcome</div>
-        <h2 class="sec-h2" style="color:var(--header-text);text-align:center;margin-bottom:44px;">교육 후 기대 효과</h2>
-        <div class="case-cards">
-          <div class="case-card">
-            <div class="case-badge">팀 성과 향상</div>
-            <p>명확한 목표 설정과 체계적 성과관리 역량 강화로 팀의 목표 달성률과 생산성이 높아집니다.</p>
-            <div class="c-result">→ 성과관리 체계 정착</div>
-          </div>
-          <div class="case-card">
-            <div class="case-badge">구성원 몰입 증가</div>
-            <p>코칭형 소통과 심리적 안전감 조성으로 팀 내 신뢰가 높아지고 구성원의 자발적 참여가 증가합니다.</p>
-            <div class="c-result">→ 이직률 감소 및 몰입도 상승</div>
-          </div>
-          <div class="case-card">
-            <div class="case-badge">리더십 역량 내재화</div>
-            <p>진단·실습·액션플랜 기반 학습으로 교육 후에도 현업에서 지속적으로 활용 가능한 역량이 형성됩니다.</p>
-            <div class="c-result">→ 교육 전이 효과 극대화</div>
-          </div>
-        </div>
-      </div>
-    </section>
+@media(max-width:900px){.kakao-flip-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:600px){
+  .kakao-flip-grid{grid-template-columns:repeat(3,1fr)}
+  .cert-ticker img{width:150px;height:105px}
+}
+</style>
 
-    <!-- ══ REVIEW MARQUEE ══ -->
-    <section class="review-band">
-      <div class="review-band-head">
-        <h2>리더십 교육 후기</h2>
-        <p>리더십 역량 강화 교육을 경험한 기업 참가자들의 생생한 반응</p>
-      </div>
-      <div class="review-marquee-wrap">
-        <div class="review-marquee-row">
-          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"팀장이 된 후 막막했던 1:1 면담을 어떻게 해야 하는지 구체적으로 배울 수 있었습니다. 교육 다음 주부터 바로 적용했어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">김</div><div class="review-mini-info"><strong>김민준</strong><span>신임 팀장 / IT기업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"GROW 코칭 모델 실습이 가장 유익했습니다. 구성원과 대화하는 방식이 완전히 달라진 것을 스스로도 느낍니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">이</div><div class="review-mini-info"><strong>이지현</strong><span>부서장 / 금융업</span></div></div></div>
-          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"단순 강의가 아니라 롤플레잉과 그룹 피드백 중심이어서 현장에서 바로 쓸 수 있는 스킬을 익혔습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">박</div><div class="review-mini-info"><strong>박재현</strong><span>팀장 / 제조업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"심리적 안전감 개념을 팀에 적용했더니 구성원들이 의견을 훨씬 적극적으로 내기 시작했습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">최</div><div class="review-mini-info"><strong>최서연</strong><span>팀장 / 스타트업</span></div></div></div>
-          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"리더십 스타일 진단 결과를 팀원들과 공유했더니 서로를 더 잘 이해하는 계기가 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">정</div><div class="review-mini-info"><strong>정하은</strong><span>팀장 / 유통기업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"OKR 설정 워크숍 덕분에 팀 목표가 명확해지고 구성원들의 자율성도 높아졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">한</div><div class="review-mini-info"><strong>한동훈</strong><span>부서장 / 서비스업</span></div></div></div>
-        </div>
-        <div class="review-marquee-row">
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"SBI 피드백 모델을 배우고 나서 구성원에게 더 구체적이고 건설적인 피드백을 줄 수 있게 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">오</div><div class="review-mini-info"><strong>오민아</strong><span>팀장 / 의료기관</span></div></div></div>
-          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"어려운 대화 롤플레잉이 처음엔 어색했지만 실제 상황에서 훨씬 침착하게 대응할 수 있었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">윤</div><div class="review-mini-info"><strong>윤성훈</strong><span>팀장 / 공공기관</span></div></div></div>
-          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"팀 규범을 함께 만드는 워크숍을 진행했더니 구성원들의 책임감이 눈에 띄게 달라졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">강</div><div class="review-mini-info"><strong>강지우</strong><span>부서장 / IT기업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"예비 리더 과정으로 참여했는데 팀장이 되기 전 미리 역할을 준비할 수 있어서 너무 좋았습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">신</div><div class="review-mini-info"><strong>신보람</strong><span>예비 리더 / 금융업</span></div></div></div>
-          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"기존 관리 방식의 문제점을 직시하게 해줬고, 코칭형 리더십으로 바뀌는 계기가 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">임</div><div class="review-mini-info"><strong>임혜진</strong><span>부서장 / 제조업</span></div></div></div>
-        </div>
-        <div class="review-marquee-row">
-          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"진단 결과를 기반으로 나의 리더십 패턴을 인식하고 개선점을 찾을 수 있어 자기 성찰의 시간이 됐습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">류</div><div class="review-mini-info"><strong>류민석</strong><span>팀장 / 스타트업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"액션플랜을 작성하고 한 달 후 점검까지 연계해줘서 교육 내용이 실제로 정착되는 느낌이었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">문</div><div class="review-mini-info"><strong>문승호</strong><span>팀장 / 서비스업</span></div></div></div>
-          <div class="review-mini accent-blue"><div class="star-row">★★★★★</div><p>"다른 부서 리더들과 함께 실습하면서 다양한 상황을 공유할 수 있어 시야가 넓어졌습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">배</div><div class="review-mini-info"><strong>배수연</strong><span>부서장 / 유통기업</span></div></div></div>
-          <div class="review-mini"><div class="star-row">★★★★★</div><p>"성과관리, 소통, 코칭 세 가지를 한 번에 배울 수 있어서 분산된 교육보다 훨씬 효율적이었습니다."</p><div class="review-mini-meta"><div class="review-mini-avatar">전</div><div class="review-mini-info"><strong>전유림</strong><span>팀장 / IT기업</span></div></div></div>
-          <div class="review-mini accent-purple"><div class="star-row">★★★★★</div><p>"팀원들과의 관계가 변하는 걸 느꼈습니다. 경청하는 방식 하나만 바꿨는데 분위기가 달라졌어요."</p><div class="review-mini-meta"><div class="review-mini-avatar">장</div><div class="review-mini-info"><strong>장민호</strong><span>팀장 / 제조업</span></div></div></div>
-        </div>
-      </div>
-    </section>
+<section class="trust-section" id="trust">
+  <div class="wrap">
+    <div class="trust-intro">
+      <div class="section-eyebrow" style="color:var(--brand,#4a68ff);justify-content:center;margin-bottom:12px;">Trust &amp; Proof</div>
+      <h2>코치의 자격과 실력,<br>합격자가 증명합니다</h2>
+      <p>빅링커 코치진의 공인 자격증과 수강생이 직접 보내온 합격 후기를 확인하세요.</p>
+    </div>
 
-    <!-- ══ FAQ ══ -->
-    <section class="faq-band">
-      <div class="wrap">
-        <div style="max-width:780px;margin:0 auto;">
-          <div class="faq-title">자주 묻는 질문</div>
-          <details open>
-            <summary>어떤 직급이 참여하는 게 가장 효과적인가요? <span class="faq-arrow">▾</span></summary>
-            <p>팀장·부서장 등 현직 리더뿐만 아니라 예비 리더(고성과자, 승진 예정자)에게도 효과적입니다. 직급이 혼합될 경우 다양한 관점에서 토의가 활성화되는 효과가 있습니다. 권장 인원은 20명 이하입니다.</p>
-          </details>
-          <details>
-            <summary>교육 시간과 운영 방식은 어떻게 되나요? <span class="faq-arrow">▾</span></summary>
-            <p>기본 구성은 8~16시간이며, 1일 집중 워크숍(8H) 또는 2회차 분할 운영(각 4~8H)이 가능합니다. 강의, 진단, 롤플레잉, 워크숍, 액션플랜 작성을 결합합니다.</p>
-          </details>
-          <details>
-            <summary>리더십 진단 도구는 어떤 것을 사용하나요? <span class="faq-arrow">▾</span></summary>
-            <p>기업의 보유 도구(DiSC, MBTI 등)와 연계하거나 빅링커 자체 리더십 스타일 진단지를 활용합니다. 사전 진단 데이터를 활용해 개인화된 학습 경험을 설계합니다.</p>
-          </details>
-          <details>
-            <summary>기업 상황에 맞게 내용을 커스터마이징할 수 있나요? <span class="faq-arrow">▾</span></summary>
-            <p>가능합니다. 사전 인터뷰를 통해 조직 현황, 리더십 이슈, 산업 특성을 파악한 후 사례와 실습 내용을 맞춤 설계합니다. 성과관리, 소통, 코칭 중 집중 영역 선택도 가능합니다.</p>
-          </details>
-          <details>
-            <summary>교육 후 효과를 어떻게 유지하나요? <span class="faq-arrow">▾</span></summary>
-            <p>교육 후 개인 액션플랜 수립, 4주 후 점검 세션, 개별 코칭 연계, 온라인 자료 제공을 통해 현업 적용을 지속 지원합니다. 요청 시 분기별 팔로업 과정도 운영합니다.</p>
-          </details>
-        </div>
+    <!-- 자격증 · 이력 ticker -->
+    <div class="trust-label">자격증 · 이력</div>
+    <div class="cert-ticker-wrap">
+      <div class="cert-ticker" id="certTicker">
+        <!-- SET A -->
+        <img src="./assets/certificate/KakaoTalk_20260413_193056294_08.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_01.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_02.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_03.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_04.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_05.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_06.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_07.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_08.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_09.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_02.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_03.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_10.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_12.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_15.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_19.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_26.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_29.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193346683.webp" alt="자격증" loading="lazy">
+        <!-- SET B (duplicate for seamless loop) -->
+        <img src="./assets/certificate/KakaoTalk_20260413_193056294_08.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_01.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_02.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_03.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_04.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_05.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_06.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_07.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_08.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193104956_09.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_02.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_03.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_10.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_12.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_15.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_19.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_26.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193340481_29.webp" alt="자격증" loading="lazy">
+        <img src="./assets/certificate/KakaoTalk_20260413_193346683.webp" alt="자격증" loading="lazy">
       </div>
-    </section>
+    </div>
 
-    <!-- ══ CTA ══ -->
-    <section class="cta-band" id="cta">
-      <div class="wrap">
-        <div class="cta-inner">
-          <div class="cta-badge">리더십 역량 강화 기업교육</div>
-          <h2>성과를 이끄는 리더를 만드는<br>실전형 교육</h2>
-          <p>진단·학습·실습·현업 적용까지 한 흐름으로 연결합니다.<br>귀사의 리더십 과제에 맞춘 맞춤형 교육안으로 조정할 수 있습니다.</p>
-          <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 →</a>
-          <div class="cta-contact">
-            <div class="cta-contact-item">📞 <strong>02-2039-8584</strong></div>
-            <div class="cta-contact-item">📱 <strong>Kate.Lee 010-2507-0174</strong></div>
-            <div class="cta-contact-item">📱 <strong>Kevin.Lee 010-9253-7319</strong></div>
-            <div class="cta-contact-item">✉️ <strong>biglinkerkor@gmail.com</strong></div>
-          </div>
+    <!-- 카카오 합격 후기 flip grid -->
+    <div class="trust-label" style="margin-top:48px;">수강생 카카오톡 합격 후기</div>
+    <div class="kakao-flip-grid" id="kakaoFlipGrid">
+      <!-- 카드 12개는 JS로 렌더링 -->
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const KAKAO = [
+    "KakaoTalk_20260413_193056294.webp","KakaoTalk_20260413_193056294_01.webp",
+    "KakaoTalk_20260413_193056294_02.webp","KakaoTalk_20260413_193056294_03.webp",
+    "KakaoTalk_20260413_193056294_04.webp","KakaoTalk_20260413_193056294_05.webp",
+    "KakaoTalk_20260413_193056294_06.webp","KakaoTalk_20260413_193056294_07.webp",
+    "KakaoTalk_20260413_193104956.webp","KakaoTalk_20260413_193203932.webp",
+    "KakaoTalk_20260413_193233280.webp","KakaoTalk_20260413_193233280_01.webp",
+    "KakaoTalk_20260413_193233280_02.webp","KakaoTalk_20260413_193243331.webp",
+    "KakaoTalk_20260413_193243331_01.webp","KakaoTalk_20260413_193243331_02.webp",
+    "KakaoTalk_20260413_193243331_03.webp","KakaoTalk_20260413_193243331_04.webp",
+    "KakaoTalk_20260413_193243331_05.webp","KakaoTalk_20260413_193243331_06.webp",
+    "KakaoTalk_20260413_193243331_07.webp","KakaoTalk_20260413_193243331_08.webp",
+    "KakaoTalk_20260413_193243331_09.webp","KakaoTalk_20260413_193243331_10.webp",
+    "KakaoTalk_20260413_193243331_11.webp","KakaoTalk_20260413_193243331_12.webp",
+    "KakaoTalk_20260413_193243331_13.webp","KakaoTalk_20260413_193243331_14.webp",
+    "KakaoTalk_20260413_193340481_01.webp","KakaoTalk_20260413_193340481_04.webp",
+    "KakaoTalk_20260413_193340481_05.webp","KakaoTalk_20260413_193340481_06.webp",
+    "KakaoTalk_20260413_193340481_07.webp","KakaoTalk_20260413_193340481_08.webp",
+    "KakaoTalk_20260413_193340481_09.webp","KakaoTalk_20260413_193340481_11.webp",
+    "KakaoTalk_20260413_193340481_13.webp","KakaoTalk_20260413_193340481_14.webp",
+    "KakaoTalk_20260413_193340481_16.webp","KakaoTalk_20260413_193340481_17.webp",
+    "KakaoTalk_20260413_193340481_18.webp","KakaoTalk_20260413_193340481_20.webp",
+    "KakaoTalk_20260413_193340481_21.webp","KakaoTalk_20260413_193340481_22.webp",
+    "KakaoTalk_20260413_193340481_23.webp","KakaoTalk_20260413_193340481_24.webp",
+    "KakaoTalk_20260413_193340481_25.webp","KakaoTalk_20260413_193340481_27.webp",
+    "KakaoTalk_20260413_193340481_28.webp"
+  ];
+  let shuffled = KAKAO.slice().sort(()=>Math.random()-.5);
+  let idx = 0;
+
+  function nextImg(){
+    const src = './assets/kakao/' + shuffled[idx % shuffled.length];
+    idx++;
+    if(idx >= shuffled.length){ shuffled.sort(()=>Math.random()-.5); idx=0; }
+    return src;
+  }
+
+  function buildCard(){
+    const card = document.createElement('div');
+    card.className = 'kakao-flip-card';
+    card.innerHTML =
+      '<div class="kakao-flip-inner">' +
+        '<div class="kakao-flip-front"><span class="kff-icon">📱</span><span class="kff-text">합격 후기<br>확인하기</span></div>' +
+        '<div class="kakao-flip-back"><img src="" alt="합격 후기" loading="lazy"></div>' +
+      '</div>';
+    return card;
+  }
+
+  function init(){
+    const grid = document.getElementById('kakaoFlipGrid');
+    if(!grid) return;
+    const cols = window.innerWidth < 600 ? 3 : window.innerWidth < 900 ? 4 : 6;
+    const ROWS = 2;
+    const TOTAL = cols * ROWS;
+
+    // Build cards
+    for(let i=0;i<TOTAL;i++){
+      const card = buildCard();
+      card.querySelector('.kakao-flip-back img').src = nextImg();
+      grid.appendChild(card);
+    }
+
+    let phase = 'flipping';
+    let flipQueue = [];
+    let flipTimer = null;
+
+    function resetQueue(){
+      flipQueue = Array.from(grid.querySelectorAll('.kakao-flip-card'));
+      flipQueue.sort(()=>Math.random()-.5);
+    }
+    resetQueue();
+
+    function flipNextCard(){
+      if(phase !== 'flipping') return;
+      const unflipped = flipQueue.filter(c=>!c.classList.contains('is-flipped'));
+      if(unflipped.length === 0){
+        phase = 'scattering';
+        clearTimeout(flipTimer);
+        setTimeout(doScatter, 900);
+        return;
+      }
+      const card = unflipped[0];
+      card.classList.add('is-flipped');
+      flipTimer = setTimeout(flipNextCard, 320 + Math.random()*180);
+    }
+
+    function doScatter(){
+      const cards = grid.querySelectorAll('.kakao-flip-card');
+      cards.forEach(card=>{
+        const sx = (Math.random()-.5)*160;
+        const sy = -(60+Math.random()*100);
+        const sr = (Math.random()-.5)*40;
+        card.style.setProperty('--sx', sx+'px');
+        card.style.setProperty('--sy', sy+'px');
+        card.style.setProperty('--sr', sr+'deg');
+        card.classList.remove('is-flipped');
+        card.classList.add('is-scattering');
+      });
+      setTimeout(doReset, 650);
+    }
+
+    function doReset(){
+      const cards = grid.querySelectorAll('.kakao-flip-card');
+      cards.forEach((card,i)=>{
+        card.classList.remove('is-scattering');
+        // assign new image to back before fall-in
+        card.querySelector('.kakao-flip-back img').src = nextImg();
+        card.style.setProperty('--fd', (i*55)+'ms');
+        card.classList.add('is-falling');
+        setTimeout(()=>card.classList.remove('is-falling'), i*55+500);
+      });
+      const totalDelay = (cards.length-1)*55 + 500 + 400;
+      setTimeout(()=>{
+        phase = 'flipping';
+        resetQueue();
+        flipTimer = setTimeout(flipNextCard, 300);
+      }, totalDelay);
+    }
+
+    // Start first cycle
+    flipTimer = setTimeout(flipNextCard, 800);
+
+    // Manual flip on click
+    grid.addEventListener('click', e=>{
+      const card = e.target.closest('.kakao-flip-card');
+      if(!card || card.classList.contains('is-scattering') || card.classList.contains('is-falling')) return;
+      card.classList.toggle('is-flipped');
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">인공지능 AI와 미래 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 비전공자도 이해할 수 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>기술 교육이 아니라 개념 이해와 실무 활용에 초점을 둡니다. 코딩이나 수학 지식 없이도 충분히 이해할 수 있는 수준으로 설계합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. AI 기술 교육과 어떻게 다른가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>기술 활용 교육이 어떻게 쓰는가에 집중한다면, AI 미래 교육은 왜 써야 하는가, 어떤 영향을 미치는가, 어떻게 대비해야 하는가에 집중합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 경영진 대상 교육도 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>AI 전략과 거버넌스에 집중한 경영진 교육 모듈이 있습니다. 1~2시간 임원 브리핑 세션도 가능합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 업종별로 다르게 구성할 수 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>제조·금융·의료·리테일·공공 등 업종별 AI 활용 사례와 영향을 특화해 구성합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">인공지능 AI와 미래 교육</div>
+        <h2>AI를 두려워하지 않는<br>조직을 만듭니다</h2>
+        <p>전 직원이 AI 시대를 이해하고 준비하는 교육을 설계합니다.<br>입문부터 전략까지 직급·직무별 맞춤 AI 미래 교육을 제안합니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+<style>
+  .site-footer { background:#07090e; border-top:1px solid rgba(255,255,255,0.07); color:rgba(255,255,255,0.5); font-size:13px; }
+  .footer-inner { max-width:1320px; margin:0 auto; padding:64px 28px 40px; }
+  .footer-top { display:grid; grid-template-columns:280px 1fr; gap:60px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .footer-logo { font-size:20px; font-weight:900; color:#fff; letter-spacing:-0.04em; margin-bottom:14px; }
+  .footer-brand-desc { font-size:13px; color:rgba(255,255,255,0.42); line-height:1.7; margin-bottom:20px; }
+  .footer-sns { display:flex; gap:8px; }
+  .footer-sns-btn { width:34px; height:34px; border-radius:9px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.55); font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.18s,border-color 0.18s,color 0.18s; }
+  .footer-sns-btn:hover { background:rgba(74,104,255,0.15); border-color:rgba(74,104,255,0.35); color:#7f92ff; }
+  .footer-nav-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .footer-nav-group h4 { font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin-bottom:16px; }
+  .footer-nav-group a { display:block; font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:10px; transition:color 0.18s; text-decoration:none; }
+  .footer-nav-group a:hover { color:#fff; }
+  .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:28px; }
+  .footer-legal { font-size:12px; color:rgba(255,255,255,0.25); line-height:1.7; }
+  .footer-policy-links { display:flex; gap:20px; flex-shrink:0; }
+  .footer-policy-links a { font-size:12px; color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.18s; }
+  .footer-policy-links a:hover { color:rgba(255,255,255,0.7); }
+  @media(max-width:860px){ .footer-top{grid-template-columns:1fr;gap:40px;} }
+  @media(max-width:540px){ .footer-inner{padding:48px 20px 32px;} .footer-nav-grid{grid-template-columns:repeat(2,1fr);} .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;} .footer-policy-links{gap:14px;} }
+</style>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -1116,6 +902,16 @@
             <a href="./digital-detox-training.html">디지털디톡스 역량강화</a>
             <a href="./leadership-training.html">리더십 역량강화</a>
             <a href="./business-manner-speech-training.html">비즈니스 매너 스피치</a>
+            <a href="./musculoskeletal-training.html">근골격계 질환예방</a>
+            <a href="./self-leadership-training.html">셀프리더십</a>
+            <a href="./communication-training.html">의사소통 역량강화</a>
+            <a href="./promotion-training.html">진급자 역량강화</a>
+            <a href="./manager-training.html">팀장·중간관리자</a>
+            <a href="./media-literacy-training.html">미디어 리터러시</a>
+            <a href="./ai-future-training.html">인공지능 AI와 미래</a>
+            <a href="./sustainable-food-training.html">지속 가능한 푸드</a>
+            <a href="./cosmetic-safety-training.html">화장품 안전 교육</a>
+            <a href="./emotional-resilience-training.html">감정 코칭·회복 탄력성</a>
           </div>
           <div class="footer-nav-group">
             <h4>콘텐츠</h4>
@@ -1136,11 +932,15 @@
       <div class="footer-bottom">
         <div class="footer-legal">
           © 2026 BigLinker. All rights reserved.<br>
-          사업자등록번호 000-00-00000 · 통신판매업 제0000-서울-0000호
+          상호: 주식회사 빅링커 &nbsp;|&nbsp; 대표: 이재현, 이가형 &nbsp;|&nbsp; 개인정보관리책임자: 이재현<br>
+          전화: 02-2039-8584 &nbsp;|&nbsp; 이메일: biglinkerkor@gmail.com<br>
+          강남센터: 서울특별시 강남구 영동대로602 6층<br>
+          가산센터: 서울특별시 금천구 디지털로9길 32, B동 1901호<br>
+          사업자등록번호: 538-81-03520
         </div>
         <div class="footer-policy-links">
-          <a href="#">이용약관</a>
-          <a href="#">개인정보처리방침</a>
+          <a href="https://gobiglinker.com/siteinfo/terms" target="_blank" rel="noopener">이용약관</a>
+          <a href="https://gobiglinker.com/siteinfo/privacy" target="_blank" rel="noopener">개인정보처리방침</a>
         </div>
       </div>
     </div>
@@ -1149,10 +949,10 @@
 
 <div class="mobile-floating-cta">
     <div>
-      <strong>리더십 역량 강화 교육</strong>
-      <span>지금 교육 문의하기</span>
+      <strong>AI와 미래 교육</strong>
+      <span>전 직원 AI 시대 대비 교육</span>
     </div>
-    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">신청 →</a>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
   </div>
 
   <!-- Social Proof Toast Layer -->

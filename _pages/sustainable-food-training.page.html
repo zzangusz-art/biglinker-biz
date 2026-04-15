@@ -1,0 +1,275 @@
+<!-- META
+TITLE: 지속 가능한 푸드 기업교육 -- 빅링커
+HEADER_PROMO: 2026 지속가능 식품·급식 교육 프로그램
+ACTIVE_TAB: sustainable-food-training
+-->
+
+<!-- PAGE_CSS -->
+<style>
+    :root {
+      --header-bg: #f6f7fb; --header-surface: #ffffff; --header-line: #e5e8ef;
+      --header-line-strong: #d7dbe5; --header-text: #17191f; --header-muted: #6e7687;
+      --bg: #0b0e13; --bg-soft: #121722; --bg-dark: #090c11; --panel: #f5f6fb;
+      --text: #f6f7fb; --muted: rgba(255,255,255,0.66); --muted-dark: #5d6473;
+      --brand: #4a68ff; --brand-2: #7f92ff; --brand-soft: #eef0ff;
+      --max: 1320px; --radius-xl: 28px; --radius-lg: 22px; --radius-md: 18px;
+      --radius-sm: 12px; --radius-xs: 8px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28); --shadow-card: 0 18px 36px rgba(36,46,78,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: radial-gradient(circle at 50% 0%, rgba(66,104,255,0.12), transparent 18%),
+        linear-gradient(180deg, #090b0f 0%, #0b0e13 32%, #0d1015 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .inner { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .section-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.36); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .section-eyebrow.center { justify-content: center; }
+    .section-eyebrow.center::before { display: none; }
+    .section-light .section-eyebrow, .section-panel .section-eyebrow { color: var(--brand); }
+    .section-light { background: #fff; padding: 100px 0; }
+    .section-panel { background: var(--panel); padding: 100px 0; }
+    .section-dark { padding: 110px 0; }
+    .sec-h2 { font-size: clamp(22px,2.8vw,36px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.3; }
+    .hero { padding: 88px 0 68px; text-align: center; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.3); background: rgba(74,104,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 28px; }
+    .hero h1 { max-width: 780px; margin: 0 auto 20px; font-size: clamp(30px,4.4vw,58px); line-height: 1.14; letter-spacing: -0.05em; font-weight: 700; color: var(--text); }
+    .hero h1 em { color: var(--brand-2); font-style: normal; }
+    .hero p { max-width: 580px; margin: 0 auto 36px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 13px; font-size: 15px; font-weight: 700; background: var(--brand); color: #fff; box-shadow: 0 10px 28px rgba(74,104,255,0.28); transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: 13px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.22); color: var(--text); background: rgba(255,255,255,0.06); transition: transform 0.2s; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat .s-num { font-size: 32px; font-weight: 900; color: var(--brand-2); letter-spacing: -0.04em; line-height: 1; }
+    .hero-stat .s-label { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .point-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .point-card { padding: 28px 22px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .point-card .p-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+    .point-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .point-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .program-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    .prog-card { padding: 28px 24px; border-radius: var(--radius-md); border: 1px solid #e7ebf3; background: #fff; box-shadow: var(--shadow-card); }
+    .prog-tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 12px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 800; margin-bottom: 12px; }
+    .prog-card h3 { font-size: 15px; font-weight: 700; color: var(--header-text); margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: var(--header-muted); line-height: 1.7; margin: 0 0 14px; }
+    .prog-list { list-style: none; display: grid; gap: 5px; }
+    .prog-list li { font-size: 12px; color: var(--brand); font-weight: 700; display: flex; align-items: flex-start; gap: 6px; }
+    .prog-list li::before { content: "¹3"; flex-shrink: 0; }
+    .effect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .effect-card { display: flex; align-items: flex-start; gap: 18px; padding: 28px 26px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.04); }
+    .effect-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: rgba(74,104,255,0.15); border: 1px solid rgba(74,104,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--brand-2); }
+    .effect-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .effect-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+    .faq-band { padding: 100px 0; }
+    .faq-title { font-size: clamp(20px,2.4vw,30px); font-weight: 700; letter-spacing: -0.04em; text-align: center; margin-bottom: 40px; line-height: 1.4; }
+    .faq-band details { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-band summary { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; gap: 16px; }
+    .faq-band summary::-webkit-details-marker { display: none; }
+    .faq-band details[open] summary { color: var(--brand-2); }
+    .faq-arrow { flex-shrink: 0; font-size: 16px; color: var(--muted); transition: transform 0.2s; }
+    .faq-band details[open] .faq-arrow { transform: rotate(180deg); color: var(--brand-2); }
+    .faq-band details p { padding: 0 0 20px; font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+    .cta-band { padding: 120px 0; background: radial-gradient(ellipse at 50% 0%, rgba(74,104,255,0.24), transparent 70%); }
+    .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .cta-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(127,146,255,0.4); background: rgba(127,146,255,0.1); font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 20px; }
+    .cta-inner h2 { font-size: clamp(24px,3vw,42px); font-weight: 700; line-height: 1.25; letter-spacing: -0.045em; color: var(--text); margin-bottom: 16px; }
+    .cta-inner p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+    .cta-contact { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-contact-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .cta-contact-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .site-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 280px 1fr; gap: 60px; padding: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-size: 18px; font-weight: 900; color: var(--brand-2); margin-bottom: 12px; }
+    .footer-brand-desc { font-size: 13px; color: var(--muted-dark); line-height: 1.75; margin: 0 0 16px; }
+    .footer-sns { display: flex; gap: 8px; }
+    .footer-sns-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--muted-dark); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .footer-nav-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .footer-nav-group h4 { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .footer-nav-group a { display: block; font-size: 13px; color: var(--muted-dark); margin-bottom: 10px; font-weight: 500; }
+    .footer-nav-group a:hover { color: var(--brand-2); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 16px; }
+    .footer-legal { font-size: 12px; color: var(--muted-dark); line-height: 1.7; }
+    .footer-policy-links { display: flex; gap: 16px; }
+    .footer-policy-links a { font-size: 12px; color: var(--muted-dark); font-weight: 600; }
+    .mobile-floating-cta { display: none; position: fixed; bottom: 20px; left: 16px; right: 16px; border-radius: 16px; background: var(--brand); padding: 14px 18px; box-shadow: 0 16px 40px rgba(74,104,255,0.4); align-items: center; gap: 12px; z-index: 900; }
+    .mobile-floating-cta strong { display: block; font-size: 14px; font-weight: 800; color: #fff; }
+    .mobile-floating-cta span { font-size: 12px; color: rgba(255,255,255,0.75); }
+    @media (max-width: 760px) {
+      .wrap, .inner { padding: 0 16px; }
+      .main-header-wrap, .category-row { grid-template-columns: 1fr; }
+      .header-promo, .header-actions, .category-balance { display: none; }
+      .brand { justify-self: center; }
+      .category-utility { width: auto; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding-bottom: 8px; }
+      .mobile-floating-cta { display: flex; }
+      .point-grid { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .effect-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+</style>
+<!-- /PAGE_CSS -->
+
+<!-- MOBILE_CTA -->
+<div class="mobile-floating-cta">
+    <div>
+      <strong>지속가능 푸드 교육</strong>
+      <span>ESG 식품·급식 역량 교육</span>
+    </div>
+    <a class="btn-primary" href="#cta" style="min-height:40px;padding:0 18px;font-size:13px;flex-shrink:0;">문의 &rarr;</a>
+  </div>
+<!-- /MOBILE_CTA -->
+
+<!-- MAIN -->
+  <!-- == HERO == -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker">SUSTAINABLE FOOD</div>
+      <h1>음식이 만드는 미래,<br><em>지속 가능한 푸드</em> 교육</h1>
+      <p>식품 산업·단체 급식·유통 분야 종사자와 소비자 대상으로 지속 가능한 식품 시스템 이해, 탄소 발자국, 건강한 식문화를 교육합니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cta">교육 문의하기 &rarr;</a>
+        <a class="btn-secondary" href="#programs">프로그램 보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="s-num">ESG 연계</div><div class="s-label">지속가능 경영 실천</div></div><div class="hero-stat"><div class="s-num">탄소발자국</div><div class="s-label">식품 환경 영향 이해</div></div><div class="hero-stat"><div class="s-num">건강식문화</div><div class="s-label">올바른 식습관</div></div><div class="hero-stat"><div class="s-num">실전형</div><div class="s-label">현장 적용 중심</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PAIN == -->
+  <section class="section-dark" id="pain">
+    <div class="wrap">
+      <div class="section-eyebrow">PROBLEM</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">지속가능성이 이제<br>식품 산업의 핵심입니다</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(34,197,94,0.12);">🌱</div>
+          <h3>ESG 경영에서 식품이 빠져 있습니다</h3>
+          <p>탄소 중립과 ESG 실천에서 식품 생산·유통·소비 단계의 환경 영향을 빠뜨리면 지속가능경영 보고서가 불완전해집니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(245,158,11,0.12);">🍽️</div>
+          <h3>단체 급식의 지속가능성 관리가 어렵습니다</h3>
+          <p>기업 구내식당·학교·의료시설의 급식 담당자들이 친환경 식재료 선택과 음식물 쓰레기 감축을 체계적으로 실천하기 어렵습니다.</p>
+        </div>
+        <div class="point-card">
+          <div class="p-icon" style="background:rgba(74,104,255,0.12);">🏷️</div>
+          <h3>소비자의 윤리적 소비 기준이 높아졌습니다</h3>
+          <p>가치 소비를 중시하는 고객들은 브랜드의 지속가능성을 꼼꼼히 살핍니다. 대응 역량과 스토리텔링이 필요합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == PROGRAMS == -->
+  <section class="section-panel" id="programs">
+    <div class="wrap">
+      <div class="section-eyebrow">PROGRAM</div>
+      <h2 class="sec-h2" style="color:var(--header-text);margin-bottom:36px;">지속가능 푸드<br>4개 교육 모듈</h2>
+      <div class="program-grid">
+        <div class="prog-card">
+          <div class="prog-tag">식품과 환경</div>
+          <h3>탄소 발자국 이해</h3>
+          <p>음식 생산·가공·유통·소비 전 과정에서 발생하는 탄소 발자국을 이해하고 환경 영향을 줄이는 방법을 학습합니다.</p>
+          <ul class="prog-list"><li>식품 탄소 발자국 계산</li><li>동물성·식물성 식품 비교</li><li>로컬 푸드와 푸드 마일리지</li><li>음식물 쓰레기 감축 전략</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">지속가능 급식</div>
+          <h3>친환경 급식 운영</h3>
+          <p>단체 급식 담당자를 위한 친환경 식재료 선택, 계절·지역 식재료 활용, 음식물 쓰레기 최소화 운영 방법을 다룹니다.</p>
+          <ul class="prog-list"><li>친환경 식재료 선정 기준</li><li>계절 메뉴 기획</li><li>음식물 쓰레기 분석과 감축</li><li>지속가능 급식 인증 이해</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">ESG와 식품 비즈니스</div>
+          <h3>지속가능 경영 연결</h3>
+          <p>식품 제조·유통·외식 기업의 ESG 전략에 지속가능한 식품 시스템을 연결하는 방법과 소비자 커뮤니케이션 전략을 학습합니다.</p>
+          <ul class="prog-list"><li>식품 ESG 보고 기준</li><li>지속가능 포장재 전환</li><li>소비자 그린워싱 방지</li><li>지속가능 식품 인증 취득</li></ul>
+        </div>
+        <div class="prog-card">
+          <div class="prog-tag">건강 식문화</div>
+          <h3>올바른 식습관 형성</h3>
+          <p>직원 건강 증진을 위한 균형 잡힌 영양 교육, 식습관 개선, 구내식당 연계 웰빙 프로그램을 운영합니다.</p>
+          <ul class="prog-list"><li>영양 균형 기초</li><li>현명한 외식·배달 선택</li><li>수분·에너지 관리</li><li>맞춤형 건강 식단 설계</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- == EFFECTS == -->
+  <section class="section-dark" id="effects">
+    <div class="wrap">
+      <div class="section-eyebrow">EFFECT</div>
+      <h2 class="sec-h2" style="margin-bottom:36px;">지속가능 푸드 교육의<br>4가지 기대 성과</h2>
+      <div class="effect-grid">
+        <div class="effect-card">
+          <div class="effect-num">01</div>
+          <div class="effect-body"><h3>ESG 실천 역량 강화</h3><p>식품 분야 탄소 감축과 지속가능성 실천을 ESG 경영에 통합하는 역량이 향상됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">02</div>
+          <div class="effect-body"><h3>운영 비용 절감</h3><p>음식물 쓰레기 감축과 효율적인 식재료 관리를 통해 급식·식품 운영 비용이 절감됩니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">03</div>
+          <div class="effect-body"><h3>브랜드 가치 향상</h3><p>지속가능한 식품 전략 실천은 소비자 신뢰와 브랜드 가치를 높입니다.</p></div>
+        </div>
+        <div class="effect-card">
+          <div class="effect-num">04</div>
+          <div class="effect-body"><h3>직원 건강 증진</h3><p>올바른 식습관 교육은 직원의 건강과 에너지 수준을 높여 생산성 향상으로 이어집니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIAL: trust-proof.html -->
+
+  <!-- == FAQ == -->
+  <section class="faq-band" id="faq">
+    <div class="wrap" style="max-width:780px;">
+      <h2 class="faq-title">지속 가능한 푸드 교육<br>자주 묻는 질문</h2>
+      <details open>
+        <summary><span>Q. 어떤 업종에 가장 적합한가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>식품 제조·유통, 외식 프랜차이즈, 기업 구내식당·단체 급식, 학교·병원 등 식품 관련 모든 분야에 적용 가능합니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 영양사·조리사 자격증 교육인가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>자격증 교육이 아닙니다. 지속가능성·환경·ESG·식문화 관점의 인식 전환과 실무 역량 교육입니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 법정 식품안전 교육과 연계할 수 있나요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>법정 식품위생 교육과 연계하거나 추가 선택 모듈로 운영할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary><span>Q. 급식 메뉴 개선 컨설팅도 가능한가요?</span><span class="faq-arrow">&#9662;</span></summary>
+        <p>교육과 함께 지속가능 급식 메뉴 구성 컨설팅을 연계해 제공합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- == CTA == -->
+  <section class="cta-band" id="cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div class="cta-badge">지속 가능한 푸드 교육</div>
+        <h2>지속가능한 식품 문화,<br>지금 시작할 수 있습니다</h2>
+        <p>귀사의 업종과 목적에 맞는 지속가능 푸드 교육을 설계합니다.<br>ESG 연계부터 급식 운영 개선까지 통합 교육 프로그램을 제안합니다.</p>
+        <a class="btn-primary" href="mailto:biglinkerkor@gmail.com" style="margin:0 auto;display:inline-flex;">교육 문의하기 &rarr;</a>
+        <div class="cta-contact">
+          <div class="cta-contact-item">&#128222; <strong>02-2039-8584</strong></div>
+          <div class="cta-contact-item">&#128241; Kate.Lee <strong>010-2507-0174</strong></div>
+          <div class="cta-contact-item">&#128241; Kevin.Lee <strong>010-9253-7319</strong></div>
+          <div class="cta-contact-item">&#9993; <strong>biglinkerkor@gmail.com</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->

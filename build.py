@@ -77,6 +77,13 @@ _DIR_NAME  = "biz"
 _DOMAIN    = "https://gobiglinker.com"
 _DIR_LABEL = "기업교육"
 _HOWTO = {'name': '기업 맞춤 교육 도입 방법', 'steps': ['현재 팀 역량 수준 및 교육 니즈 진단', '직무·목표별 맞춤 커리큘럼 설계', '파일럿 교육 진행 및 현업 적용도 확인', '정규 과정 전환 및 지속 운영 체계 수립']}
+_COACHES = [
+    {'name': '김재환',  'jobTitle': '조직문화·리더십 기업교육 전문 코치'},
+    {'name': '유장현',  'jobTitle': '조직개발·리더십 컨설팅 코치'},
+    {'name': '안세영',  'jobTitle': '비즈니스전략·지속가능경영 코치'},
+    {'name': '방병권',  'jobTitle': 'HR 데이터분석·채용 교육 코치'},
+    {'name': '이은선',  'jobTitle': '조직문화·커뮤니케이션 코치'},
+]
 
 
 def _page_url(slug):
@@ -199,6 +206,27 @@ def build_jsonld(title, description, slug, main_block):
                 "acceptedAnswer": {"@type":"Answer","text":a}
             })
         schemas.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":entities})
+
+    # Person ItemList (index only)
+    if slug == "index" and _COACHES:
+        items = []
+        for i, c in enumerate(_COACHES):
+            items.append({
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": {
+                    "@type": "Person",
+                    "name": c["name"],
+                    "jobTitle": c["jobTitle"],
+                    "worksFor": {"@type": "Organization", "name": "빅링커", "url": _DOMAIN}
+                }
+            })
+        schemas.append({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "빅링커 전문 코치진",
+            "itemListElement": items
+        })
 
     blocks = []
     for s in schemas:

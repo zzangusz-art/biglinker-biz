@@ -1,29 +1,55 @@
 # BigLinker 기업교육
 
-> 기업 임직원 역량강화 전문 교육 코칭 플랫폼
+> 기업 임직원 역량강화 전문 교육 플랫폼 | 빅링커(BigLinker)
 
-빅링커(BigLinker) 기업교육은 AI 활용·리더십·커뮤니케이션·안전보건 등 직무별 맞춤형 교육 프로그램을 제공합니다.
-기업 규모와 목표에 따라 표준 과정 선택 또는 완전 맞춤형 커리큘럼 설계가 가능합니다.
+빅링커는 AI 활용·리더십·커뮤니케이션·CS·안전보건 등 직무별 맞춤형 기업교육 프로그램을 제공합니다.
+5인 스타트업부터 대기업 팀 단위까지, 기업 맞춤 커리큘럼 설계 및 운영 체계를 구축합니다.
 
 ## 교육 프로그램
-- [기업교육 홈](https://biz.gobiglinker.com/)
-- [AI 활용 기업교육](https://biz.gobiglinker.com/enterprise-ai-training.html)
-- [면접관 역량강화](https://biz.gobiglinker.com/interviewer-training.html)
-- [AI 상향평준화 CS 교육](https://biz.gobiglinker.com/cs-training.html)
-- [고객서비스 역량강화](https://biz.gobiglinker.com/customer-service-training.html)
-- [디지털디톡스 교육](https://biz.gobiglinker.com/digital-detox-training.html)
-- [리더십 역량강화](https://biz.gobiglinker.com/leadership-training.html)
-- [비즈니스 매너·스피치](https://biz.gobiglinker.com/business-manner-speech-training.html)
-- [근골격계 질환예방](https://biz.gobiglinker.com/musculoskeletal-training.html)
-- [셀프리더십](https://biz.gobiglinker.com/self-leadership-training.html)
-- [의사소통 역량강화](https://biz.gobiglinker.com/communication-training.html)
-- [진급자 역량강화](https://biz.gobiglinker.com/promotion-training.html)
-- [팀장·중간관리자 교육](https://biz.gobiglinker.com/manager-training.html)
-- [미디어 리터러시](https://biz.gobiglinker.com/media-literacy-training.html)
-- [인공지능 AI와 미래](https://biz.gobiglinker.com/ai-future-training.html)
-- [지속 가능한 푸드](https://biz.gobiglinker.com/sustainable-food-training.html)
-- [화장품 안전 교육](https://biz.gobiglinker.com/cosmetic-safety-training.html)
-- [감정 코칭·회복 탄력성](https://biz.gobiglinker.com/emotional-resilience-training.html)
+
+- [AI 활용 기업교육](https://biz.gobiglinker.com/enterprise-ai-training.html): ChatGPT·Claude 등 생성형 AI 업무 활용, 프롬프트 설계, AI 기반 보고서 자동화
+- [인공지능 AI와 미래](https://biz.gobiglinker.com/ai-future-training.html): AI 시대 직무 변화 대응 전략, 미래 역량 설계
+- [면접관 역량강화](https://biz.gobiglinker.com/interviewer-training.html): 구조화 면접 설계, 편향 제거, 역량 기반 평가 실습
+- [리더십 역량강화](https://biz.gobiglinker.com/leadership-training.html): 상황별 리더십 스타일 진단, 팀 동기부여·갈등관리 실전 훈련
+- [팀장·중간관리자 교육](https://biz.gobiglinker.com/manager-training.html): 중간관리자의 역할 전환·성과 코칭·보고 문화 개선
+- [진급자 역량강화](https://biz.gobiglinker.com/promotion-training.html): 직급 전환 시 요구되는 역할·마인드셋·업무 방식 재설계
+- [의사소통 역량강화](https://biz.gobiglinker.com/communication-training.html): 수평적 소통, 보고·회의·피드백 문화 개선
+- [비즈니스 매너·스피치](https://biz.gobiglinker.com/business-manner-speech-training.html): 프레젠테이션·보고서 발표·대외 스피치 실전 훈련
+- [셀프리더십](https://biz.gobiglinker.com/self-leadership-training.html): 자기관리·목표 설정·시간 관리·번아웃 예방
+- [CS·고객서비스 역량강화](https://biz.gobiglinker.com/cs-training.html): AI 기반 응대 스크립트 최적화, 감정노동 관리, 불만 처리 역량
+- [고객서비스 역량강화](https://biz.gobiglinker.com/customer-service-training.html): 고객 접점 서비스 품질 향상 실전 교육
+- [디지털디톡스 교육](https://biz.gobiglinker.com/digital-detox-training.html): 디지털 과의존 해소, 딥워크 집중력 훈련
+- [미디어 리터러시](https://biz.gobiglinker.com/media-literacy-training.html): 정보 판별·디지털 콘텐츠 활용·SNS 리스크 관리
+- [근골격계 질환예방](https://biz.gobiglinker.com/musculoskeletal-training.html): 사무직 특화 근골격계 예방 및 건강관리 교육
+- [감정 코칭·회복 탄력성](https://biz.gobiglinker.com/emotional-resilience-training.html): 스트레스 관리, 심리적 안전감 구축, 조직 회복력 향상
+- [지속 가능한 푸드](https://biz.gobiglinker.com/sustainable-food-training.html): ESG 식음료·지속가능경영 임직원 교육
+- [화장품 안전 교육](https://biz.gobiglinker.com/cosmetic-safety-training.html): 화장품 법규·성분 안전성·소비자 커뮤니케이션 교육
+
+## 교육 도입 프로세스
+
+1. 팀 역량 수준 및 교육 니즈 진단
+2. 직무·목표별 맞춤 커리큘럼 설계
+3. 파일럿 교육 진행 및 현업 적용도 확인
+4. 정규 과정 전환 및 지속 운영 체계 수립
+
+## 자주 묻는 질문 (FAQ)
+
+Q: 기업교육 도입 시 맞춤 설계가 가능한가요?
+A: 네, 가능합니다. 팀 규모·직무·수준·목표에 따라 커리큘럼을 처음부터 설계합니다.
+
+Q: 소규모 기업도 기업교육 도입이 가능한가요?
+A: 네, 5인 스타트업부터 대기업 팀 단위까지 규모와 관계없이 맞춤 교육을 제공합니다.
+
+Q: 교육 효과를 어떻게 측정하나요?
+A: 교육 전후 역량 진단, 현업 적용 과제 수행, 만족도 조사를 통해 정량·정성 데이터를 수집하고 리포트로 제공합니다.
+
+## 관련 채널
+
+- 블로그: https://blog.gobiglinker.com/blog/biz
+- 편입·대입 코칭: https://transfer.gobiglinker.com
+- 대학원 코칭: https://graduate.gobiglinker.com
+- 취업 코칭: https://job.gobiglinker.com
 
 ## 운영사
-- 빅링커(BigLinker) | https://gobiglinker.com
+
+빅링커(BigLinker) | https://gobiglinker.com | 문의: biglinkerkor@gmail.com
